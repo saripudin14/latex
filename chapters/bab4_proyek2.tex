@@ -1,2 +1,241 @@
-\subsection{Lingkungan Implementasi Sistem}
-(Isi bab 4 akan dilengkapi nanti)
+\chapter{IMPLEMENTASI DAN PENGUJIAN}
+
+\section{Lingkungan Implementasi Sistem}
+
+\subsection{Perangkat Keras}
+Perangkat keras yang digunakan dalam implementasi sistem memiliki spesifikasi sebagai berikut:
+\begin{itemize}
+    \item Laptop: Lenovo LOQ 15 IRX9
+    \item Prosesor: Intel Core i5-13450HX
+    \item Kartu Grafis: NVIDIA GeForce RTX 3050 6GB GDDR6
+    \item Memori: 20 GB DDR5 4800 MHz
+    \item Penyimpanan Utama: NVMe SSD 512 GB PCIe Gen 4.0 x4
+\end{itemize}
+Spesifikasi perangkat keras tersebut dinilai telah memadai untuk menjalankan aplikasi backend, basis data, serta proses pengembangan dan pengujian sistem secara bersamaan tanpa mengalami kendala performa yang signifikan.
+
+\subsection{Perangkat Lunak}
+Perangkat lunak yang digunakan dalam implementasi sistem meliputi sistem operasi, bahasa pemrograman, basis data, serta berbagai tools pendukung pengembangan sebagai berikut:
+\begin{enumerate}
+    \item \textbf{Sistem Operasi}
+    \begin{itemize}
+        \item Windows 11 sebagai sistem operasi utama pengembangan
+    \end{itemize}
+    \item \textbf{Backend}
+    \begin{itemize}
+        \item Bahasa pemrograman Go versi 1.25.3
+        \item PostgreSQL sebagai sistem manajemen basis data relasional
+        \item Supabase sebagai platform hosting database dan penyimpanan file
+        \item Air sebagai development tool untuk hot reload selama pengembangan
+    \end{itemize}
+    \item \textbf{Frontend}
+    \begin{itemize}
+        \item HTML5 untuk struktur halaman web
+        \item CSS3 untuk pengaturan tampilan dan tata letak
+        \item JavaScript (Vanilla) untuk logika interaksi pengguna
+    \end{itemize}
+    \item \textbf{Library dan Dependency Backend}
+    \begin{itemize}
+        \item \texttt{github.com/golang-jwt/jwt/v5} untuk implementasi autentikasi berbasis JSON Web Token
+        \item \texttt{github.com/jackc/pgx/v5} sebagai driver PostgreSQL
+        \item \texttt{golang.org/x/crypto/bcrypt} untuk enkripsi kata sandi
+        \item \texttt{github.com/joho/godotenv} untuk manajemen environment variables
+        \item \texttt{github.com/xuri/excelize/v2} untuk fitur ekspor laporan ke format Excel
+    \end{itemize}
+\end{enumerate}
+Pemilihan perangkat lunak tersebut didasarkan pada pertimbangan performa, keamanan, kemudahan pengembangan, serta dukungan komunitas yang baik, sehingga mendukung implementasi sistem secara efektif dan berkelanjutan.
+
+\section{Implementasi Desain Tampilan}
+
+\subsection{Halaman Utama (Guest)}
+Halaman Utama (Guest) merupakan halaman publik yang dapat diakses oleh pengguna tanpa melakukan login ke dalam sistem. Halaman ini berfungsi sebagai pusat informasi awal yang menampilkan ketersediaan sarana dan prasarana kampus secara umum, sehingga pengguna dapat memperoleh gambaran kondisi fasilitas sebelum mengajukan peminjaman.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gambar/media/image15.png}
+    \caption{Halaman Utama}
+    \label{fig:halaman_utama}
+\end{figure}
+
+Pada halaman ini ditampilkan informasi berupa kalender aktivitas, jadwal peminjaman harian, daftar ruangan, serta inventaris barang yang tersedia. Seluruh informasi disajikan secara ringkas dan mudah dipahami untuk mendukung transparansi data peminjaman. Dengan adanya Halaman Utama ini, pengguna dapat memantau jadwal penggunaan fasilitas kampus secara efektif dan memperoleh informasi awal tanpa harus masuk ke dalam sistem.
+
+\subsection{Halaman Login}
+Halaman Login digunakan sebagai gerbang autentikasi bagi pengguna untuk dapat mengakses sistem sesuai dengan hak akses yang dimiliki. Pada halaman ini, pengguna diminta untuk memasukkan email dan kata sandi yang telah terdaftar sebagai proses verifikasi identitas sebelum masuk ke dalam sistem.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gambar/media/image16.png}
+    \caption{Halaman Login}
+    \label{fig:halaman_login}
+\end{figure}
+
+Sistem akan melakukan validasi terhadap data yang dimasukkan oleh pengguna. Apabila data yang diberikan valid, pengguna akan diarahkan ke dashboard sesuai dengan peran masing-masing, seperti mahasiswa, admin Sarpras, atau petugas security. Sebaliknya, jika data tidak valid, sistem akan menampilkan pesan kesalahan sebagai informasi kepada pengguna. Halaman Login dirancang dengan tampilan sederhana dan responsif guna memberikan kemudahan serta kenyamanan dalam proses autentikasi pengguna.
+
+\subsection{Halaman Register}
+Halaman Register digunakan oleh pengguna baru untuk melakukan pendaftaran akun sebelum dapat mengakses sistem. Pada halaman ini, pengguna diminta untuk mengisi data diri secara lengkap, seperti nama, email, kata sandi, identitas mahasiswa, serta informasi organisasi yang terkait dengan pengajuan peminjaman.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gambar/media/image17.png}
+    \caption{Halaman Register}
+    \label{fig:halaman_register}
+\end{figure}
+
+Sistem melakukan validasi terhadap data yang dimasukkan untuk memastikan keakuratan dan kelengkapan informasi. Setelah proses pendaftaran berhasil, data pengguna akan disimpan ke dalam sistem dan akun dapat digunakan untuk melakukan login. Halaman Register dirancang agar mudah dipahami dan digunakan, sehingga proses pembuatan akun dapat dilakukan secara efektif dan efisien oleh pengguna.
+
+\subsection{Dashboard Mahasiswa}
+Dashboard Mahasiswa merupakan halaman utama yang diakses oleh mahasiswa setelah berhasil melakukan login ke dalam sistem. Halaman ini berfungsi sebagai pusat informasi dan aktivitas mahasiswa dalam proses peminjaman sarana dan prasarana kampus.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gambar/media/image18.png}
+    \caption{Dashboard Mahasiswa}
+    \label{fig:dashboard_mahasiswa}
+\end{figure}
+
+Pada dashboard ini ditampilkan ringkasan informasi peminjaman, kalender jadwal penggunaan fasilitas, serta agenda harian yang berkaitan dengan peminjaman yang diajukan. Selain itu, mahasiswa dapat mengakses fitur utama seperti pengajuan peminjaman, melihat status dan riwayat peminjaman, serta memantau jadwal penggunaan sarana dan prasarana. Dashboard Mahasiswa dirancang untuk memudahkan pengguna dalam memantau dan mengelola aktivitas peminjaman secara terstruktur dan efisien.
+
+\subsection{Form Pengajuan Peminjaman}
+Form Pengajuan Peminjaman digunakan oleh mahasiswa untuk mengajukan peminjaman sarana dan prasarana kampus melalui sistem. Pada halaman ini, mahasiswa mengisi data pengajuan yang meliputi informasi kegiatan, pilihan ruangan dan/atau barang yang akan dipinjam, jadwal penggunaan, serta dokumen pendukung peminjaman.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gambar/media/image19.png}
+    \caption{Form Pengajuan}
+    \label{fig:form_pengajuan}
+\end{figure}
+
+Sistem akan melakukan validasi terhadap data yang dimasukkan sebelum pengajuan diproses. Setelah pengajuan dikirim, data akan disimpan dalam sistem dan menunggu proses verifikasi oleh pihak Sarpras. Form ini dirancang secara terstruktur dan mudah digunakan untuk membantu mahasiswa dalam menyampaikan pengajuan peminjaman secara jelas dan terdokumentasi dengan baik.
+
+\subsection{Dashboard Sarpras}
+Dashboard Sarpras merupakan halaman utama yang digunakan oleh pihak Sarana dan Prasarana untuk mengelola dan memantau seluruh proses peminjaman dalam sistem. Halaman ini menampilkan ringkasan informasi pengajuan peminjaman, khususnya pengajuan yang masih menunggu proses verifikasi.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gambar/media/image20.png}
+    \caption{Dashboard Sarpras}
+    \label{fig:dashboard_sarpras}
+\end{figure}
+
+Melalui Dashboard Sarpras, admin dapat mengakses fitur manajemen data sarana dan prasarana, melakukan verifikasi pengajuan peminjaman, serta memantau jadwal penggunaan fasilitas kampus. Dashboard ini dirancang untuk membantu pihak Sarpras dalam menjalankan tugas pengelolaan peminjaman secara terpusat, efisien, dan terkontrol.
+
+\subsection{Form Verifikasi Peminjaman}
+Form Verifikasi Peminjaman digunakan oleh pihak Sarpras untuk melakukan pemeriksaan dan pengambilan keputusan terhadap pengajuan peminjaman yang diajukan oleh mahasiswa. Pada halaman ini, Sarpras dapat melihat daftar pengajuan yang menunggu verifikasi beserta detail informasi peminjaman yang diajukan.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gambar/media/image21.png}
+    \caption{Form Verifikasi Peminjaman}
+    \label{fig:form_verifikasi_peminjaman}
+\end{figure}
+
+Berdasarkan hasil pemeriksaan data dan dokumen pendukung, Sarpras dapat memberikan keputusan berupa persetujuan atau penolakan pengajuan peminjaman. Setiap keputusan yang diambil akan dicatat oleh sistem dan disampaikan kepada mahasiswa melalui notifikasi sebagai informasi hasil verifikasi. Form ini dirancang untuk mendukung proses verifikasi peminjaman secara sistematis, transparan, dan terdokumentasi.
+
+\subsection{Halaman Laporan Peminjaman}
+Halaman Laporan Peminjaman digunakan oleh pihak Sarpras untuk melihat rekapitulasi data peminjaman sarana dan prasarana yang tersimpan dalam sistem. Halaman ini menyajikan informasi peminjaman secara terstruktur sehingga memudahkan proses pemantauan dan evaluasi.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gambar/media/image22.png}
+    \caption{Halaman Laporan Peminjaman}
+    \label{fig:halaman_laporan_peminjaman}
+\end{figure}
+
+Pada halaman ini, pengguna dapat melakukan penyaringan data berdasarkan periode waktu dan status peminjaman. Data laporan dapat digunakan sebagai bahan dokumentasi dan pendukung dalam penyusunan laporan administrasi. Halaman Laporan Peminjaman dirancang untuk membantu pihak Sarpras dalam memperoleh informasi peminjaman secara akurat dan sistematis.
+
+\subsection{Dashboard Security}
+Dashboard Security merupakan halaman utama yang digunakan oleh petugas keamanan untuk memantau dan memverifikasi kehadiran peminjam sarana dan prasarana kampus. Halaman ini menampilkan daftar jadwal peminjaman yang berlangsung pada hari berjalan beserta status verifikasi kehadiran peminjam.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gambar/media/image23.png}
+    \caption{Dashboard Security}
+    \label{fig:dashboard_security}
+\end{figure}
+
+Melalui Dashboard Security, petugas dapat melakukan pengecekan kehadiran peminjam berdasarkan jadwal yang telah disetujui serta mencatat hasil verifikasi ke dalam sistem. Dashboard ini dirancang untuk mendukung proses pengawasan penggunaan fasilitas kampus agar sesuai dengan jadwal dan ketentuan yang telah ditetapkan.
+
+\subsection{Form Verifikasi Kehadiran}
+Form Verifikasi Kehadiran digunakan oleh petugas security untuk mencatat dan memverifikasi kehadiran peminjam pada saat penggunaan sarana dan prasarana kampus. Pada halaman ini, petugas dapat melihat detail jadwal peminjaman yang sedang berlangsung serta melakukan konfirmasi kehadiran peminjam sesuai dengan data yang tercatat dalam sistem.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gambar/media/image24.png}
+    \caption{Form Verifikasi Kehadiran}
+    \label{fig:form_verifikasi_kehadiran}
+\end{figure}
+
+Hasil verifikasi kehadiran akan disimpan dan terdokumentasi sebagai bagian dari riwayat peminjaman. Form ini dirancang untuk memastikan penggunaan sarana dan prasarana sesuai dengan jadwal yang telah disetujui serta mendukung pengawasan dan pengendalian fasilitas kampus secara tertib dan terstruktur.
+
+\section{Pengujian}
+
+\subsection{Pengujian Black Box}
+Pengujian Black Box dilakukan dengan memvalidasi input dan output sistem tanpa melihat struktur internal kode. Pengujian mencakup modul autentikasi, master data, peminjaman, kehadiran, notifikasi, RBAC, serta pengujian antarmuka pengguna (UI). Berdasarkan hasil pengujian, seluruh skenario uji berhasil dijalankan dengan status PASS.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Pengujian Aplikasi}
+    \label{tab:pengujian_aplikasi}
+    \begin{tabular}{|c|l|l|p{4cm}|c|}
+        \hline
+        No. & Modul/Fitur & Skenario Uji & Hasil Yang Diharapkan & Hasil Uji \\
+        \hline
+        1. & Login & Input email \& password valid & Masuk dashboard sesuai role & Passed \\
+        \hline
+        2. & Login & Input password salah & Pesan error muncul & Passed \\
+        \hline
+        3. & Register & Data valid & Akun berhasil dibuat & Passed \\
+        \hline
+        4. & Pengajuan Peminjaman & Data lengkap & Status PENDING & Passed \\
+        \hline
+        5. & Verifikasi Peminjaman & Approve data & Status APPROVED & Passed \\
+        \hline
+        6. & Pembatalan Peminjaman & Klik batal & Status CANCELED & Passed \\
+        \hline
+        7. & Kehadiran & Input kehadiran & Data tersimpan & Passed \\
+        \hline
+        8. & Role-Based Access Control & Akses tanpa hak & Akses ditolak & Passed \\
+        \hline
+        9. & Notifikasi & Aksi peminjaman & Notifikasi muncul & Passed \\
+        \hline
+        10. & Logout & Klik logout & Kembali ke halaman login & Passed \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Berdasarkan tabel di atas, dapat disimpulkan bahwa seluruh fungsi sistem telah berjalan sesuai dengan spesifikasi dan tidak ditemukan kegagalan pada proses pengujian fungsional.
+
+\subsection{Pengujian Code Coverage}
+Pengujian Code Coverage dilakukan pada sisi backend untuk mengetahui persentase baris kode yang telah dieksekusi selama proses pengujian unit. Hasil pengujian menunjukkan bahwa beberapa modul inti telah diuji dengan tingkat keterujian yang baik, khususnya pada layanan autentikasi dan peminjaman.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Hasil Code Coverage}
+    \label{tab:hasil_code_coverage}
+    \begin{tabular}{|c|l|c|}
+        \hline
+        No. & Nama Unit & Persentase \\
+        \hline
+        1. & auth\_service.go & 83.3\% \\
+        \hline
+        2. & code\_generator.go & 100\% \\
+        \hline
+        3. & kehadiran\_service.go & 83.3\% \\
+        \hline
+        4. & peminjaman\_service.go & 34.7\% \\
+        \hline
+        5. & export\_service.go & 0.0\% \\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Total Coverage}} & \textbf{31.9\%} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Hasil visual pengujian Code Coverage disajikan dalam bentuk laporan HTML dan dilampirkan pada bagian Lampiran Code Coverage sebagai bukti pendukung.
+
+\section{Repository GitHub Project}
+Repository GitHub digunakan sebagai media penyimpanan dan pengelolaan source code dalam pengembangan Sistem Informasi Peminjaman Sarana dan Prasarana Kampus. Repository ini mendukung pengendalian versi dan dokumentasi selama proses pengembangan. Struktur repository dipisahkan antara backend dan frontend untuk memudahkan pengelolaan kode. Repository proyek dapat diakses melalui:
+\begin{itemize}
+    \item \url{https://github.com/ditverse/proyek-2-backend}
+    \item \url{https://github.com/ditverse/proyek-2-frontend}
+\end{itemize}
+Penggunaan GitHub membantu memastikan proses pengembangan sistem berjalan secara terstruktur dan terdokumentasi dengan baik.
