@@ -2,8 +2,11 @@
 # File: compile-latex.ps1
 # Deskripsi: Mengkompilasi Template-Ujian-Kualifikasi-DJN.tex secara otomatis
 
+# Add TinyTeX to PATH
+$env:Path += ";$env:APPDATA\TinyTeX\bin\windows"
+
 # Set nama file (tanpa ekstensi)
-$TexFile = "bukped"
+$TexFile = "laporan_proyek2"
 
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "  Kompilasi LaTeX Document" -ForegroundColor Cyan

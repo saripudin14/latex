@@ -1,0 +1,249 @@
+% Template LaTeX untuk Ujian Kualifikasi
+% Program Studi Doktor Informatika
+% Universitas Telkom
+
+% Document Class
+\documentclass[12pt,a4paper]{report}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx} % Times New Roman
+\usepackage{courier}  % Courier for monospace
+\usepackage{helvet}   % Helvetica for sans-serif
+\usepackage{amsmath}
+% \usepackage[english,indonesian]{babel}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[format=hang,font=footnotesize,labelfont=bf]{caption}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage[normalem]{ulem} % Added ulem package
+
+% Page Setup
+\geometry{
+    top=3cm,
+    bottom=3cm,
+    left=4cm,
+    right=3cm
+}
+
+% Title Formatting
+\titleformat{\chapter}[display]
+  {\normalfont\fontsize{16}{19}\bfseries\centering}
+  {\chaptertitlename\ \thechapter}
+  {0.5em}
+  {}
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+\renewcommand{\chaptername}{BAB}
+
+\titleformat{\section}
+    {\normalfont\fontsize{14}{16}\bfseries}{\thesection}{1em}{}
+    
+\titleformat{\subsection}
+    {\normalfont\fontsize{12}{14}\bfseries}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+    {\normalfont\fontsize{12}{14}\normalfont}{\thesubsubsection}{1em}{}
+
+% Spacing
+\onehalfspacing
+
+% Header/Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=black,
+}
+
+% Table of Contents customization
+\renewcommand{\contentsname}{DAFTAR ISI}
+\renewcommand{\cfttoctitlefont}{\hfill\fontsize{16}{19}\selectfont\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftchappresnum}{BAB }
+\setlength{\cftchapnumwidth}{4em}
+
+% List of Tables customization
+\renewcommand{\listtablename}{DAFTAR TABEL}
+\renewcommand{\cftlottitlefont}{\hfill\fontsize{16}{19}\selectfont\bfseries}
+\renewcommand{\cftafterlottitle}{\hfill}
+
+% List of Figures customization
+\renewcommand{\listfigurename}{DAFTAR GAMBAR}
+\renewcommand{\cftloftitlefont}{\hfill\fontsize{16}{19}\selectfont\bfseries}
+\renewcommand{\cftafterloftitle}{\hfill}
+
+% List of Equations setup
+\newcommand{\listequationsname}{DAFTAR RUMUS}
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{%
+\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+\renewcommand{\cftequtitlefont}{\hfill\fontsize{16}{19}\selectfont\bfseries}
+\renewcommand{\cftafterequtitle}{\hfill}
+\setlength{\cftmyequationsindent}{0pt}
+
+% Redefine \listofequations to use the custom list
+\newcommand{\listofequations}{\listofmyequations}
+
+% Subsection numbering format (Standard LaTeX numbering is preferred)
+
+% Custom Commands for Metadata
+\makeatletter
+\newcommand{\myTitle}[1]{\def\@myTitle{#1}}
+\newcommand{\myAuthorOne}[2]{\def\@myNameOne{#1}\def\@myNIMOne{#2}}
+\newcommand{\myAuthorTwo}[2]{\def\@myNameTwo{#1}\def\@myNIMTwo{#2}}
+\newcommand{\myYear}[1]{\def\@myYear{#1}}
+
+% Redefine title page
+% Initialize default values
+\def\@myTitle{Judul Penelitian}
+\def\@myNameOne{Nama Mahasiswa 1}
+\def\@myNIMOne{NIM 1}
+\def\@myNameTwo{Nama Mahasiswa 2}
+\def\@myNIMTwo{NIM 2}
+\def\@myYear{Tahun}
+
+\renewcommand{\maketitle}{
+    \begin{titlepage}
+        \centering
+        \vspace*{0.5cm}
+        
+        % Judul Penelitian
+        {\fontsize{14}{16}\selectfont\bfseries
+        \@myTitle\par}
+        
+        \vspace{1.5cm}
+        
+        % Jenis Laporan
+        {\fontsize{12}{14}\selectfont
+        \textbf{LAPORAN PROYEK II}\par}
+        \vspace{0.5cm}
+        {\fontsize{12}{14}\selectfont
+        Diajukan untuk Memenuhi Kelulusan Matakuliah Proyek 2 pada Program Studi DIV Teknik Informatika\par}
+        
+        \vspace{1.5cm}
+        
+        % Logo
+        \IfFileExists{logo.png}{
+            \includegraphics[width=0.4\textwidth]{logo.png}
+        }{
+            {\fontsize{16}{19}\bfseries Logo\par}
+        }
+
+        \vspace{1.5cm}
+        
+        % Penulis
+        {\fontsize{12}{14}\selectfont
+        \textbf{DISUSUN OLEH :}\par}
+        \vspace{0.5cm}
+        
+        \begin{tabular}{ll}
+            \textbf{\@myNIMOne} & \textbf{\@myNameOne} \\
+            \textbf{\@myNIMTwo} & \textbf{\@myNameTwo}
+        \end{tabular}\par
+        
+        \vfill
+        
+        % Program Studi dan Informasi
+        {\fontsize{14}{16}\selectfont\bfseries
+        PROGRAM STUDI DIV TEKNIK INFORMATIKA\par
+        SEKOLAH VOKASI\par
+        UNIVERSITAS LOGISTIK DAN BISNIS INTERNASIONAL\par
+        BANDUNG\par
+        \@myYear\par}
+        
+    \end{titlepage}
+    \newpage
+}
+\makeatother
+
+% Set Metadata
+\myTitle{IMPLEMENTASI SISTEM INFORMASI PEMINJAMAN SARANA DAN PRASARANA KAMPUS BERBASIS WEB MENGGUNAKAN CRUD RDBMS}
+\myAuthorOne{MUHAMMAD ARIF RIVALDI}{714240008}
+\myAuthorTwo{RADITYA RIZKI RAHARJA}{714240041}
+\myYear{2026}
+
+% Bibliography Style
+\usepackage[
+    backend=bibtex,
+    style=authoryear,
+    sorting=nyt,
+    maxbibnames=99,
+    dashed=false,
+    url=false,
+    doi=true,
+]{biblatex}
+\urlstyle{same}
+\addbibresource{references.bib}
+\addbibresource{ref_proyek2.bib}
+
+\begin{document}
+
+% Title Page
+\maketitle
+
+% Start Roman Numbering
+\pagenumbering{roman}
+
+% Placeholder for Front Matter (can be populated later)
+% \input{chapters/lembar_pengesahan}
+% \input{chapters/kata_pengantar}
+
+
+% DAFTAR ISI
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR ISI}
+\tableofcontents
+\clearpage
+
+% DAFTAR GAMBAR
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+\listoffigures
+\clearpage
+
+% DAFTAR TABEL
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+\listoftables
+\clearpage
+
+\input{chapters/abstrak}
+\clearpage
+
+% Start Arabic Numbering for Chapters
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% Placeholder for Chapters
+\input{chapters/bab1_proyek2}
+\input{chapters/bab2_proyek2}
+\input{chapters/bab3_proyek2}
+% \input{chapters/bab4}
+% \input{chapters/bab5}
+
+% References
+\printbibliography[heading=bibintoc, title={DAFTAR PUSTAKA}]
+
+% Lampiran
+% \input{chapters/lampiran}
+
+\end{document}

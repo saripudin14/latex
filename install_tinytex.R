@@ -1,0 +1,7 @@
+dir.create("r_libs", showWarnings = FALSE)
+.libPaths("r_libs")
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+install.packages('tinytex', lib="r_libs")
+if (!requireNamespace("tinytex", quietly = TRUE)) stop("TinyTeX package not installed")
+library(tinytex)
+install_tinytex(force = TRUE)
