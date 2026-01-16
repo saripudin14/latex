@@ -91,6 +91,8 @@
 \renewcommand{\listfigurename}{DAFTAR GAMBAR}
 \renewcommand{\cftloftitlefont}{\hfill\fontsize{16}{19}\selectfont\bfseries}
 \renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\tablename}{Tabel}
 
 % List of Equations setup
 \newcommand{\listequationsname}{DAFTAR RUMUS}
@@ -204,6 +206,13 @@
 % Start Roman Numbering
 \pagenumbering{roman}
 
+\input{chapters/abstrak}
+\clearpage
+\input{chapters/abstract}
+\clearpage
+\input{chapters/kata_pengantar}
+\clearpage
+
 % Placeholder for Front Matter (can be populated later)
 % \input{chapters/lembar_pengesahan}
 % \input{chapters/kata_pengantar}
@@ -227,8 +236,7 @@
 \listoftables
 \clearpage
 
-\input{chapters/abstrak}
-\clearpage
+
 
 % Start Arabic Numbering for Chapters
 \pagenumbering{arabic}

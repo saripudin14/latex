@@ -194,7 +194,7 @@ Perancangan sistem dilakukan sebagai tahap lanjutan dari hasil analisis kebutuha
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image3.png}
+    \includegraphics[width=0.8\textwidth]{gambar/media/usecase.png}
     \caption{Usecase Diagram}
     \label{fig:usecase_diagram}
 \end{figure}
@@ -322,30 +322,34 @@ Sequence diagram ini menunjukkan alur komunikasi antar komponen sistem secara be
 \subsubsection{Sequence Diagram Verifikasi Peminjaman}
 Sequence diagram ini menggambarkan alur interaksi antara aktor Admin dengan Web App, System, Database, dan Email Service dalam proses verifikasi pengajuan peminjaman. Proses diawali ketika admin melakukan login melalui Web App. System memvalidasi kredensial admin dengan melakukan pengecekan ke Database. Jika login berhasil, sistem memberikan akses dan menampilkan dashboard admin.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{gambar/media/image8.png}
+    \caption{Sequence Diagram Verifikasi Peminjaman}
+    \label{fig:sequence_verifikasi}
+\end{figure}
+
 Admin kemudian membuka daftar pengajuan peminjaman. Web App meminta data pengajuan dengan status PENDING kepada System, yang selanjutnya mengambil data tersebut dari Database dan menampilkannya dalam bentuk tabel. Admin memilih salah satu pengajuan untuk melihat detail lengkap, dan System mengambil serta menampilkan detail pengajuan dari Database.
 
 Pada tahap pengambilan keputusan, admin dapat menyetujui atau menolak pengajuan. Jika pengajuan disetujui, System memperbarui status peminjaman menjadi APPROVED di Database dan mengirimkan notifikasi persetujuan kepada mahasiswa melalui Email Service. Jika pengajuan ditolak, System memperbarui status menjadi REJECTED beserta alasan penolakan dan mengirimkan notifikasi penolakan kepada mahasiswa. Setelah proses selesai, Web App menampilkan konfirmasi kepada admin.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image8.png}
-    \caption{Sequence Diagram Verifikasi Peminjaman}
-    \label{fig:sequence_verifikasi}
-\end{figure}
+
 
 Sequence diagram ini menunjukkan alur komunikasi sistem dalam memastikan setiap pengajuan peminjaman diverifikasi secara terkontrol dan terdokumentasi dengan baik.
 
 \subsubsection{Sequence Diagram Verifikasi Kehadiran}
 Sequence diagram ini menggambarkan alur interaksi antara aktor Security dengan Web App, System, dan Database dalam proses verifikasi kehadiran peminjam. Proses dimulai ketika security melakukan login melalui Web App, yang kemudian divalidasi oleh System dengan melakukan pengecekan kredensial ke Database. Setelah login berhasil, sistem menampilkan dashboard security.
 
+
+
+Ketika peminjam datang, security melakukan pengecekan identitas dan mencari data peminjaman pada jadwal yang tersedia melalui Web App. System memproses permintaan tersebut dan memeriksa kesesuaian data dengan Database. Jika data peminjaman ditemukan dan sesuai jadwal, security melakukan verifikasi kehadiran. System kemudian mencatat kehadiran dengan memperbarui status menjadi HADIR beserta waktu masuk pada Database, dan menampilkan konfirmasi bahwa verifikasi berhasil sehingga peminjam diizinkan masuk ke ruangan.
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image9.png}
+    \includegraphics[width=0.6\textwidth]{gambar/media/image9.png}
     \caption{Sequence Diagram Verifikasi Kehadiran}
     \label{fig:sequence_kehadiran}
 \end{figure}
-
-Ketika peminjam datang, security melakukan pengecekan identitas dan mencari data peminjaman pada jadwal yang tersedia melalui Web App. System memproses permintaan tersebut dan memeriksa kesesuaian data dengan Database. Jika data peminjaman ditemukan dan sesuai jadwal, security melakukan verifikasi kehadiran. System kemudian mencatat kehadiran dengan memperbarui status menjadi HADIR beserta waktu masuk pada Database, dan menampilkan konfirmasi bahwa verifikasi berhasil sehingga peminjam diizinkan masuk ke ruangan.
 
 Sebaliknya, apabila data peminjaman tidak ditemukan atau tidak sesuai, sistem menolak proses verifikasi dan security tidak memberikan izin masuk ke ruangan. Sequence diagram ini menunjukkan alur komunikasi sistem dalam memastikan bahwa hanya peminjam yang sah yang dapat menggunakan sarana dan prasarana kampus.
 
@@ -353,7 +357,7 @@ Sebaliknya, apabila data peminjaman tidak ditemukan atau tidak sesuai, sistem me
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image10.png}
+    \includegraphics[width=0.9\textwidth]{gambar/media/image10.png}
     \caption{Entity Relationship Diagram}
     \label{fig:erd}
 \end{figure}
@@ -364,7 +368,8 @@ Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis d
     \centering
     \caption{Relasi Antar Entitas}
     \label{tab:relasi_entitas}
-    \begin{tabular}{|c|l|l|l|p{6cm}|}
+    \makebox[\textwidth][c]{
+    \begin{tabularx}{1.1\textwidth}{|c|l|l|l|X|}
         \hline
         No. & Entitas Utama & Entitas Terkait & Jenis Relasi & Keterangan \\
         \hline
@@ -378,7 +383,7 @@ Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis d
         \hline
         5. & peminjaman & peminjaman\_barang & One-to-Many & Satu peminjaman dapat memiliki lebih dari satu barang \\
         \hline
-        6. & barang & peminjaman\_barang & One-to-One & Satu barang dapat tercatat pada banyak transaksi peminjaman \\
+        6. & barang & peminjaman\_barang & One-to-Many & Satu barang dapat tercatat pada banyak transaksi peminjaman \\
         \hline
         7. & peminjaman & kehadiran\_peminjam & One-to-Many & Setiap peminjaman memiliki satu data kehadiran \\
         \hline
@@ -390,13 +395,21 @@ Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis d
         \hline
         11. & peminjaman & log\_aktivitas & One-to-Many & Aktivitas terkait peminjaman tercatat dalam log \\
         \hline
-    \end{tabular}
+    \end{tabularx}
+    }
 \end{table}
 
 Dengan perancangan ERD yang terstruktur dan relasi antar entitas yang jelas, Sistem Informasi Peminjaman Sarana dan Prasarana Kampus mampu mendukung pengelolaan data peminjaman secara terintegrasi dan konsisten. Struktur basis data ini menjadi acuan utama dalam implementasi sistem, khususnya dalam penerapan operasi CRUD serta pengelolaan data peminjaman, verifikasi, dan pelaporan pada tahap implementasi sistem.
 
 \subsection{Class Diagram}
 Class Diagram digunakan untuk menggambarkan struktur kelas dalam sistem beserta atribut, tipe data, serta hubungan antar kelas. Diagram ini merepresentasikan rancangan statis sistem yang menjadi dasar dalam proses implementasi, khususnya dalam pembuatan struktur database, model data, dan logika bisnis aplikasi.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{gambar/media/image11.png}
+    \caption{Class Diagram}
+    \label{fig:class_diagram}
+\end{figure}
 
 \begin{table}[htbp]
     \centering
@@ -429,18 +442,15 @@ Class Diagram digunakan untuk menggambarkan struktur kelas dalam sistem beserta 
     \end{tabular}
 \end{table}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image11.png}
-    \caption{Class Diagram}
-    \label{fig:class_diagram}
-\end{figure}
 
+
+\newpage
 Berdasarkan Class Diagram pada Gambar \ref{fig:class_diagram}, sistem peminjaman sarana dan prasarana kampus terdiri dari beberapa kelas utama, yaitu User, Peminjaman, Barang, Ruangan, Kegiatan, Organisasi, serta kelas pendukung seperti PeminjamanBarangDetail, KehadiranPeminjam, Notifikasi, dan LogAktivitas.
 Kelas Peminjaman berperan sebagai pusat relasi yang menghubungkan pengguna dengan sarana dan prasarana yang dipinjam, kegiatan yang dilaksanakan, serta proses verifikasi dan kehadiran. Untuk menjaga konsistensi status dan peran dalam sistem, digunakan beberapa enumeration seperti RoleEnum, PeminjamanStatusEnum, KehadiranStatusEnum, NotifikasiJenisEnum, dan NotifikasiStatusEnum.
 
 Dengan adanya Class Diagram ini, struktur kelas dan hubungan antar komponen dalam Sistem Informasi Peminjaman Sarana dan Prasarana Kampus dapat dipahami secara jelas. Class Diagram ini menjadi acuan dalam proses implementasi sistem, khususnya dalam pembuatan model data, pengelolaan relasi antar entitas, serta penerapan logika bisnis sesuai dengan kebutuhan sistem.
 
+\newpage
 \subsection{BPMN Diagram}
 
 \subsubsection{BPMN Proses Peminjaman}
@@ -448,7 +458,7 @@ BPMN Proses Peminjaman menggambarkan alur peminjaman sarana dan prasarana kampus
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image12.png}
+    \includegraphics[width=0.9\textwidth]{gambar/media/image12.png}
     \caption{BPMN Proses Peminjaman}
     \label{fig:bpmn_peminjaman}
 \end{figure}
@@ -460,7 +470,7 @@ BPMN Verifikasi Peminjaman menggambarkan alur pemeriksaan dan pengambilan keputu
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image13.png}
+    \includegraphics[width=0.9\textwidth]{gambar/media/image13.png}
     \caption{BPMN Verifikasi Peminjaman}
     \label{fig:bpmn_verifikasi}
 \end{figure}
@@ -472,7 +482,7 @@ BPMN Verifikasi Kehadiran Peminjam menggambarkan proses pemeriksaan kehadiran pe
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image14.png}
+    \includegraphics[width=0.9\textwidth]{gambar/media/image14.png}
     \caption{BPMN Verifikasi Kehadiran}
     \label{fig:bpmn_kehadiran}
 \end{figure}
