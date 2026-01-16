@@ -3,9 +3,66 @@
 \addcontentsline{toc}{chapter}{LAMPIRAN}
 \chapter*{LAMPIRAN}
 
+% Reset figure numbering for appendix
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\figurename}{Lampiran}
 
-\vspace*{\fill}
-\begin{center}
-    \textit{\textbf{(Halaman ini sengaja dikosongkan)}}
-\end{center}
-\vspace*{\fill}
+\section*{Lampiran A: Hasil Pengujian Code Coverage Backend}
+
+Lampiran ini menyajikan hasil pengujian \textit{code coverage} backend menggunakan \textit{testing framework} Go. Hasil ditampilkan dalam bentuk laporan HTML yang menunjukkan persentase coverage dan detail kode yang telah diuji (\textit{covered}) maupun belum diuji (\textit{not covered}).
+
+\subsection*{A.1 Ringkasan Code Coverage}
+
+Ringkasan hasil pengujian menunjukkan total \textit{code coverage} sebesar 31,9\%. Modul inti (\textit{auth\_service}, \textit{code\_generator}, \textit{kehadiran\_service}, \textit{peminjaman\_service}) telah mencapai tingkat keterujian tinggi.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{gambar/media/image25.png}
+    \caption{Ringkasan Code Coverage Backend}
+    \label{fig:coverage_summary}
+\end{figure}
+
+\subsection*{A.2 Detail Coverage: Auth Service}
+
+Detail coverage \textit{Auth Service} menunjukkan sebagian besar kode telah tercakup pengujian (hijau), termasuk fungsi kritis seperti login dan register.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{gambar/media/auth service.png}
+    \caption{Detail Coverage Auth Service}
+    \label{fig:coverage_auth}
+\end{figure}
+
+\subsection*{A.3 Detail Coverage: Kehadiran Service}
+
+Detail coverage \textit{Kehadiran Service} menunjukkan tingkat coverage tinggi (88,2\%), dengan fungsi utama \texttt{CreateKehadiran} telah diuji menyeluruh.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{gambar/media/kehadiran service.png}
+    \caption{Detail Coverage Kehadiran Service}
+    \label{fig:coverage_kehadiran}
+\end{figure}
+
+\subsection*{A.4 Detail Coverage: Peminjaman Service}
+
+Detail coverage \textit{Peminjaman Service} menunjukkan tingkat coverage baik untuk fungsi inti (pengajuan, verifikasi, pembatalan peminjaman).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{gambar/media/peminjaman service.png}
+    \caption{Detail Coverage Peminjaman Service}
+    \label{fig:coverage_peminjaman}
+\end{figure}
+
+\section*{Lampiran B: Dokumentasi Wawancara}
+
+Dokumentasi wawancara dengan staf Sarana dan Prasarana sebagai bagian proses pengumpulan data dan analisis kebutuhan sistem.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{gambar/media/coblong.jpeg}
+    \caption{Dokumentasi Wawancara dengan Staf Sarana dan Prasarana}
+    \label{fig:dokumentasi_wawancara}
+\end{figure}
