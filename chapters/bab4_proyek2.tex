@@ -27,7 +27,7 @@ Perangkat lunak yang digunakan dalam implementasi sistem meliputi sistem operasi
         \item Supabase sebagai platform hosting database dan penyimpanan file
         \item Air sebagai development tool untuk hot reload selama pengembangan
     \end{itemize}
-    \end{itemize}
+
 \end{enumerate}
 \newpage
 \begin{enumerate}[resume]
@@ -74,6 +74,7 @@ Halaman Login digunakan sebagai gerbang autentikasi bagi pengguna untuk dapat me
 
 Sistem akan melakukan validasi terhadap data yang dimasukkan oleh pengguna. Apabila data yang diberikan valid, pengguna akan diarahkan ke dashboard sesuai dengan peran masing-masing, seperti mahasiswa, admin Sarpras, atau petugas security. Sebaliknya, jika data tidak valid, sistem akan menampilkan pesan kesalahan sebagai informasi kepada pengguna. Halaman Login dirancang dengan tampilan sederhana dan responsif guna memberikan kemudahan serta kenyamanan dalam proses autentikasi pengguna.
 
+\newpage
 \subsection{Halaman Register}
 Halaman Register digunakan oleh pengguna baru untuk melakukan pendaftaran akun sebelum dapat mengakses sistem. Pada halaman ini, pengguna diminta untuk mengisi data diri secara lengkap, seperti nama, email, kata sandi, identitas mahasiswa, serta informasi organisasi yang terkait dengan pengajuan peminjaman.
 
@@ -91,7 +92,7 @@ Dashboard Mahasiswa merupakan halaman utama yang diakses oleh mahasiswa setelah 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image18.png}
+    \includegraphics[width=0.5\textwidth]{gambar/media/image18.png}
     \caption{Dashboard Mahasiswa}
     \label{fig:dashboard_mahasiswa}
 \end{figure}
@@ -139,11 +140,12 @@ Halaman Laporan Peminjaman digunakan oleh pihak Sarpras untuk melihat rekapitula
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image22.png}
+    \includegraphics[width=0.6\textwidth]{gambar/media/image22.png}
     \caption{Halaman Laporan Peminjaman}
     \label{fig:halaman_laporan_peminjaman}
 \end{figure}
 
+\newpage
 Pada halaman ini, pengguna dapat melakukan penyaringan data berdasarkan periode waktu dan status peminjaman. Data laporan dapat digunakan sebagai bahan dokumentasi dan pendukung dalam penyusunan laporan administrasi. Halaman Laporan Peminjaman dirancang untuk membantu pihak Sarpras dalam memperoleh informasi peminjaman secara akurat dan sistematis.
 
 \subsection{Dashboard Security}
@@ -151,13 +153,14 @@ Dashboard Security merupakan halaman utama yang digunakan oleh petugas keamanan 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image23.png}
+    \includegraphics[width=1.0\textwidth]{gambar/media/image23.png}
     \caption{Dashboard Security}
     \label{fig:dashboard_security}
 \end{figure}
 
 Melalui Dashboard Security, petugas dapat melakukan pengecekan kehadiran peminjam berdasarkan jadwal yang telah disetujui serta mencatat hasil verifikasi ke dalam sistem. Dashboard ini dirancang untuk mendukung proses pengawasan penggunaan fasilitas kampus agar sesuai dengan jadwal dan ketentuan yang telah ditetapkan.
 
+\newpage
 \subsection{Form Verifikasi Kehadiran}
 Form Verifikasi Kehadiran digunakan oleh petugas security untuk mencatat dan memverifikasi kehadiran peminjam pada saat penggunaan sarana dan prasarana kampus. Pada halaman ini, petugas dapat melihat detail jadwal peminjaman yang sedang berlangsung serta melakukan konfirmasi kehadiran peminjam sesuai dengan data yang tercatat dalam sistem.
 
@@ -179,7 +182,7 @@ Pengujian Black Box dilakukan dengan memvalidasi input dan output sistem tanpa m
     \centering
     \caption{Pengujian Aplikasi}
     \label{tab:pengujian_aplikasi}
-    \begin{tabular}{|c|l|l|p{4cm}|c|}
+    \begin{tabularx}{\textwidth}{|c|l|X|X|c|}
         \hline
         No. & Modul/Fitur & Skenario Uji & Hasil Yang Diharapkan & Hasil Uji \\
         \hline
@@ -197,41 +200,45 @@ Pengujian Black Box dilakukan dengan memvalidasi input dan output sistem tanpa m
         \hline
         7. & Kehadiran & Input kehadiran & Data tersimpan & Passed \\
         \hline
-        8. & Role-Based Access Control & Akses tanpa hak & Akses ditolak & Passed \\
+        8. & RBAC & Akses tanpa hak & Akses ditolak & Passed \\
         \hline
         9. & Notifikasi & Aksi peminjaman & Notifikasi muncul & Passed \\
         \hline
         10. & Logout & Klik logout & Kembali ke halaman login & Passed \\
         \hline
-    \end{tabular}
+    \end{tabularx}
 \end{table}
 
 Berdasarkan tabel di atas, dapat disimpulkan bahwa seluruh fungsi sistem telah berjalan sesuai dengan spesifikasi dan tidak ditemukan kegagalan pada proses pengujian fungsional.
 
 \subsection{Pengujian Code Coverage}
-Pengujian Code Coverage dilakukan pada sisi backend untuk mengetahui persentase baris kode yang telah dieksekusi selama proses pengujian unit. Hasil pengujian menunjukkan bahwa beberapa modul inti telah diuji dengan tingkat keterujian yang baik, khususnya pada layanan autentikasi dan peminjaman.
+Pengujian code coverage dilakukan untuk mengukur sejauh mana kode program backend Sistem Informasi Peminjaman Sarana dan Prasarana Kampus telah dieksekusi selama proses unit testing. Pengujian difokuskan pada layer service yang merepresentasikan logika bisnis utama sistem.
+
+Hasil pengujian menunjukkan nilai code coverage sebesar 31,9\%. Nilai ini dipengaruhi oleh beberapa fungsi yang tidak dilakukan pengujian unit secara langsung, seperti konstruktor service, fungsi pengiriman email, serta ekspor data ke format Excel yang bergantung pada layanan eksternal dan file system. Sementara itu, fungsi utama sistem seperti autentikasi pengguna, pengajuan peminjaman, verifikasi peminjaman, pembatalan peminjaman, dan pencatatan kehadiran telah diuji dengan tingkat coverage di atas 75\%, sehingga dapat disimpulkan bahwa logika bisnis inti sistem telah berjalan dengan baik dan sesuai kebutuhan fungsional.
 
 \begin{table}[htbp]
     \centering
-    \caption{Hasil Code Coverage}
+    \caption{Ringkasan Hasil Code Coverage Backend}
     \label{tab:hasil_code_coverage}
-    \begin{tabular}{|c|l|c|}
+    \begin{tabularx}{\textwidth}{|c|l|X|c|}
         \hline
-        No. & Nama Unit & Persentase \\
+        No & Service & Fungsi Utama & Coverage (\%) \\
         \hline
-        1. & auth\_service.go & 83.3\% \\
+        1 & Auth Service & Login, Register & 75 -- 100 \\
         \hline
-        2. & code\_generator.go & 100\% \\
+        2 & Code Generator & generateCode & 100 \\
         \hline
-        3. & kehadiran\_service.go & 83.3\% \\
+        3 & Kehadiran Service & CreateKehadiran & 88.2 \\
         \hline
-        4. & peminjaman\_service.go & 34.7\% \\
+        4 & Peminjaman Service & Create, Verifikasi, Cancel & 76.9 -- 87.5 \\
         \hline
-        5. & export\_service.go & 0.0\% \\
+        5 & Export Service & Generate Excel & 0 \\
         \hline
-        \multicolumn{2}{|c|}{\textbf{Total Coverage}} & \textbf{31.9\%} \\
+        6 & Email Service & Kirim Notifikasi & 0 \\
         \hline
-    \end{tabular}
+        \multicolumn{3}{|c|}{\textbf{Total Coverage}} & \textbf{31.9} \\
+        \hline
+    \end{tabularx}
 \end{table}
 
 Hasil visual pengujian Code Coverage disajikan dalam bentuk laporan HTML dan dilampirkan pada bagian Lampiran Code Coverage sebagai bukti pendukung.

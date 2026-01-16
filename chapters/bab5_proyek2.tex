@@ -1,19 +1,20 @@
 \chapter{KESIMPULAN DAN SARAN}
 
 \section{Kesimpulan}
-Berdasarkan hasil pengembangan Sistem Informasi Peminjaman Sarana dan Prasarana Kampus Berbasis Web Menggunakan CRUD RDBMS, dapat disimpulkan bahwa:
+Berdasarkan hasil pengembangan dan pengujian Sistem Informasi Peminjaman Sarana dan Prasarana Kampus yang telah dilakukan, dapat ditarik beberapa kesimpulan sebagai berikut:
 \begin{enumerate}
-    \item Sistem berhasil mendukung proses pengelolaan peminjaman dan inventaris sarana dan prasarana kampus secara terkomputerisasi dan terintegrasi.
-    \item Penerapan konsep CRUD dan RDBMS memungkinkan pengelolaan data inventaris, pengguna, dan transaksi peminjaman dilakukan secara terstruktur dan terdokumentasi dengan baik.
-    \item Metode Scrum efektif digunakan dalam pengembangan sistem karena mendukung proses iteratif, evaluasi berkala, dan penyesuaian kebutuhan pengguna.
-    \item Sistem menyediakan fitur utama meliputi pengelolaan inventaris, pengajuan peminjaman, verifikasi peminjaman, verifikasi kehadiran, serta laporan peminjaman.
-    \item Hasil Black Box Testing menunjukkan seluruh fungsi utama sistem berjalan sesuai kebutuhan, dan pengujian code coverage membuktikan modul inti sistem telah diuji dan berfungsi dengan baik.
+    \item Aplikasi peminjaman sarana dan prasarana kampus berbasis web telah berhasil dibangun dan diimplementasikan menggunakan arsitektur backend berbasis bahasa pemrograman Go dan manajemen basis data PostgreSQL dengan platform Supabase. Sistem ini mampu mengintegrasikan proses bisnis mulai dari pendaftaran akun, pengajuan peminjaman, verifikasi oleh admin Sarpras, hingga verifikasi kehadiran oleh petugas keamanan.
+    \item Berdasarkan hasil pengujian Black Box secara fungsional, seluruh fitur utama seperti autentikasi, manajemen data master, transaksi peminjaman (Create, Read, Update, Cancel), serta validasi kehadiran telah berjalan sesuai dengan skenario yang dirancang dan memenuhi kebutuhan pengguna.
+    \item Pengujian unit pada backend menghasilkan total code coverage sebesar 31,9\%. Meskipun secara keseluruhan nilai coverage belum maksimal, modul-modul inti yang menangani logika bisnis krusial (seperti autentikasi, layanan peminjaman, dan pencatatan kehadiran) telah memiliki tingkat keterujian yang tinggi (di atas 75\%), yang menjamin keandalan fungsi-fungsi vital sistem.
+    \item Implementasi fitur verifikasi berjenjang yang melibatkan Admin Sarpras untuk persetujuan awal dan petugas Security untuk validasi fisik di lapangan telah berhasil menciptakan mekanisme kontrol yang lebih ketat terhadap penggunaan aset kampus.
+    \item Sistem telah berhasil mengimplementasikan mekanisme validasi jadwal yang mampu mencegah terjadinya bentrok jadwal peminjaman (\textit{double booking}) serta menyediakan fitur pemantauan ketersediaan ruangan secara \textit{real-time}, sehingga mendukung pengelolaan data peminjaman yang terdokumentasi dengan baik untuk keperluan pelaporan dan evaluasi.
 \end{enumerate}
 
 \section{Saran}
-Adapun saran untuk pengembangan sistem selanjutnya adalah sebagai berikut:
+Demi pengembangan dan penyempurnaan sistem di masa mendatang, terdapat beberapa saran yang dapat dipertimbangkan:
 \begin{enumerate}
-    \item Menambahkan fitur monitoring kondisi dan riwayat penggunaan inventaris untuk mendukung manajemen aset kampus.
-    \item Meningkatkan cakupan unit testing agar persentase code coverage dapat lebih optimal pada seluruh modul sistem.
-    \item Memperkuat aspek keamanan dan audit log untuk meningkatkan keandalan dan pelacakan perubahan data sistem.
+    \item Diperlukan peningkatan cakupan pengujian unit (\textit{unit testing}), khususnya pada layanan pendukung seperti \textit{Email Service} dan \textit{Export Service} yang saat ini belum tercakup dalam pengujian otomatis, guna memastikan stabilitas sistem secara menyeluruh.
+    \item Pengembangan fitur notifikasi dapat ditingkatkan dengan menambahkan integrasi ke platform pesan instan (seperti WhatsApp Gateway) agar informasi status peminjaman dapat diterima pengguna secara lebih \textit{real-time}.
+    \item Disarankan untuk menambahkan fitur visualisasi data statistik peminjaman dalam bentuk grafik pada Dashboard Sarpras untuk membantu pengambilan keputusan terkait manajemen aset dan penjadwalan pemeliharaan fasilitas.
+    \item Perlu dilakukan optimasi pada manajemen file dokumen pendukung untuk mengantisipasi peningkatan ukuran penyimpanan seiring dengan bertambahnya jumlah transaksi peminjaman.
 \end{enumerate}
