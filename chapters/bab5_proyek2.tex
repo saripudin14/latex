@@ -1,20 +1,17 @@
 \chapter{KESIMPULAN DAN SARAN}
 
 \section{Kesimpulan}
-Berdasarkan hasil pengembangan dan pengujian Sistem Informasi Peminjaman Sarana dan Prasarana Kampus yang telah dilakukan, dapat ditarik beberapa kesimpulan sebagai berikut:
+Berdasarkan hasil pengembangan dan pengujian sistem, dapat disimpulkan bahwa:
 \begin{enumerate}
-    \item Aplikasi peminjaman sarana dan prasarana kampus berbasis web telah berhasil dibangun dan diimplementasikan menggunakan arsitektur backend berbasis bahasa pemrograman Go dan manajemen basis data PostgreSQL dengan platform Supabase. Sistem ini mampu mengintegrasikan proses bisnis mulai dari pendaftaran akun, pengajuan peminjaman, verifikasi oleh admin Sarpras, hingga verifikasi kehadiran oleh petugas keamanan.
-    \item Berdasarkan hasil pengujian Black Box secara fungsional, seluruh fitur utama seperti autentikasi, manajemen data master, transaksi peminjaman (Create, Read, Update, Cancel), serta validasi kehadiran telah berjalan sesuai dengan skenario yang dirancang dan memenuhi kebutuhan pengguna.
-    \item Pengujian unit pada backend menghasilkan total code coverage sebesar 31,9\%. Meskipun secara keseluruhan nilai coverage belum maksimal, modul-modul inti yang menangani logika bisnis krusial (seperti autentikasi, layanan peminjaman, dan pencatatan kehadiran) telah memiliki tingkat keterujian yang tinggi (di atas 75\%), yang menjamin keandalan fungsi-fungsi vital sistem.
-    \item Implementasi fitur verifikasi berjenjang yang melibatkan Admin Sarpras untuk persetujuan awal dan petugas Security untuk validasi fisik di lapangan telah berhasil menciptakan mekanisme kontrol yang lebih ketat terhadap penggunaan aset kampus.
-    \item Sistem telah berhasil mengimplementasikan mekanisme validasi jadwal yang mampu mencegah terjadinya bentrok jadwal peminjaman (\textit{double booking}) serta menyediakan fitur pemantauan ketersediaan ruangan secara \textit{real-time}, sehingga mendukung pengelolaan data peminjaman yang terdokumentasi dengan baik untuk keperluan pelaporan dan evaluasi.
+    \item Sistem informasi peminjaman sarana dan prasarana kampus berbasis web telah berhasil diimplementasikan menggunakan bahasa pemrograman Go, basis data PostgreSQL (Supabase), dan metode Scrum, yang mengintegrasikan proses pengajuan, verifikasi Admin Sarpras, hingga validasi kehadiran Security secara terkomputerisasi.
+    \item Fitur validasi jadwal berhasil mencegah bentrok peminjaman (\textit{double booking}) dan menyediakan kalender ketersediaan ruangan secara \textit{real-time} untuk pemantauan mahasiswa.
+    \item Pengujian Black Box menunjukkan seluruh fungsi sistem berjalan sesuai spesifikasi. Pengujian unit menghasilkan code coverage 31,9\%, dengan modul inti mencapai tingkat keterujian di atas 75\%.
 \end{enumerate}
 
 \section{Saran}
-Demi pengembangan dan penyempurnaan sistem di masa mendatang, terdapat beberapa saran yang dapat dipertimbangkan:
+Untuk pengembangan selanjutnya, disarankan untuk:
 \begin{enumerate}
-    \item Diperlukan peningkatan cakupan pengujian unit (\textit{unit testing}), khususnya pada layanan pendukung seperti \textit{Email Service} dan \textit{Export Service} yang saat ini belum tercakup dalam pengujian otomatis, guna memastikan stabilitas sistem secara menyeluruh.
-    \item Pengembangan fitur notifikasi dapat ditingkatkan dengan menambahkan integrasi ke platform pesan instan (seperti WhatsApp Gateway) agar informasi status peminjaman dapat diterima pengguna secara lebih \textit{real-time}.
-    \item Disarankan untuk menambahkan fitur visualisasi data statistik peminjaman dalam bentuk grafik pada Dashboard Sarpras untuk membantu pengambilan keputusan terkait manajemen aset dan penjadwalan pemeliharaan fasilitas.
-    \item Perlu dilakukan optimasi pada manajemen file dokumen pendukung untuk mengantisipasi peningkatan ukuran penyimpanan seiring dengan bertambahnya jumlah transaksi peminjaman.
+    \item Mengembangkan modul manajemen inventaris lanjutan yang mencakup monitoring kondisi aset (baik/rusak), pelacakan riwayat pemeliharaan, serta sistem penjadwalan \textit{maintenance} berkala untuk mendukung pengelolaan aset kampus yang lebih komprehensif.
+    \item Mengembangkan fitur lanjutan: integrasi notifikasi WhatsApp Gateway, visualisasi statistik peminjaman, dan modul pemantauan kondisi aset.
+    \item Menambahkan fitur evaluasi dan \textit{rating} kepuasan pengguna terhadap layanan peminjaman untuk mendukung peningkatan kualitas layanan secara berkelanjutan.
 \end{enumerate}
