@@ -200,7 +200,11 @@ Perancangan sistem dilakukan sebagai tahap lanjutan dari hasil analisis kebutuha
 \end{figure}
 
 \newpage
-Use Case Diagram pada Sistem Informasi Peminjaman Sarana dan Prasarana Kampus menggambarkan interaksi antara aktor dengan sistem berdasarkan hak akses dan peran masing-masing. Penjelasan Use Case Diagram disajikan dalam bentuk tabel aktor dan tabel use case sebagai berikut.
+Use Case Diagram pada Sistem Informasi Peminjaman Sarana dan Prasarana Kampus menggambarkan interaksi antara aktor dan sistem berdasarkan peran serta hak akses masing-masing. Diagram ini digunakan untuk memvisualisasikan fungsi-fungsi utama sistem yang dapat diakses oleh pengguna, sehingga memberikan gambaran umum mengenai ruang lingkup dan kemampuan sistem dalam mendukung proses peminjaman sarana dan prasarana kampus.
+
+Melalui Use Case Diagram, setiap aktor ditunjukkan memiliki tanggung jawab dan batasan akses yang berbeda sesuai dengan perannya, seperti pengajuan peminjaman, pengelolaan data sarana dan prasarana, serta proses verifikasi dan persetujuan peminjaman. Dengan pembagian hak akses ini, sistem dapat berjalan secara terkontrol dan membantu memastikan bahwa setiap proses dilakukan oleh pihak yang berwenang.
+
+Penjelasan lebih lanjut mengenai Use Case Diagram disajikan dalam bentuk tabel aktor dan tabel use case. Tabel aktor menjelaskan peran dan hak akses masing-masing aktor, sedangkan tabel use case memuat daftar fungsi sistem beserta deskripsi singkatnya, sehingga kebutuhan fungsional sistem dapat dipahami secara lebih jelas dan sistematis.
 
 \begin{table}[htbp]
     \centering
@@ -324,7 +328,7 @@ Sequence diagram ini menggambarkan alur interaksi antara aktor Admin dengan Web 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{gambar/media/image8.png}
+    \includegraphics[width=0.8\textwidth]{gambar/media/image8.png}
     \caption{Sequence Diagram Verifikasi Peminjaman}
     \label{fig:sequence_verifikasi}
 \end{figure}
@@ -337,6 +341,7 @@ Pada tahap pengambilan keputusan, admin dapat menyetujui atau menolak pengajuan.
 
 Sequence diagram ini menunjukkan alur komunikasi sistem dalam memastikan setiap pengajuan peminjaman diverifikasi secara terkontrol dan terdokumentasi dengan baik.
 
+\newpage
 \subsubsection{Sequence Diagram Verifikasi Kehadiran}
 Sequence diagram ini menggambarkan alur interaksi antara aktor Security dengan Web App, System, dan Database dalam proses verifikasi kehadiran peminjam. Proses dimulai ketika security melakukan login melalui Web App, yang kemudian divalidasi oleh System dengan melakukan pengecekan kredensial ke Database. Setelah login berhasil, sistem menampilkan dashboard security.
 
@@ -368,8 +373,7 @@ Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis d
     \centering
     \caption{Relasi Antar Entitas}
     \label{tab:relasi_entitas}
-    \makebox[\textwidth][c]{
-    \begin{tabularx}{1.1\textwidth}{|c|l|l|l|X|}
+    \begin{tabularx}{\textwidth}{|c|l|l|l|X|}
         \hline
         No. & Entitas Utama & Entitas Terkait & Jenis Relasi & Keterangan \\
         \hline
@@ -396,11 +400,11 @@ Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis d
         11. & peminjaman & log\_aktivitas & One-to-Many & Aktivitas terkait peminjaman tercatat dalam log \\
         \hline
     \end{tabularx}
-    }
 \end{table}
 
 Dengan perancangan ERD yang terstruktur dan relasi antar entitas yang jelas, Sistem Informasi Peminjaman Sarana dan Prasarana Kampus mampu mendukung pengelolaan data peminjaman secara terintegrasi dan konsisten. Struktur basis data ini menjadi acuan utama dalam implementasi sistem, khususnya dalam penerapan operasi CRUD serta pengelolaan data peminjaman, verifikasi, dan pelaporan pada tahap implementasi sistem.
 
+\newpage
 \subsection{Class Diagram}
 Class Diagram digunakan untuk menggambarkan struktur kelas dalam sistem beserta atribut, tipe data, serta hubungan antar kelas. Diagram ini merepresentasikan rancangan statis sistem yang menjadi dasar dalam proses implementasi, khususnya dalam pembuatan struktur database, model data, dan logika bisnis aplikasi.
 
@@ -444,7 +448,6 @@ Class Diagram digunakan untuk menggambarkan struktur kelas dalam sistem beserta 
 
 
 
-\newpage
 Berdasarkan Class Diagram pada Gambar \ref{fig:class_diagram}, sistem peminjaman sarana dan prasarana kampus terdiri dari beberapa kelas utama, yaitu User, Peminjaman, Barang, Ruangan, Kegiatan, Organisasi, serta kelas pendukung seperti PeminjamanBarangDetail, KehadiranPeminjam, Notifikasi, dan LogAktivitas.
 Kelas Peminjaman berperan sebagai pusat relasi yang menghubungkan pengguna dengan sarana dan prasarana yang dipinjam, kegiatan yang dilaksanakan, serta proses verifikasi dan kehadiran. Untuk menjaga konsistensi status dan peran dalam sistem, digunakan beberapa enumeration seperti RoleEnum, PeminjamanStatusEnum, KehadiranStatusEnum, NotifikasiJenisEnum, dan NotifikasiStatusEnum.
 
@@ -458,19 +461,22 @@ BPMN Proses Peminjaman menggambarkan alur peminjaman sarana dan prasarana kampus
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{gambar/media/image12.png}
+    \includegraphics[width=1.1\textwidth]{gambar/media/image12.png}
     \caption{BPMN Proses Peminjaman}
     \label{fig:bpmn_peminjaman}
 \end{figure}
 
-Selanjutnya, Sarpras melakukan \textit{review} pengajuan untuk menentukan persetujuan atau penolakan, di mana pengajuan yang ditolak akan diakhiri oleh sistem dengan status DITOLAK, sedangkan pengajuan yang disetujui ditetapkan berstatus DISETUJUI dan diinformasikan kepada mahasiswa serta petugas keamanan. Pada hari pelaksanaan, Security melakukan verifikasi kehadiran peminjam; jika peminjam hadir, sistem memperbarui status peminjaman menjadi ONGOING yang menandakan kegiatan berlangsung, sedangkan jika peminjam tidak hadir, sistem mencatat kondisi tersebut dan proses peminjaman dinyatakan selesai.
+Selanjutnya, Sarpras melakukan \textit{review} pengajuan untuk menentukan persetujuan atau penolakan, di mana pengajuan yang ditolak akan diakhiri oleh sistem dengan status DITOLAK, sedangkan pengajuan yang disetujui ditetapkan berstatus DISETUJUI dan diinformasikan kepada mahasiswa serta petugas keamanan.
+
+\newpage
+Pada hari pelaksanaan, Security melakukan verifikasi kehadiran peminjam; jika peminjam hadir, sistem memperbarui status peminjaman menjadi ONGOING yang menandakan kegiatan berlangsung, sedangkan jika peminjam tidak hadir, sistem mencatat kondisi tersebut dan proses peminjaman dinyatakan selesai.
 
 \subsubsection{BPMN Verifikasi Peminjaman}
 BPMN Verifikasi Peminjaman menggambarkan alur pemeriksaan dan pengambilan keputusan terhadap pengajuan peminjaman sarana dan prasarana oleh pihak Sarpras. Proses dimulai ketika pengajuan peminjaman masuk ke dalam sistem, kemudian Sarpras melakukan login dan mengakses dashboard untuk meninjau serta memeriksa kelengkapan dan kebenaran data pengajuan, seperti identitas peminjam, jenis sarana atau prasarana, jadwal penggunaan, dan dokumen pendukung.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{gambar/media/image13.png}
+    \includegraphics[width=1.1\textwidth]{gambar/media/image13.png}
     \caption{BPMN Verifikasi Peminjaman}
     \label{fig:bpmn_verifikasi}
 \end{figure}
@@ -482,9 +488,10 @@ BPMN Verifikasi Kehadiran Peminjam menggambarkan proses pemeriksaan kehadiran pe
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{gambar/media/image14.png}
+    \includegraphics[width=1.1\textwidth]{gambar/media/image14.png}
     \caption{BPMN Verifikasi Kehadiran}
     \label{fig:bpmn_kehadiran}
 \end{figure}
 
+\newpage
 Selanjutnya, Security melakukan pemeriksaan apakah peminjam hadir sesuai dengan jadwal yang ditentukan, di mana pada kondisi peminjam hadir Security mengisi catatan kehadiran dan sistem mengonfirmasi hasil verifikasi dengan menetapkan status peminjaman menjadi ONGOING, sedangkan pada kondisi peminjam tidak hadir Security mengisi catatan ketidakhadiran dan sistem mengonfirmasi hasil verifikasi dengan menetapkan status peminjaman menjadi FINISHED. Proses verifikasi kehadiran ini berfungsi sebagai kontrol akhir untuk memastikan bahwa penggunaan sarana dan prasarana kampus berjalan sesuai dengan persetujuan dan ketentuan yang berlaku.
