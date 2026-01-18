@@ -24,6 +24,8 @@
 \usepackage[format=hang,font=footnotesize,labelfont=bf]{caption}
 \usepackage{enumitem}
 \usepackage{parskip}
+\setlength{\parindent}{1.25cm} % Indentasi paragraf 1.25cm
+\usepackage{indentfirst} % Indent juga paragraf pertama setelah heading
 \usepackage{fancyhdr}
 \usepackage{tocloft}
 \usepackage{tabularx}
@@ -206,6 +208,8 @@
 % Start Roman Numbering
 \pagenumbering{roman}
 
+\input{chapters/surat_pernyataan}
+\clearpage
 \input{chapters/abstrak}
 \clearpage
 \input{chapters/abstract}
