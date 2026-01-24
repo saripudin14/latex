@@ -7,23 +7,25 @@
 Pemilihan metode dan pendekatan penelitian pada pengembangan Sistem Informasi Peminjaman Sarana dan Prasarana Kampus disesuaikan dengan karakteristik permasalahan yang dihadapi serta kebutuhan pengguna sistem. Permasalahan pengelolaan peminjaman fasilitas kampus yang masih dilakukan secara manual dan semi-digital menuntut adanya solusi sistem informasi yang terstruktur, adaptif, dan mampu mendukung proses operasional secara efektif. Oleh karena itu, metode dan pendekatan penelitian yang digunakan diarahkan untuk menghasilkan sistem yang tidak hanya memenuhi kebutuhan fungsional pengguna, tetapi juga mampu diimplementasikan secara optimal dalam lingkungan operasional kampus.
 
 \subsection{Jenis Penelitian}
-Penelitian ini merupakan penelitian terapan (\textit{applied research}) yang berfokus pada pengembangan sistem informasi untuk mendukung proses peminjaman sarana dan prasarana kampus. Penelitian terapan dipilih karena tujuan utama penelitian ini bukan hanya menghasilkan kajian teoritis, tetapi juga menghasilkan produk perangkat lunak yang dapat digunakan secara langsung untuk menyelesaikan permasalahan nyata yang terjadi di lingkungan kampus.
+Penelitian ini merupakan penelitian terapan (applied research) yang berfokus pada pengembangan sistem informasi untuk mendukung proses peminjaman sarana dan prasarana kampus. Penelitian terapan dipilih karena tujuan utama penelitian ini bukan hanya menghasilkan kajian teoritis, tetapi juga menghasilkan produk perangkat lunak yang dapat digunakan secara langsung untuk menyelesaikan permasalahan nyata yang terjadi di lingkungan kampus.
 
 Pendekatan yang digunakan dalam penelitian ini adalah rekayasa perangkat lunak, di mana proses penelitian meliputi analisis kebutuhan, perancangan sistem, pengembangan aplikasi, serta pengujian fungsional sistem.
 
 \subsection{Metode Penelitian}
-Metode penelitian yang digunakan adalah Scrum, yaitu salah satu metode pengembangan perangkat lunak berbasis Agile yang bersifat iteratif dan inkremental. Pemilihan metode Scrum didasarkan pada karakteristik permasalahan yang ditemukan dari hasil observasi dan wawancara dengan staf Sarana dan Prasarana kampus, antara lain:
+Metode penelitian yang digunakan adalah \textit{Scrum}, yaitu salah satu metode pengembangan perangkat lunak berbasis \textit{Agile} yang bersifat iteratif dan inkremental. Pemilihan metode \textit{Scrum} didasarkan pada karakteristik permasalahan yang ditemukan dari hasil observasi dan wawancara dengan staf Sarana dan Prasarana kampus, antara lain:
 \newpage
 \begin{enumerate}
     \item Kebutuhan sistem yang dinamis dan dapat berubah seiring proses pengembangan.
     \item Keterlibatan banyak pemangku kepentingan (Mahasiswa/UKM, Staf Sarpras, dan Security).
     \item Perlunya evaluasi berkala terhadap sistem yang dikembangkan agar sesuai dengan kebutuhan pengguna.
 \end{enumerate}
-Metode Scrum memungkinkan pengembangan sistem dilakukan secara bertahap melalui beberapa \textit{sprint}, sehingga setiap tahapan pengembangan dapat dievaluasi dan disempurnakan berdasarkan umpan balik pengguna \parencite{Nugraha2021}.
+Metode \textit{Scrum} memungkinkan pengembangan sistem dilakukan secara bertahap melalui beberapa \textit{sprint}, sehingga setiap tahapan pengembangan dapat dievaluasi dan disempurnakan berdasarkan umpan balik pengguna.
 
 \subsection{Objek dan Subjek Penelitian}
 \subsubsection{Objek Penelitian}
-Objek penelitian dalam penelitian ini adalah Sistem Informasi Peminjaman Sarana dan Prasarana Kampus ULBI, yang mencakup proses pengelolaan jadwal ruangan, pengajuan peminjaman, verifikasi peminjaman, validasi kehadiran, serta pembuatan laporan peminjaman secara terintegrasi. Sistem ini dirancang untuk menggantikan proses manual dan semi-digital yang sebelumnya digunakan, sehingga diharapkan dapat meningkatkan efisiensi, akurasi data, serta transparansi proses peminjaman.
+Objek penelitian dalam penelitian ini adalah Sistem Informasi Peminjaman Sarana dan Prasarana Kampus ULBI, yang mencakup proses pengelolaan jadwal ruangan, pengajuan peminjaman, verifikasi peminjaman, validasi kehadiran, serta pembuatan laporan peminjaman secara terintegrasi.
+
+Sistem ini dirancang untuk menggantikan proses manual dan semi-digital yang sebelumnya digunakan, sehingga diharapkan dapat meningkatkan efisiensi, akurasi data, serta transparansi proses peminjaman.
 
 \subsubsection{Subjek Penelitian}
 Subjek penelitian adalah pihak-pihak yang terlibat langsung dalam penggunaan sistem, yaitu:
@@ -32,39 +34,41 @@ Subjek penelitian adalah pihak-pihak yang terlibat langsung dalam penggunaan sis
     \item Staf Sarana dan Prasarana, sebagai pihak pengelola dan pemberi persetujuan peminjaman.
     \item Petugas Keamanan (Security), sebagai pihak yang melakukan validasi kehadiran dan izin kegiatan di lapangan.
 \end{enumerate}
-Penentuan subjek penelitian ini mengacu pada hasil analisis kebutuhan dan \textit{Use Case Diagram} yang menggambarkan interaksi aktor dengan sistem.
+Penentuan subjek penelitian ini mengacu pada hasil analisis kebutuhan dan Use Case Diagram yang menggambarkan interaksi aktor dengan sistem.
 
 \subsection{Teknik Pengumpulan Data}
 \subsubsection{Observasi}
-Teknik observasi dilakukan dengan mengamati secara langsung proses peminjaman sarana dan prasarana yang berjalan di lingkungan kampus. Observasi difokuskan pada proses pencatatan jadwal, pengajuan peminjaman, serta mekanisme verifikasi kegiatan yang masih dilakukan secara manual atau semi-digital. Hasil observasi digunakan sebagai dasar untuk mengidentifikasi permasalahan operasional yang terjadi pada sistem lama.
+Teknik observasi dilakukan dengan mengamati secara langsung proses peminjaman sarana dan prasarana yang berjalan di lingkungan kampus. Observasi difokuskan pada proses pencatatan jadwal, pengajuan peminjaman, serta mekanisme verifikasi kegiatan yang masih dilakukan secara manual atau semi-digital.
+
+Hasil observasi digunakan sebagai dasar untuk mengidentifikasi permasalahan operasional yang terjadi pada sistem lama.
 
 \subsubsection{Wawancara}
 Wawancara dilakukan dengan staf Sarana dan Prasarana sebagai pihak yang bertanggung jawab dalam pengelolaan peminjaman fasilitas kampus. Wawancara bertujuan untuk:
-\begin{enumerate}
+\begin{itemize}
     \item Menggali kebutuhan sistem yang diharapkan.
     \item Mengidentifikasi kendala dalam proses peminjaman yang sedang berjalan.
     \item Menentukan fitur utama yang harus tersedia dalam sistem.
-\end{enumerate}
+\end{itemize}
 Hasil wawancara ini kemudian dirangkum dalam dokumen spesifikasi kebutuhan perangkat lunak (SKPL).
 
 \subsubsection{Studi Pustaka}
-Pengelolaan sarana dan prasarana di institusi pendidikan memerlukan sistem informasi yang terintegrasi untuk mengatasi permasalahan pencatatan manual, keterlambatan informasi, serta kesulitan dalam penyusunan laporan. Penelitian sebelumnya menunjukkan bahwa sistem informasi manajemen sarana dan prasarana mampu meningkatkan efisiensi pengelolaan fasilitas, mempercepat proses administrasi, serta mempermudah monitoring penggunaan aset di lingkungan pendidikan \parencite{Nabella2025}.
+Pengelolaan sarana dan prasarana di institusi pendidikan memerlukan sistem informasi yang terintegrasi untuk mengatasi permasalahan pencatatan manual, keterlambatan informasi, serta kesulitan dalam penyusunan laporan. Penelitian sebelumnya menunjukkan bahwa sistem informasi manajemen sarana dan prasarana mampu meningkatkan efisiensi pengelolaan fasilitas, mempercepat proses administrasi, serta mempermudah monitoring penggunaan aset di lingkungan pendidikan \parencite{PutriNabella2025}.
 
-Dalam pengembangan sistem informasi berbasis web, metode Agile khususnya Scrum banyak digunakan karena mampu menangani kebutuhan sistem yang bersifat dinamis dan melibatkan banyak pemangku kepentingan. Scrum menerapkan pengembangan secara iteratif dan inkremental melalui tahapan \textit{product backlog}, \textit{sprint planning}, \textit{sprint}, \textit{sprint review}, dan \textit{sprint retrospective}, sehingga memungkinkan sistem dikembangkan secara bertahap sesuai kebutuhan pengguna \parencite{Nugraha2021}.
+Dalam pengembangan sistem informasi berbasis web, metode \textit{Agile} khususnya \textit{Scrum} banyak digunakan karena mampu menangani kebutuhan sistem yang bersifat dinamis dan melibatkan banyak pemangku kepentingan. \textit{Scrum} menerapkan pengembangan secara iteratif dan inkremental melalui tahapan \textit{product backlog}, \textit{sprint planning}, \textit{sprint}, \textit{sprint review}, dan \textit{sprint retrospective}, sehingga memungkinkan sistem dikembangkan secara bertahap sesuai kebutuhan pengguna \parencite{Nugraha2021}.
 
-Penerapan Scrum pada sistem informasi sektor publik juga menunjukkan hasil yang efektif. Penelitian mengenai pengembangan Sistem Informasi Pendataan Bangunan (SIPBANG) pada instansi pemerintahan membuktikan bahwa Scrum mampu menghasilkan sistem yang sesuai dengan kebutuhan pengguna meskipun terdapat keterbatasan waktu dan kompleksitas proses bisnis. Evaluasi hasil sprint menunjukkan bahwa sistem yang dikembangkan dengan Scrum lebih adaptif dan mudah disesuaikan dengan kebutuhan organisasi \parencite{Rifky2022}.
+Penerapan \textit{Scrum} pada sistem informasi sektor publik juga menunjukkan hasil yang efektif. Penelitian mengenai pengembangan Sistem Informasi Pendataan Bangunan (SIPBANG) pada instansi pemerintahan membuktikan bahwa \textit{Scrum} mampu menghasilkan sistem yang sesuai dengan kebutuhan pengguna meskipun terdapat keterbatasan waktu dan kompleksitas proses bisnis. Evaluasi hasil \textit{sprint} menunjukkan bahwa sistem yang dikembangkan dengan \textit{Scrum} lebih adaptif dan mudah disesuaikan dengan kebutuhan organisasi \parencite{Rifky2022}.
 
-Selain itu, kajian metodologis yang mengombinasikan Scrum dengan model pengembangan lain menunjukkan bahwa Scrum memiliki keunggulan dalam fleksibilitas dan pengelolaan perubahan kebutuhan, khususnya pada pengembangan perangkat lunak berbasis website. Pendekatan Scrum dinilai efektif dalam meningkatkan kualitas produk perangkat lunak karena memungkinkan evaluasi dan perbaikan dilakukan secara berkelanjutan pada setiap iterasi pengembangan \parencite{Tumbade2024}.
+Selain itu, kajian metodologis yang mengombinasikan \textit{Scrum} dengan model pengembangan lain menunjukkan bahwa \textit{Scrum} memiliki keunggulan dalam fleksibilitas dan pengelolaan perubahan kebutuhan, khususnya pada pengembangan perangkat lunak berbasis website. Pendekatan \textit{Scrum} dinilai efektif dalam meningkatkan kualitas produk perangkat lunak karena memungkinkan evaluasi dan perbaikan dilakukan secara berkelanjutan pada setiap iterasi pengembangan \parencite{Adi2015}.
 
-Pada tahap pengujian sistem, \textit{Black Box Testing} merupakan teknik pengujian yang umum digunakan untuk memastikan fungsionalitas sistem berjalan sesuai dengan spesifikasi yang telah ditentukan. Pengujian ini berfokus pada kesesuaian antara input dan output sistem tanpa memperhatikan struktur internal kode program. Penelitian terdahulu menunjukkan bahwa \textit{Black Box Testing} efektif digunakan untuk menguji kesiapan sistem sebelum digunakan oleh pengguna akhir, khususnya pada sistem berbasis web \parencite{Putra2020}.
+Pada tahap pengujian sistem, \textit{Black Box Testing} merupakan teknik pengujian yang umum digunakan untuk memastikan fungsionalitas sistem berjalan sesuai dengan spesifikasi yang telah ditentukan. Pengujian ini berfokus pada kesesuaian antara input dan output sistem tanpa memperhatikan struktur internal kode program. Penelitian terdahulu menunjukkan bahwa \textit{Black Box Testing} efektif digunakan untuk menguji kesiapan sistem sebelum digunakan oleh pengguna akhir, khususnya pada sistem berbasis web \parencite{Suwirmayanti2020}.
 
-Berdasarkan hasil studi pustaka tersebut, dapat disimpulkan bahwa pengembangan sistem informasi manajemen sarana dan prasarana menggunakan metode Scrum serta pengujian \textit{Black Box Testing} merupakan pendekatan yang relevan dan didukung oleh penelitian sebelumnya. Studi pustaka ini menjadi landasan teoritis dalam perancangan dan pengembangan Sistem Informasi Peminjaman Sarana dan Prasarana Kampus pada penelitian ini.
+Berdasarkan hasil studi pustaka tersebut, dapat disimpulkan bahwa pengembangan sistem informasi manajemen sarana dan prasarana menggunakan metode \textit{Scrum} serta pengujian \textit{Black Box Testing} merupakan pendekatan yang relevan dan didukung oleh penelitian sebelumnya. Studi pustaka ini menjadi landasan teoritis dalam perancangan dan pengembangan Sistem Informasi Peminjaman Sarana dan Prasarana Kampus pada penelitian ini.
 
 \subsection{Tahapan Metode Penelitian Menggunakan Scrum}
-Metode penelitian yang digunakan dalam pengembangan Sistem Informasi Peminjaman Sarana dan Prasarana Kampus adalah Scrum, yang diterapkan secara iteratif dan inkremental. Tahapan Scrum dalam penelitian ini disusun berdasarkan diagram metodologi Scrum yang telah dirancang, sehingga setiap tahapan memiliki luaran yang jelas dan dapat dibuktikan pada tahap hasil penelitian (BAB IV).
+Metode penelitian yang digunakan dalam pengembangan Sistem Informasi Peminjaman Sarana dan Prasarana Kampus adalah Scrum. Berdasarkan Scrum Guide \parencite{Schwaber2012}, Scrum didefinisikan sebagai kerangka kerja ringan yang membantu tim dan organisasi menghasilkan nilai melalui solusi adaptif untuk masalah yang kompleks.
 
 \newpage
-Berdasarkan diagram metodologi Scrum yang digunakan dalam penelitian ini, proses penelitian dan pengembangan sistem dilakukan secara iteratif dan inkremental, dimulai dari tahap perencanaan produk hingga evaluasi berkelanjutan melalui beberapa siklus sprint.
+Proses pengembangan dilakukan secara iteratif dan inkremental dengan melibatkan arsitektur teknis berbasis backend Golang dan penyimpanan data terintegrasi. Berikut adalah rincian tahapan yang dilakukan dalam penelitian ini
 
 \begin{figure}[htbp]
     \centering
@@ -73,42 +77,91 @@ Berdasarkan diagram metodologi Scrum yang digunakan dalam penelitian ini, proses
     \label{fig:alur_scrum}
 \end{figure}
 
-\subsubsection{Product Planning}
-Tahap awal dalam metode Scrum adalah \textit{Product Planning}, yang bertujuan untuk mengidentifikasi dan mendefinisikan kebutuhan sistem secara menyeluruh. Pada tahap ini, kebutuhan sistem diperoleh dari Dokumen Spesifikasi Kebutuhan Perangkat Lunak (SKPL) yang disusun berdasarkan hasil observasi dan wawancara dengan staf Sarana dan Prasarana kampus.
+\subsubsection{Inisiasi dan Penetapan Product Goal}
+Tahap ini merupakan fase awal sebelum siklus Sprint dimulai. Tujuannya adalah membangun pemahaman bersama mengenai visi produk. Berdasarkan analisis awal, sistem ini dirancang untuk melayani empat role utama pengguna, yaitu Mahasiswa (peminjam), Sarpras (verifikator), Security (validasi kehadiran), dan Admin.
 
 \newpage
-Dalam \textit{Product Planning}, \textit{Product Owner}, yang diperankan oleh staf Sarpras, berperan dalam memvalidasi kebutuhan pengguna serta memastikan bahwa kebutuhan tersebut sesuai dengan proses bisnis peminjaman sarana dan prasarana kampus. Tahap ini menghasilkan pemahaman awal terhadap ruang lingkup sistem yang akan dikembangkan.
+Pada tahap ini, Scrum Team menetapkan Product Goal: Terwujudnya sistem peminjaman yang mampu menangani siklus hidup (lifecycle) peminjaman secara otomatis mulai dari status Pending, Approved, Ongoing, hingga Finished, serta terintegrasi dengan layanan surat digital.
 
-\subsubsection{Product Backlog}
-Berdasarkan hasil \textit{Product Planning}, selanjutnya disusun \textit{Product Backlog}, yaitu daftar kebutuhan sistem yang telah diprioritaskan. \textit{Product Backlog} disusun mengacu pada kebutuhan fungsional yang telah didefinisikan dalam dokumen SKPL dan \textit{Use Case Diagram}.
+\subsubsection{Manajemen Product Backlog}
+Berdasarkan analisis kebutuhan dan ekstraksi fitur yang telah dilakukan, disusunlah Product Backlog yang terdiri dari 56 item pekerjaan (work items). Item-item ini dikelompokkan ke dalam enam kategori fungsional utama untuk memudahkan prioritas pengembangan oleh Product Owner. Berikut adalah penjabaran naratif dari ruang lingkup backlog tersebut:
 
-\textit{Product Backlog} pada penelitian ini mencakup fitur utama seperti kalender ketersediaan ruangan secara real-time, pencegahan bentrok jadwal (\textit{double booking}), form peminjaman dan validasi kapasitas, unggah surat digital dan persetujuan admin, tampilan mobile untuk petugas keamanan, serta fitur laporan rekapitulasi peminjaman. \textit{Product Backlog} ini menjadi dasar perencanaan pengembangan sistem pada setiap \textit{sprint}.
+\begin{enumerate}
+    \item Modul Autentikasi dan Keamanan Akses\\
+    Fondasi keamanan sistem dibangun melalui 5 item backlog yang menangani otorisasi pengguna. Fitur ini mencakup pendaftaran akun (Register) dan proses Login yang menghasilkan token JWT (JSON Web Token) untuk manajemen sesi yang aman. Sistem juga menerapkan Password Hashing menggunakan algoritma bcrypt dan Role-based Redirect untuk memisahkan antarmuka antara Mahasiswa, Admin, dan Security secara otomatis.
+    
+    \item Fitur Inti Peminjaman (Core Features)\\
+    Sebanyak 21 item backlog difokuskan pada fungsionalitas utama peminjaman. Mahasiswa disediakan fitur Dashboard interaktif dan Widget Kalender untuk memantau ketersediaan ruangan secara real-time. Proses pengajuan dirancang lengkap mulai dari pengisian formulir, penambahan daftar barang, hingga fitur krusial Validasi Konflik Jadwal yang secara otomatis mencegah pemesanan ganda (double booking) pada waktu yang sama. Selain itu, modul ini terintegrasi dengan layanan Supabase Storage untuk menangani unggahan dan akses surat peminjaman digital.
+    
+    \item Administrasi dan Verifikasi\\
+    Untuk mendukung peran Staf Sarpras, terdapat 8 item backlog kategori Admin. Fitur utamanya meliputi mekanisme verifikasi (Approve/Reject) terhadap pengajuan masuk dan kemampuan pembatalan peminjaman jika diperlukan. Modul ini juga dilengkapi dengan manajemen data master (CRUD Ruangan dan Barang) serta fitur pelaporan yang mampu mengekspor rekapitulasi data peminjaman ke dalam format Excel untuk kebutuhan arsip institusi.
+    
+    \newpage
+    \item Validasi Lapangan (Security)\\
+    Guna memastikan kesesuaian antara data sistem dan fisik di lapangan, sistem menyediakan 3 fitur khusus untuk peran Security. Fitur ini memungkinkan petugas keamanan memantau jadwal aktif harian dan melakukan Verifikasi Kehadiran (Hadir/Tidak Hadir/Batal) langsung melalui sistem, yang kemudian tercatat dalam riwayat digital.
+    
+    \item Infrastruktur Teknis (Technical Enablers) dan Pendukung\\
+    Kelancaran operasional sistem didukung oleh 15 item teknis dan 6 item pendukung. Pengembangan backend menggunakan bahasa Go (Golang) diperkuat dengan Scheduler (Cron Job) yang berjalan otomatis setiap menit untuk memperbarui status peminjaman (misalnya dari Approved ke Ongoing). Selain itu, sistem notifikasi dikembangkan secara asynchronous menggunakan integrasi Gmail API, memastikan pengguna menerima email status peminjaman tanpa memperlambat kinerja aplikasi utama. Seluruh aktivitas sistem juga direkam dalam fitur Audit Trail atau Log Aktivitas untuk transparansi jejak digital.
+\end{enumerate}
 
-\subsubsection{Sprint Planning}
-Setelah \textit{Product Backlog} disusun, dilakukan \textit{Sprint Planning} untuk menentukan item \textit{Product Backlog} yang akan dikerjakan dalam satu iterasi pengembangan. \textit{Sprint Planning} dilakukan dengan mempertimbangkan prioritas kebutuhan pengguna dan kemampuan tim pengembang.
+\subsubsection{The Sprint (Siklus Sprint)}
+Sprint adalah wadah dari seluruh event Scrum. Dalam penelitian ini, durasi Sprint ditetapkan selama 1-2 minggu. Setiap Sprint bertujuan mengubah item backlog terpilih menjadi fungsionalitas yang berjalan di atas arsitektur Golang (Backend) dan HTML5/JavaScript (Frontend).
 
-Hasil dari \textit{Sprint Planning} adalah \textit{Sprint Backlog}, yaitu daftar fitur terpilih yang akan dikembangkan oleh \textit{Scrum Team} dalam satu \textit{sprint}. Pada penelitian ini, durasi setiap \textit{sprint} ditetapkan selama 1–2 minggu.
+\subsubsection{Sprint Planning (Perencanaan Sprint)}
+Sprint Planning dilakukan di awal setiap iterasi untuk menentukan fokus pekerjaan dan target yang ingin dicapai. Mengingat kompleksitas sistem yang memiliki total 56 item backlog, proses pengembangan dalam penelitian ini dibagi ke dalam empat Sprint utama. Berikut adalah narasi perencanaan untuk setiap Sprint:
 
-\subsubsection{Sprint Execution}
-Tahap \textit{Sprint Execution} merupakan tahap pelaksanaan pengembangan sistem oleh \textit{Scrum Team}, yang dalam penelitian ini diperankan oleh mahasiswa/peneliti. Pada tahap ini, pengembangan sistem dilakukan secara bertahap yang meliputi analisis kebutuhan fitur, perancangan sistem, implementasi kode program, serta pengujian fungsional awal.
+\begin{enumerate}
+    \item Sprint 1: Fondasi Aplikasi\\
+    Pada tahap awal, Scrum Team menyepakati Sprint Goal untuk membangun infrastruktur teknis dan sistem keamanan pengguna.
+    \begin{itemize}
+        \item \textbf{What (Fitur Terpilih):} Tim memilih item dari kategori Technical Enablers seperti inisiasi Database Migration dan Config Management untuk menyiapkan lingkungan pengembangan. Selain itu, fokus fungsional diarahkan pada kategori Auth, yaitu fitur Login User, Register User, dan penerapan JWT Authentication Middleware.
+        \item \textbf{How (Pengerjaan):} Developers akan menyiapkan skema database PostgreSQL dan mengimplementasikan algoritma bcrypt untuk keamanan password hashing.
+    \end{itemize}
 
-\newpage
-Selama \textit{Sprint Execution} berlangsung, dilakukan \textit{Daily Scrum} (\textit{stand-up meeting}) untuk memantau progres pengembangan, mengidentifikasi kendala yang muncul, serta memastikan pekerjaan berjalan sesuai dengan rencana \textit{sprint} yang telah ditetapkan.
+    \item Sprint 2: Pengembangan Fitur Inti Peminjaman\\
+    Setelah fondasi akses selesai, perencanaan Sprint 2 difokuskan pada Sprint Goal: "Menyediakan fungsi utama pengajuan peminjaman bagi mahasiswa."
+    \begin{itemize}
+        \item \textbf{What (Fitur Terpilih):} Backlog yang diambil berasal dari kategori Core Feature, meliputi Form Pengajuan Peminjaman, Validasi Konflik Jadwal untuk mencegah double booking, serta integrasi Upload Surat Digital ke penyimpanan awan.
+        \item \textbf{How (Pengerjaan):} Tim akan menghubungkan logika aplikasi dengan Supabase Storage untuk menangani file PDF dan membuat logika validasi tanggal otomatis pada backend.
+    \end{itemize}
 
-\subsubsection{Sprint Review and Delivery}
-Setelah \textit{Sprint Execution} selesai, sistem yang telah dikembangkan menghasilkan \textit{Shippable Increment}, yaitu modul sistem yang telah dapat dijalankan dan diuji. Increment ini kemudian dipresentasikan pada tahap \textit{Sprint Review}, yang melibatkan pihak staf Sarpras dan petugas keamanan (Security).
+    \item Sprint 3: Manajemen Admin dan Verifikasi\\
+    Sprint ini bertujuan melengkapi siklus bisnis sistem. Sprint Goal yang ditetapkan adalah: "Memberikan kendali kepada Admin untuk memvalidasi pengajuan dan mengelola data master."
+    \begin{itemize}
+        \item \textbf{What (Fitur Terpilih):} Tim memilih fitur dari kategori Admin, yaitu Verifikasi Peminjaman (Approve/Reject), manajemen data ruangan (CRUD Ruangan), serta fitur Export Excel untuk kebutuhan pelaporan.
+        \item \textbf{How (Pengerjaan):} Pengembangan difokuskan pada pembuatan dashboard interaktif untuk Sarpras agar dapat memantau status pengajuan Pending dengan mudah.
+    \end{itemize}
 
-\textit{Sprint Review} bertujuan untuk memperoleh umpan balik pengguna serta melakukan validasi terhadap kesesuaian sistem dengan kebutuhan operasional di lapangan. Hasil \textit{Sprint Review} menjadi dasar perbaikan atau penyesuaian fitur pada \textit{sprint} berikutnya.
+    \item Sprint 4: Verifikasi Kegiatan, Notifikasi, dan Otomatisasi\\
+    Sprint terakhir direncanakan untuk penyempurnaan sistem dan integrasi lapangan. Sprint Goal-nya adalah: "Menutup siklus peminjaman dengan validasi keamanan fisik dan notifikasi otomatis."
+    \begin{itemize}
+        \item \textbf{What (Fitur Terpilih):} Item yang dikerjakan mencakup fitur Security untuk Verifikasi Kehadiran di lapangan, serta kategori Support dan Technical berupa pengiriman email notifikasi (Email Notification) dan penerapan Status Scheduler (Cron Job).
+        \newpage
+        \item \textbf{How (Pengerjaan):} Developers mengimplementasikan background job untuk memperbarui status peminjaman secara otomatis dan mengintegrasikan Gmail API untuk pengiriman notifikasi secara asynchronous.
+    \end{itemize}
+\end{enumerate}
 
-\subsubsection{Sprint Retrospective}
-Tahap akhir dalam satu siklus \textit{sprint} adalah \textit{Sprint Retrospective}, yaitu evaluasi internal yang dilakukan oleh \textit{Scrum Team} terhadap proses pengembangan yang telah berlangsung. Evaluasi ini bertujuan untuk mengidentifikasi kekurangan, hambatan, serta peluang perbaikan dalam proses pengembangan sistem. Hasil \textit{Sprint Retrospective} digunakan sebagai dasar perbaikan berkelanjutan (\textit{continuous improvement}) pada \textit{sprint} berikutnya, sehingga kualitas sistem dan proses pengembangan dapat terus ditingkatkan.
+Setiap sesi perencanaan ini menghasilkan Sprint Backlog spesifik yang menjadi panduan kerja harian tim pengembang selama durasi Sprint berlangsung.
+
+\subsubsection{Daily Scrum}
+Daily Scrum adalah pertemuan 15 menit yang dilakukan setiap hari kerja oleh Developers. Tujuannya adalah untuk menginspeksi kemajuan menuju Sprint Goal dan menyesuaikan Sprint Backlog jika diperlukan. Kegiatan ini membantu mengidentifikasi hambatan (impediments) teknis sedini mungkin agar solusi dapat segera dicari.
+
+\subsubsection{Implementasi Increment}
+Pada tahap ini, Developers melakukan aktivitas teknis (analisis, desain, pengkodean, dan pengujian unit) untuk mengubah item backlog menjadi Increment. Increment adalah wujud konkret dari fitur yang sudah selesai. Agar sebuah fitur dapat dinyatakan sebagai Increment yang valid, fitur tersebut harus memenuhi Definition of Done (DoD). Dalam penelitian ini, kriteria DoD meliputi: kode program selesai ditulis, lolos pengujian Black Box Testing, dan bebas dari error validasi.
+
+\subsubsection{Sprint Review (Tinjauan Sprint)}
+Di akhir durasi Sprint, dilakukan Sprint Review. Kegiatan ini bukan sekadar presentasi, melainkan sesi kerja untuk menginspeksi hasil Increment yang telah selesai. Scrum Team mendemonstrasikan fitur sistem kepada pemangku kepentingan (stakeholders), yaitu Staf Sarana Prasarana dan Petugas Keamanan. Umpan balik (feedback) dari pengguna pada sesi ini akan dicatat dan dapat menjadi item baru dalam Product Backlog untuk dikerjakan pada Sprint berikutnya.
+
+\subsubsection{Sprint Retrospective (Retrospektif Sprint)}
+Tahap penutup dari satu siklus Sprint adalah Sprint Retrospective. Fokus kegiatan ini adalah evaluasi internal mengenai kualitas interaksi, proses, dan alat yang digunakan oleh tim. Tujuannya adalah merencanakan cara meningkatkan kualitas dan efektivitas kerja pada Sprint selanjutnya.
 
 \subsection{Teknik Pengujian}
-Pengujian sistem pada penelitian ini dilakukan untuk memastikan bahwa Sistem Informasi Peminjaman Sarana dan Prasarana Kampus yang dikembangkan telah berfungsi sesuai dengan kebutuhan pengguna yang telah didefinisikan pada tahap analisis kebutuhan. Pengujian sistem merupakan bagian penting dari proses pengembangan menggunakan metode Scrum, di mana setiap increment sistem yang dihasilkan pada akhir \textit{sprint} harus memenuhi kriteria fungsional yang telah ditetapkan.
+Pengujian sistem pada penelitian ini dilakukan untuk memastikan bahwa Sistem Informasi Peminjaman Sarana dan Prasarana Kampus yang dikembangkan telah berfungsi sesuai dengan kebutuhan pengguna yang telah didefinisikan pada tahap analisis kebutuhan. Pengujian sistem merupakan bagian penting dari proses pengembangan menggunakan metode Scrum, di mana setiap increment sistem yang dihasilkan pada akhir sprint harus memenuhi kriteria fungsional yang telah ditetapkan.
 
-\newpage
 \subsubsection{Metode Pengujian}
-Metode pengujian yang digunakan dalam penelitian ini adalah \textit{Black Box Testing}. \textit{Black Box Testing} merupakan metode pengujian perangkat lunak yang berfokus pada pengujian fungsionalitas sistem tanpa memperhatikan struktur internal atau kode program yang digunakan. Pemilihan metode \textit{Black Box Testing} didasarkan pada pertimbangan bahwa tujuan utama pengujian adalah untuk memastikan bahwa setiap fitur sistem dapat berjalan sesuai dengan kebutuhan pengguna, sebagaimana yang telah dirumuskan dalam dokumen spesifikasi kebutuhan perangkat lunak dan \textit{use case diagram}.
+Metode pengujian yang digunakan dalam penelitian ini adalah Black Box Testing. Black Box Testing merupakan metode pengujian perangkat lunak yang berfokus pada pengujian fungsionalitas sistem tanpa memperhatikan struktur internal atau kode program yang digunakan.
+
+Pemilihan metode Black Box Testing didasarkan pada pertimbangan bahwa tujuan utama pengujian adalah untuk memastikan bahwa setiap fitur sistem dapat berjalan sesuai dengan kebutuhan pengguna, sebagaimana yang telah dirumuskan dalam dokumen spesifikasi kebutuhan perangkat lunak dan use case diagram.
 
 \subsubsection{Ruang Lingkup Pengujian}
 Ruang lingkup pengujian sistem mencakup seluruh fitur utama yang dikembangkan pada setiap \textit{sprint}, khususnya fitur-fitur yang berkaitan langsung dengan proses peminjaman sarana dan prasarana kampus. Fitur yang diuji meliputi:
@@ -126,7 +179,6 @@ Pengujian dilakukan untuk memastikan bahwa setiap fitur tersebut memberikan kelu
 \subsubsection{Skenario dan Prosedur Pengujian}
 Pengujian sistem dilakukan dengan menyusun skenario pengujian berdasarkan fungsi-fungsi utama sistem. Setiap skenario pengujian terdiri dari beberapa komponen, yaitu kondisi awal, langkah pengujian, data masukan, hasil yang diharapkan, dan hasil pengujian aktual.
 
-\newpage
 Prosedur pengujian dilakukan dengan cara menjalankan sistem sesuai dengan skenario yang telah ditentukan, kemudian membandingkan hasil aktual dengan hasil yang diharapkan. Apabila hasil pengujian sesuai dengan hasil yang diharapkan, maka fitur tersebut dinyatakan berhasil. Sebaliknya, apabila terjadi perbedaan, maka fitur tersebut akan diperbaiki dan diuji kembali pada \textit{sprint} berikutnya.
 
 \subsubsection{Waktu dan Pelaksanaan Pengujian}
@@ -138,12 +190,11 @@ Hasil pengujian sistem didokumentasikan dalam bentuk tabel pengujian \textit{Bla
 \section{Analisis Sistem}
 Analisis sistem dilakukan untuk mengidentifikasi kebutuhan dan karakteristik Sistem Informasi Peminjaman Sarana dan Prasarana Kampus yang dikembangkan. Analisis ini bertujuan untuk memahami proses bisnis yang berjalan, kebutuhan pengguna, serta fungsi-fungsi yang harus disediakan oleh sistem agar mampu mendukung pengelolaan peminjaman sarana dan prasarana kampus secara efektif, terstruktur, dan terkomputerisasi.
 
+\newpage
 Dalam penelitian ini, teknik analisis data digunakan untuk mengolah dan menafsirkan data yang diperoleh selama proses pengembangan dan pengujian sistem. Analisis data bertujuan untuk menilai kesesuaian antara sistem yang dikembangkan dengan kebutuhan pengguna yang telah ditetapkan pada tahap analisis kebutuhan. Pendekatan analisis data yang digunakan adalah analisis kualitatif, karena data yang dianalisis berupa hasil observasi, wawancara, evaluasi sprint, serta hasil pengujian fungsional sistem.
 
 \subsection{Analisis Kebutuhan Sistem}
-Analisis kebutuhan sistem dilakukan dengan mengkaji hasil observasi dan wawancara yang telah dirangkum dalam Dokumen Spesifikasi Kebutuhan Perangkat Lunak (SKPL). Data kebutuhan dianalisis untuk mengidentifikasi permasalahan utama dalam proses peminjaman sarana dan prasarana kampus, seperti pencatatan peminjaman yang belum terintegrasi, kesulitan pemantauan status peminjaman, serta keterbatasan dokumentasi data peminjaman.
-
-Hasil analisis kebutuhan ini digunakan sebagai dasar dalam penyusunan \textit{Product Backlog} serta penentuan prioritas fitur pada setiap \textit{sprint} pengembangan, sehingga sistem yang dikembangkan sesuai dengan kebutuhan pengguna dan proses bisnis yang berjalan.
+Analisis kebutuhan sistem dilakukan dengan mengkaji hasil observasi dan wawancara yang telah dirangkum dalam Dokumen Spesifikasi Kebutuhan Perangkat Lunak (SKPL). Data kebutuhan dianalisis untuk mengidentifikasi permasalahan utama dalam proses peminjaman sarana dan prasarana kampus, serta untuk menentukan fitur-fitur yang harus dikembangkan pada sistem. Hasil analisis kebutuhan ini digunakan sebagai dasar dalam penyusunan Product Backlog dan penentuan prioritas fitur pada setiap sprint pengembangan.
 
 \subsection{Analisis Fungsional}
 Analisis fungsional bertujuan untuk mengidentifikasi fungsi utama yang harus dimiliki oleh Sistem Informasi Peminjaman Sarana dan Prasarana Kampus dalam mendukung proses peminjaman secara terkomputerisasi. Sistem menerapkan konsep CRUD (\textit{Create, Read, Update, Delete}) untuk mengelola data peminjaman dan sarana secara terintegrasi.
@@ -152,13 +203,14 @@ Secara fungsional, sistem diawali dengan proses autentikasi pengguna untuk memba
 
 Berdasarkan analisis tersebut, kebutuhan fungsional sistem meliputi:
 \begin{enumerate}
-    \item Fitur notifikasi status pengajuan dan laporan rekapitulasi peminjaman.
     \item Autentikasi dan login pengguna berdasarkan hak akses.
     \item Pengajuan peminjaman sarana dan prasarana oleh mahasiswa.
     \item Penampilan informasi ketersediaan dan riwayat peminjaman.
     \item Persetujuan atau penolakan peminjaman oleh sarpras.
+    \newpage
     \item Pengelolaan data sarana dan prasarana menggunakan operasi CRUD.
     \item Penyediaan laporan data peminjaman.
+    \item Fitur notifikasi status pengajuan dan laporan rekapitulasi peminjaman.
 \end{enumerate}
 Analisis kebutuhan fungsional ini menjadi dasar dalam tahap perancangan sistem yang dibahas pada subbab selanjutnya.
 
@@ -202,7 +254,7 @@ Perancangan sistem dilakukan sebagai tahap lanjutan dari hasil analisis kebutuha
 \newpage
 Use Case Diagram pada Sistem Informasi Peminjaman Sarana dan Prasarana Kampus menggambarkan interaksi antara aktor dan sistem berdasarkan peran serta hak akses masing-masing. Diagram ini digunakan untuk memvisualisasikan fungsi-fungsi utama sistem yang dapat diakses oleh pengguna, sehingga memberikan gambaran umum mengenai ruang lingkup dan kemampuan sistem dalam mendukung proses peminjaman sarana dan prasarana kampus. Melalui Use Case Diagram, setiap aktor ditunjukkan memiliki tanggung jawab dan batasan akses yang berbeda sesuai dengan perannya, seperti pengajuan peminjaman, pengelolaan data sarana dan prasarana, serta proses verifikasi dan persetujuan peminjaman. Dengan pembagian hak akses ini, sistem dapat berjalan secara terkontrol dan membantu memastikan bahwa setiap proses dilakukan oleh pihak yang berwenang.
 
-Penjelasan lebih lanjut mengenai Use Case Diagram disajikan dalam bentuk tabel aktor dan tabel use case. Tabel aktor menjelaskan peran dan hak akses masing-masing aktor, sedangkan tabel use case memuat daftar fungsi sistem beserta deskripsi singkatnya, sehingga kebutuhan fungsional sistem dapat dipahami secara lebih jelas dan sistematis.
+Penjelasan lebih lanjut mengenai Use Case Diagram disajikan dalam bentuk tabel use case dan tabel aktor. Tabel use case memuat daftar fungsi sistem beserta deskripsi singkatnya, sedangkan tabel aktor menjelaskan peran dan hak akses masing-masing aktor, sehingga kebutuhan fungsional sistem dapat dipahami secara lebih jelas dan sistematis.
 
 
 \begin{table}[htbp]
@@ -264,20 +316,26 @@ Flowchart Pengajuan peminjaman menggambarkan alur proses pengajuan peminjaman sa
     \label{fig:flowchart_pengajuan}
 \end{figure}
 
-Proses peminjaman dimulai setelah mahasiswa berhasil login dan memilih menu Pinjam Ruangan. Mahasiswa dapat melihat daftar ruangan beserta jadwal ketersediaannya, kemudian mengajukan peminjaman dengan mengisi formulir yang memuat informasi kegiatan, waktu peminjaman, serta mengunggah surat pemberitahuan. Jika diperlukan, mahasiswa dapat menambahkan barang pendukung beserta jumlahnya. Sistem akan memeriksa kelengkapan data, dan apabila telah lengkap pengajuan dikirim dengan status menunggu verifikasi, disertai notifikasi bahwa pengajuan berhasil diajukan.
+Proses pengajuan peminjaman dimulai ketika mahasiswa berhasil melakukan login ke dalam sistem. Setelah berhasil masuk, mahasiswa membuka menu Pinjam Ruangan untuk memulai proses pengajuan.
+
+Pada tahap selanjutnya, mahasiswa dapat melihat daftar ruangan beserta jadwal ketersediaannya. Fitur ini memungkinkan mahasiswa untuk memilih ruangan yang sesuai dengan kebutuhan kegiatan dan memastikan tidak terjadi bentrok jadwal dengan peminjaman lain. Setelah menemukan ruangan yang sesuai, mahasiswa mengklik tombol Ajukan Peminjaman untuk melanjutkan ke tahap pengisian formulir.
+
+Mahasiswa kemudian mengisi formulir pengajuan yang memuat informasi penting, yaitu nama kegiatan, waktu mulai dan selesai peminjaman, serta mengunggah surat pemberitahuan sebagai dokumen pendukung. Pada tahap ini, sistem menyediakan pilihan bagi mahasiswa untuk menambahkan barang tambahan. Jika diperlukan barang pendukung, mahasiswa memilih jenis barang dan memasukkan jumlah yang dibutuhkan. Jika tidak memerlukan barang tambahan, proses langsung dilanjutkan ke tahap validasi formulir.
 
 \newpage
+Setelah formulir diisi, sistem melakukan pemeriksaan apakah formulir sudah lengkap. Jika formulir belum lengkap, mahasiswa diminta untuk melengkapi data yang kurang sebelum dapat melanjutkan. Jika formulir dinyatakan lengkap, pengajuan dikirim ke sistem untuk diproses lebih lanjut.
+
+Setelah pengajuan berhasil dikirim, sistem menampilkan pesan sukses kepada mahasiswa dan mengirimkan notifikasi bahwa pengajuan telah terkirim. Proses pengajuan peminjaman kemudian dinyatakan selesai, dan status pengajuan berubah menjadi menunggu verifikasi oleh pihak Sarpras.
+
 Dengan adanya flowchart peminjaman ini, alur proses pengajuan peminjaman sarana dan prasarana kampus oleh mahasiswa dapat dipahami secara jelas dan terstruktur. Flowchart ini menjadi acuan dalam implementasi fitur peminjaman serta membantu memastikan bahwa setiap pengajuan yang dikirimkan telah melalui proses validasi sebelum dilakukan verifikasi oleh pihak pengelola.
 
 
 \subsubsection{Flowchart Verifikasi Peminjaman}
 Flowchart verifikasi peminjaman menggambarkan alur proses pemeriksaan dan pengambilan keputusan terhadap pengajuan peminjaman sarana dan prasarana kampus yang dilakukan oleh Admin atau Sarpras. Proses ini bertujuan untuk memastikan bahwa pengajuan yang masuk telah memenuhi ketentuan administratif, jadwal penggunaan, serta kelengkapan dokumen pendukung sebelum peminjaman disetujui atau ditolak.
 
-Proses verifikasi peminjaman dimulai ketika Admin atau pihak Sarana dan Prasarana (Sarpras) melakukan login ke dalam sistem informasi peminjaman. Setelah berhasil masuk, Admin diarahkan ke halaman dashboard admin yang menampilkan notifikasi pengajuan peminjaman baru dari mahasiswa sebagai penanda bahwa terdapat permohonan yang perlu ditindaklanjuti.
+Proses verifikasi dimulai ketika Admin atau pihak Sarana dan Prasarana melakukan login ke dalam sistem informasi peminjaman. Setelah berhasil masuk, Admin diarahkan ke halaman dashboard admin. Pada dashboard, Admin melihat notifikasi pengajuan baru yang menandakan terdapat permohonan peminjaman dari mahasiswa. Admin kemudian membuka detail pengajuan untuk mengecek kelengkapan surat peminjaman dan memverifikasi kesesuaian jadwal dengan ketersediaan sarana dan prasarana yang diminta.
 
-Selanjutnya, Admin membuka detail pengajuan peminjaman untuk melakukan pemeriksaan secara menyeluruh terhadap data yang diajukan oleh mahasiswa. Pada tahap ini, Admin mengecek kelengkapan dokumen pendukung, seperti surat pemberitahuan atau surat permohonan peminjaman, serta memverifikasi kesesuaian jadwal peminjaman dengan ketersediaan sarana dan prasarana yang diminta. Pemeriksaan ini bertujuan untuk memastikan bahwa pengajuan telah memenuhi ketentuan, prosedur, dan aturan peminjaman yang berlaku di lingkungan kampus.
-
-Setelah seluruh data dan dokumen dinyatakan telah diperiksa, Admin kemudian mengambil keputusan terhadap pengajuan peminjaman tersebut. Apabila pengajuan tidak memenuhi persyaratan atau terjadi ketidaksesuaian jadwal maupun dokumen, Admin dapat menolak pengajuan dengan mengisi alasan penolakan secara jelas dan sistem akan secara otomatis mengubah status peminjaman menjadi \textit{rejected}. Sebaliknya, apabila pengajuan dinyatakan sesuai dan memenuhi seluruh ketentuan, Admin menyetujui permohonan tersebut dan sistem akan mengubah status peminjaman menjadi \textit{approved}.
+Pada tahap keputusan, jika pengajuan tidak memenuhi persyaratan atau terdapat ketidaksesuaian, Admin mengklik tombol Tolak dan mengisi alasan penolakan secara jelas. Sistem kemudian mengubah status peminjaman menjadi REJECTED. Sebaliknya, jika pengajuan dinyatakan sesuai dan memenuhi seluruh ketentuan, Admin mengklik tombol Setujui dan sistem mengubah status peminjaman menjadi APPROVED.
 
 \begin{figure}[htbp]
     \centering
@@ -287,7 +345,9 @@ Setelah seluruh data dan dokumen dinyatakan telah diperiksa, Admin kemudian meng
 \end{figure}
 
 \newpage
-Pada tahap akhir, sistem secara otomatis mengirimkan notifikasi kepada mahasiswa mengenai hasil verifikasi peminjaman, baik berupa persetujuan maupun penolakan beserta alasannya. Dengan adanya flowchart verifikasi peminjaman ini, alur pemeriksaan, pengambilan keputusan, dan penyampaian informasi dapat dipahami secara jelas dan sistematis serta menjadi acuan dalam implementasi fitur verifikasi peminjaman agar pengelolaan sarana dan prasarana berjalan lebih efektif dan terstruktur.
+Pada tahap akhir, baik setelah penolakan maupun persetujuan, sistem secara otomatis mengirimkan notifikasi kepada mahasiswa mengenai hasil verifikasi peminjaman. Notifikasi ini berisi informasi status pengajuan beserta alasan penolakan jika pengajuan ditolak. Setelah notifikasi terkirim, proses verifikasi peminjaman dinyatakan selesai.
+
+Dengan adanya flowchart verifikasi peminjaman ini, alur pemeriksaan, pengambilan keputusan, dan penyampaian informasi dapat dipahami secara jelas dan sistematis serta menjadi acuan dalam implementasi fitur verifikasi peminjaman agar pengelolaan sarana dan prasarana berjalan lebih efektif dan terstruktur.
 
 \subsubsection{Flowchart Verifikasi Kehadiran Peminjam}
 Flowchart verifikasi kehadiran peminjam menggambarkan proses pemeriksaan kehadiran peminjam sarana dan prasarana kampus yang dilakukan oleh petugas security. Proses ini bertujuan untuk memastikan bahwa peminjam yang datang ke lokasi benar-benar sesuai dengan data peminjaman yang telah disetujui sebelumnya oleh pihak Sarpras.
@@ -299,11 +359,13 @@ Flowchart verifikasi kehadiran peminjam menggambarkan proses pemeriksaan kehadir
     \label{fig:flowchart_kehadiran}
 \end{figure}
 
-Proses verifikasi kehadiran dimulai ketika peminjam datang ke lokasi dan melapor kepada petugas security dengan menunjukkan bukti persetujuan peminjaman. Petugas kemudian membuka menu Jadwal Hari Ini untuk memeriksa data peminjaman yang terjadwal. Sistem menampilkan data peminjaman, lalu petugas melakukan pengecekan kesesuaian identitas peminjam. Jika data tidak sesuai, akses ditolak dan proses dihentikan. Jika sesuai, petugas memperbarui status kehadiran menjadi HADIR, membuka akses ruangan, dan sistem secara otomatis mencatat waktu masuk peminjam. Proses verifikasi kehadiran kemudian dinyatakan selesai.
+Proses verifikasi kehadiran dimulai ketika peminjam datang ke lokasi peminjaman dan melapor kepada petugas security dengan menunjukkan bukti persetujuan peminjaman yang telah diperoleh sebelumnya. Petugas security kemudian membuka menu Jadwal Hari Ini pada sistem untuk memeriksa data peminjaman yang terjadwal pada tanggal tersebut dan melakukan pengecekan kesesuaian identitas peminjam dengan data yang tercatat dalam sistem.
 
-Flowchart verifikasi kehadiran ini berfungsi sebagai acuan dalam pengawasan penggunaan sarana dan prasarana kampus, sehingga proses peminjaman dapat berlangsung secara tertib, aman, dan terkontrol.
+Pada tahap keputusan, petugas security memverifikasi apakah data peminjam sesuai dengan data yang tercatat dalam sistem. Jika data tidak sesuai, petugas security menolak akses masuk peminjam ke area sarana dan prasarana, dan proses verifikasi kehadiran dinyatakan selesai. Sebaliknya, jika data dinyatakan sesuai, petugas security memperbarui status kehadiran peminjam menjadi HADIR melalui sistem, kemudian membuka pintu ruangan atau memberikan akses kepada peminjam untuk memasuki area yang dipinjam. Pada saat bersamaan, sistem secara otomatis mencatat waktu masuk peminjam sebagai dokumentasi digital kehadiran, dan seluruh proses verifikasi kehadiran dinyatakan selesai.
 
 \newpage
+Flowchart verifikasi kehadiran ini berfungsi sebagai acuan dalam pengawasan penggunaan sarana dan prasarana kampus, sehingga proses peminjaman dapat berlangsung secara tertib, aman, dan terkontrol.
+
 \subsection{Sequence Diagram}
 
 \subsubsection{Sequence Diagram Pengajuan Peminjaman}
@@ -311,11 +373,12 @@ Sequence diagram ini menggambarkan alur interaksi antara Mahasiswa, Web App, Sys
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image7.png}
+    \includegraphics[width=0.7\textwidth]{gambar/media/image7.png}
     \caption{Sequence Diagram Pengajuan Peminjaman}
     \label{fig:sequence_pengajuan}
 \end{figure}
 
+\newpage
 Selanjutnya, mahasiswa membuka menu jadwal ruangan. Web App meminta data jadwal kepada System, yang kemudian mengambil data ketersediaan ruangan dari Database dan menampilkannya kembali kepada mahasiswa melalui Web App.
 
 Mahasiswa kemudian mengisi dan mengirimkan formulir pengajuan peminjaman. System memvalidasi data pengajuan. Jika data valid, sistem menyimpan data peminjaman ke Database dengan status PENDING dan mengirimkan notifikasi email konfirmasi melalui Email Service. Web App menampilkan pesan bahwa pengajuan berhasil dikirim. Jika data tidak valid, sistem menolak pengajuan dan Web App menampilkan pesan kesalahan kepada mahasiswa.
@@ -325,6 +388,12 @@ Sequence diagram ini menunjukkan alur komunikasi antar komponen sistem secara be
 \subsubsection{Sequence Diagram Verifikasi Peminjaman}
 Sequence diagram ini menggambarkan alur interaksi antara aktor Admin dengan Web App, System, Database, dan Email Service dalam proses verifikasi pengajuan peminjaman. Proses diawali ketika admin melakukan login melalui Web App. System memvalidasi kredensial admin dengan melakukan pengecekan ke Database. Jika login berhasil, sistem memberikan akses dan menampilkan dashboard admin.
 
+Admin kemudian membuka daftar pengajuan peminjaman. Web App meminta data pengajuan dengan status PENDING kepada System, yang selanjutnya mengambil data tersebut dari Database dan menampilkannya dalam bentuk tabel. Admin memilih salah satu pengajuan untuk melihat detail lengkap, dan System mengambil serta menampilkan detail pengajuan dari Database.
+
+Pada tahap pengambilan keputusan, admin dapat menyetujui atau menolak pengajuan. Jika pengajuan disetujui, System memperbarui status peminjaman menjadi APPROVED di Database dan mengirimkan notifikasi persetujuan kepada mahasiswa melalui Email Service. Jika pengajuan ditolak, System memperbarui status menjadi REJECTED beserta alasan penolakan dan mengirimkan notifikasi penolakan kepada mahasiswa. Setelah proses selesai, Web App menampilkan konfirmasi kepada admin.
+
+Sequence diagram ini menunjukkan alur komunikasi sistem dalam memastikan setiap pengajuan peminjaman diverifikasi secara terkontrol dan terdokumentasi dengan baik. Adapun Sequence Diagram Verifikasi Peminjaman dapat dilihat pada Gambar \ref{fig:sequence_verifikasi} berikut.
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{gambar/media/image8.png}
@@ -332,13 +401,9 @@ Sequence diagram ini menggambarkan alur interaksi antara aktor Admin dengan Web 
     \label{fig:sequence_verifikasi}
 \end{figure}
 
-Admin kemudian membuka daftar pengajuan peminjaman. Web App meminta data pengajuan dengan status PENDING kepada System, yang selanjutnya mengambil data tersebut dari Database dan menampilkannya dalam bentuk tabel. Admin memilih salah satu pengajuan untuk melihat detail lengkap, dan System mengambil serta menampilkan detail pengajuan dari Database.
-
-Pada tahap pengambilan keputusan, admin dapat menyetujui atau menolak pengajuan. Jika pengajuan disetujui, System memperbarui status peminjaman menjadi APPROVED di Database dan mengirimkan notifikasi persetujuan kepada mahasiswa melalui Email Service. Jika pengajuan ditolak, System memperbarui status menjadi REJECTED beserta alasan penolakan dan mengirimkan notifikasi penolakan kepada mahasiswa. Setelah proses selesai, Web App menampilkan konfirmasi kepada admin.
 
 
 
-Sequence diagram ini menunjukkan alur komunikasi sistem dalam memastikan setiap pengajuan peminjaman diverifikasi secara terkontrol dan terdokumentasi dengan baik.
 
 \newpage
 \subsubsection{Sequence Diagram Verifikasi Kehadiran}
@@ -366,7 +431,11 @@ Sebaliknya, apabila data peminjaman tidak ditemukan atau tidak sesuai, sistem me
     \label{fig:erd}
 \end{figure}
 
-Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis data serta hubungan antar entitas yang terlibat dalam Sistem Informasi Peminjaman Sarana dan Prasarana Kampus. ERD ini menunjukkan keterkaitan antara data pengguna, data sarana dan prasarana, transaksi peminjaman, serta proses pendukung seperti verifikasi kehadiran, notifikasi, dan pencatatan aktivitas. Perancangan ERD dilakukan untuk memastikan integritas data dan mendukung pengolahan data menggunakan pendekatan Relational Database Management System (RDBMS).
+Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis data serta hubungan antar entitas yang terlibat dalam Sistem Informasi Peminjaman Sarana dan Prasarana Kampus. Diagram ini memvisualisasikan bagaimana data pengguna, sarana prasarana, dan transaksi peminjaman saling terhubung satu sama lain untuk membentuk integritas sistem yang utuh.
+
+Dalam desain ERD ini, entitas `users` menyimpan informasi pengguna seperti nama, email, dan peran (role), serta terhubung dengan `organisasi` yang menaungi pengguna tersebut. Entitas `peminjaman` menjadi pusat transaksi yang menghubungkan `users` dengan `ruangan` dan `kegiatan`. Untuk mendukung detail peminjaman, terdapat entitas `peminjaman\_barang` yang mencatat item barang yang dipinjam dalam satu transaksi. Selain itu, sistem juga dilengkapi dengan entitas `kehadiran\_peminjam` untuk verifikasi kehadiran, serta `mailbox` dan `log\_aktivitas` yang berfungsi sebagai media notifikasi dan pencatatan jejak audit aktivitas pengguna.
+
+Desain ERD ini menjamin integritas data serta mendukung efisiensi operasi CRUD, proses verifikasi, dan pelaporan sistem. Penjelasan lebih rinci mengenai relasi antar entitas disajikan pada Tabel \ref{tab:relasi_entitas} sebagai acuan terhadap struktur hubungan data yang terbentuk. Dengan perancangan ERD yang terstruktur dan relasi yang jelas, Sistem Informasi Peminjaman Sarana dan Prasarana Kampus mampu mengelola data peminjaman secara terintegrasi dan konsisten, serta menjadi dasar utama dalam implementasi basis data pada tahap penerapan sistem.
 
 \begin{table}[htbp]
     \centering
@@ -401,18 +470,24 @@ Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis d
     \end{tabularx}
 \end{table}
 
-Dengan perancangan ERD yang terstruktur dan relasi antar entitas yang jelas, Sistem Informasi Peminjaman Sarana dan Prasarana Kampus mampu mendukung pengelolaan data peminjaman secara terintegrasi dan konsisten. Struktur basis data ini menjadi acuan utama dalam implementasi sistem, khususnya dalam penerapan operasi CRUD serta pengelolaan data peminjaman, verifikasi, dan pelaporan pada tahap implementasi sistem.
-
 \newpage
 \subsection{Class Diagram}
 Class Diagram digunakan untuk menggambarkan struktur kelas dalam sistem beserta atribut, tipe data, serta hubungan antar kelas. Diagram ini merepresentasikan rancangan statis sistem yang menjadi dasar dalam proses implementasi, khususnya dalam pembuatan struktur database, model data, dan logika bisnis aplikasi.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{gambar/media/image11.png}
+    \includegraphics[width=1.0\textwidth]{gambar/media/image11.png}
     \caption{Class Diagram}
     \label{fig:class_diagram}
 \end{figure}
+
+Berdasarkan Class Diagram pada Gambar \ref{fig:class_diagram}, struktur sistem dibangun dengan pendekatan berorientasi objek yang memisahkan tanggung jawab antara pengelolaan pengguna, sumber daya, dan transaksi. Kelas \textbf{User} menjadi entitas induk yang mendefinisikan aktor dalam sistem (Mahasiswa, Sarpras, Security) melalui atribut \texttt{RoleEnum}. Setiap pengguna diasosiasikan dengan kelas \textbf{Organisasi}, yang menegaskan bahwa setiap aktivitas peminjaman terikat pada unit atau organisasi kemahasiswaan tertentu.
+
+Pusat dari seluruh proses bisnis dimodelkan dalam kelas \textbf{Peminjaman}. Kelas ini memfasilitasi hubungan \textit{many-to-one} terhadap kelas \textbf{User}, artinya satu pengguna dapat melakukan banyak transaksi peminjaman. Peminjaman ini secara spesifik mengikat satu \textbf{Ruangan} dan dapat melibatkan banyak \textbf{Barang}. Karena hubungan antara Peminjaman dan Barang bersifat \textit{many-to-many} (satu peminjaman bisa banyak barang, satu barang bisa dipinjam banyak kali pada waktu berbeda), sistem menggunakan kelas perantara \textbf{PeminjamanBarangDetail} untuk mencatat jumlah dan spesifikasi barang dalam setiap transaksi.
+
+Setiap peminjaman juga harus memiliki konteks acara yang jelas, yang direpresentasikan oleh relasi terhadap kelas \textbf{Kegiatan}. Untuk mengelola siklus hidup peminjaman dari pengajuan hingga selesai, sistem memanfaatkan \texttt{PeminjamanStatusEnum} yang mencakup status seperti \textit{Pending}, \textit{Approved}, hingga \textit{Finished}.
+
+Aspek validasi lapangan dimodelkan melalui kelas \textbf{KehadiranPeminjam}, yang memiliki relasi \textit{one-to-one} dengan Peminjaman. Kelas ini mencatat waktu \textit{check-in} dan status kehadiran menggunakan \texttt{KehadiranStatusEnum}, memastikan bahwa penggunaan ruangan terpantau secara riil. Selain itu, fitur pendukung komunikasi dan audit ditangani oleh kelas \textbf{Notifikasi} (menyimpan riwayat pesan ke pengguna) dan \textbf{LogAktivitas} (merekam jejak audit setiap aksi penting), yang keduanya memiliki relasi langsung dengan User untuk akuntabilitas.
 
 \begin{table}[htbp]
     \centering
@@ -447,12 +522,11 @@ Class Diagram digunakan untuk menggambarkan struktur kelas dalam sistem beserta 
 
 
 
-Berdasarkan Class Diagram pada Gambar \ref{fig:class_diagram}, sistem peminjaman sarana dan prasarana kampus terdiri dari beberapa kelas utama, yaitu User, Peminjaman, Barang, Ruangan, Kegiatan, Organisasi, serta kelas pendukung seperti PeminjamanBarangDetail, KehadiranPeminjam, Notifikasi, dan LogAktivitas.
-Kelas Peminjaman berperan sebagai pusat relasi yang menghubungkan pengguna dengan sarana dan prasarana yang dipinjam, kegiatan yang dilaksanakan, serta proses verifikasi dan kehadiran. Untuk menjaga konsistensi status dan peran dalam sistem, digunakan beberapa enumeration seperti RoleEnum, PeminjamanStatusEnum, KehadiranStatusEnum, NotifikasiJenisEnum, dan NotifikasiStatusEnum.
+
 
 Dengan adanya Class Diagram ini, struktur kelas dan hubungan antar komponen dalam Sistem Informasi Peminjaman Sarana dan Prasarana Kampus dapat dipahami secara jelas. Class Diagram ini menjadi acuan dalam proses implementasi sistem, khususnya dalam pembuatan model data, pengelolaan relasi antar entitas, serta penerapan logika bisnis sesuai dengan kebutuhan sistem.
 
-\newpage
+
 \subsection{BPMN Diagram}
 
 \subsubsection{BPMN Proses Peminjaman}
@@ -467,7 +541,7 @@ BPMN Proses Peminjaman menggambarkan alur peminjaman sarana dan prasarana kampus
 
 Selanjutnya, Sarpras melakukan \textit{review} pengajuan untuk menentukan persetujuan atau penolakan, di mana pengajuan yang ditolak akan diakhiri oleh sistem dengan status DITOLAK, sedangkan pengajuan yang disetujui ditetapkan berstatus DISETUJUI dan diinformasikan kepada mahasiswa serta petugas keamanan.
 
-\newpage
+
 Pada hari pelaksanaan, Security melakukan verifikasi kehadiran peminjam; jika peminjam hadir, sistem memperbarui status peminjaman menjadi ONGOING yang menandakan kegiatan berlangsung, sedangkan jika peminjam tidak hadir, sistem mencatat kondisi tersebut dan proses peminjaman dinyatakan selesai.
 
 \subsubsection{BPMN Verifikasi Peminjaman}
@@ -492,5 +566,5 @@ BPMN Verifikasi Kehadiran Peminjam menggambarkan proses pemeriksaan kehadiran pe
     \label{fig:bpmn_kehadiran}
 \end{figure}
 
-\newpage
-Selanjutnya, Security melakukan pemeriksaan apakah peminjam hadir sesuai dengan jadwal yang ditentukan, di mana pada kondisi peminjam hadir Security mengisi catatan kehadiran dan sistem mengonfirmasi hasil verifikasi dengan menetapkan status peminjaman menjadi ONGOING, sedangkan pada kondisi peminjam tidak hadir Security mengisi catatan ketidakhadiran dan sistem mengonfirmasi hasil verifikasi dengan menetapkan status peminjaman menjadi FINISHED. Proses verifikasi kehadiran ini berfungsi sebagai kontrol akhir untuk memastikan bahwa penggunaan sarana dan prasarana kampus berjalan sesuai dengan persetujuan dan ketentuan yang berlaku.
+
+Selanjutnya, Security memverifikasi kehadiran peminjam sesuai jadwal. Jika peminjam hadir, status peminjaman diperbarui menjadi \textit{ONGOING}; sebaliknya jika tidak hadir, status menjadi \textit{FINISHED}. Proses ini memastikan penggunaan sarana dan prasarana berjalan tertib sesuai ketentuan.
