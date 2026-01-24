@@ -176,9 +176,9 @@ Hasil verifikasi kehadiran akan disimpan dan terdokumentasi sebagai bagian dari 
 \section{Pengujian}
 
 \subsection{Pengujian Black Box}
-Pengujian Black Box dilakukan dengan memvalidasi input dan output sistem tanpa melihat struktur internal kode. Pengujian mencakup modul autentikasi, master data, peminjaman, kehadiran, notifikasi, RBAC, serta pengujian antarmuka pengguna (UI). Berdasarkan hasil pengujian, seluruh skenario uji berhasil dijalankan dengan status PASS.
+Pengujian Black Box dilakukan dengan memvalidasi input dan output sistem tanpa melihat struktur internal kode. Pengujian mencakup modul autentikasi, master data, peminjaman, kehadiran, notifikasi, RBAC, serta pengujian antarmuka pengguna (UI). Detail skenario dan hasil pengujian disajikan pada Tabel \ref{tab:pengujian_aplikasi}. Berdasarkan hasil pengujian tersebut, seluruh skenario uji berhasil dijalankan dengan status PASS.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Pengujian Aplikasi}
     \label{tab:pengujian_aplikasi}
@@ -208,13 +208,17 @@ Pengujian Black Box dilakukan dengan memvalidasi input dan output sistem tanpa m
         \hline
     \end{tabularx}
 \end{table}
+\vspace{-0.5cm}
 
 Berdasarkan tabel di atas, dapat disimpulkan bahwa seluruh fungsi sistem telah berjalan sesuai dengan spesifikasi dan tidak ditemukan kegagalan pada proses pengujian fungsional.
 
 \subsection{Pengujian Code Coverage}
 Pengujian code coverage dilakukan untuk mengukur sejauh mana kode program backend Sistem Informasi Peminjaman Sarana dan Prasarana Kampus telah dieksekusi selama proses unit testing. Pengujian difokuskan pada layer service yang merepresentasikan logika bisnis utama sistem.
 
-Hasil pengujian menunjukkan nilai code coverage sebesar 31,9\%. Nilai ini dipengaruhi oleh beberapa fungsi yang tidak dilakukan pengujian unit secara langsung, seperti konstruktor service, fungsi pengiriman email, serta ekspor data ke format Excel yang bergantung pada layanan eksternal dan file system. Sementara itu, fungsi utama sistem seperti autentikasi pengguna, pengajuan peminjaman, verifikasi peminjaman, pembatalan peminjaman, dan pencatatan kehadiran telah diuji dengan tingkat coverage di atas 75\%, sehingga dapat disimpulkan bahwa logika bisnis inti sistem telah berjalan dengan baik dan sesuai kebutuhan fungsional.
+Hasil pengujian menunjukkan nilai code coverage sebesar 31,9\%. Nilai ini dipengaruhi oleh beberapa fungsi yang tidak dilakukan pengujian unit secara langsung, seperti konstruktor service, fungsi pengiriman email, serta ekspor data ke format Excel yang bergantung pada layanan eksternal dan file system.
+    
+\newpage
+Sementara itu, fungsi utama sistem seperti autentikasi pengguna, pengajuan peminjaman, verifikasi peminjaman, pembatalan peminjaman, dan pencatatan kehadiran telah diuji dengan tingkat coverage di atas 75\%, sehingga dapat disimpulkan bahwa logika bisnis inti sistem telah berjalan dengan baik dan sesuai kebutuhan fungsional. Rincian persentase coverage untuk masing-masing service disajikan pada Tabel \ref{tab:hasil_code_coverage}.
 
 \begin{table}[htbp]
     \centering
