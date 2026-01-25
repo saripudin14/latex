@@ -476,18 +476,16 @@ Class Diagram digunakan untuk menggambarkan struktur kelas dalam sistem beserta 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1.0\textwidth]{gambar/media/image11.png}
+    \includegraphics[width=1.0\textwidth]{gambar/media/class-diagram.png}
     \caption{Class Diagram}
     \label{fig:class_diagram}
 \end{figure}
 
-Berdasarkan Class Diagram pada Gambar \ref{fig:class_diagram}, struktur sistem dibangun dengan pendekatan berorientasi objek yang memisahkan tanggung jawab antara pengelolaan pengguna, sumber daya, dan transaksi. Kelas \textbf{User} menjadi entitas induk yang mendefinisikan aktor dalam sistem (Mahasiswa, Sarpras, Security) melalui atribut \texttt{RoleEnum}. Setiap pengguna diasosiasikan dengan kelas \textbf{Organisasi}, yang menegaskan bahwa setiap aktivitas peminjaman terikat pada unit atau organisasi kemahasiswaan tertentu.
+Berdasarkan Class Diagram pada Gambar \ref{fig:class_diagram}, Sistem Informasi Peminjaman Sarana dan Prasarana Kampus dirancang menggunakan pendekatan berorientasi objek dengan pemisahan tanggung jawab yang jelas antar kelas. Perancangan ini mencakup kelas entitas utama, kelas pendukung, serta kelas layanan dan repositori untuk mendukung pengelolaan data, penerapan logika bisnis, dan akses basis data secara terstruktur.
 
-Pusat dari seluruh proses bisnis dimodelkan dalam kelas \textbf{Peminjaman}. Kelas ini memfasilitasi hubungan \textit{many-to-one} terhadap kelas \textbf{User}, artinya satu pengguna dapat melakukan banyak transaksi peminjaman. Peminjaman ini secara spesifik mengikat satu \textbf{Ruangan} dan dapat melibatkan banyak \textbf{Barang}. Karena hubungan antara Peminjaman dan Barang bersifat \textit{many-to-many} (satu peminjaman bisa banyak barang, satu barang bisa dipinjam banyak kali pada waktu berbeda), sistem menggunakan kelas perantara \textbf{PeminjamanBarangDetail} untuk mencatat jumlah dan spesifikasi barang dalam setiap transaksi.
+Kelas \textbf{User} merepresentasikan aktor dalam sistem, yaitu Mahasiswa, Sarpras, Security, dan Admin, yang dibedakan melalui atribut \texttt{RoleEnum}. Setiap pengguna terasosiasi dengan satu \textbf{Organisasi}, sehingga seluruh aktivitas peminjaman terikat pada unit atau organisasi tertentu. Proses bisnis utama dimodelkan dalam kelas \textbf{Peminjaman}, yang memiliki relasi \textit{many-to-one} dengan \textbf{User}, sehingga satu pengguna dapat melakukan lebih dari satu transaksi peminjaman. Setiap transaksi peminjaman terhubung dengan satu \textbf{Ruangan} dan satu \textbf{Kegiatan} sebagai konteks penggunaan fasilitas. Relasi antara peminjaman dan \textbf{Barang} bersifat \textit{many-to-many}, sehingga digunakan kelas perantara \textbf{PeminjamanBarangDetail} untuk mencatat detail barang yang dipinjam pada setiap transaksi. Pengelolaan status peminjaman dilakukan melalui \texttt{PeminjamanStatusEnum} untuk memastikan alur proses peminjaman berjalan secara sistematis.
 
-Setiap peminjaman juga harus memiliki konteks acara yang jelas, yang direpresentasikan oleh relasi terhadap kelas \textbf{Kegiatan}. Untuk mengelola siklus hidup peminjaman dari pengajuan hingga selesai, sistem memanfaatkan \texttt{PeminjamanStatusEnum} yang mencakup status seperti \textit{Pending}, \textit{Approved}, hingga \textit{Finished}.
-
-Aspek validasi lapangan dimodelkan melalui kelas \textbf{KehadiranPeminjam}, yang memiliki relasi \textit{one-to-one} dengan Peminjaman. Kelas ini mencatat waktu \textit{check-in} dan status kehadiran menggunakan \texttt{KehadiranStatusEnum}, memastikan bahwa penggunaan ruangan terpantau secara riil. Selain itu, fitur pendukung komunikasi dan audit ditangani oleh kelas \textbf{Notifikasi} (menyimpan riwayat pesan ke pengguna) dan \textbf{LogAktivitas} (merekam jejak audit setiap aksi penting), yang keduanya memiliki relasi langsung dengan User untuk akuntabilitas.
+Aspek verifikasi lapangan dimodelkan melalui kelas \textbf{KehadiranPeminjam} yang memiliki relasi \textit{one-to-one} dengan kelas \textbf{Peminjaman} dan berfungsi mencatat status serta waktu verifikasi kehadiran. Selain itu, sistem dilengkapi dengan kelas \textbf{Mailbox} sebagai media penyampaian pesan atau notifikasi sistem kepada pengguna serta \textbf{LogAktivitas} untuk mencatat jejak aktivitas pengguna sebagai bentuk audit dan akuntabilitas sistem.
 
 \begin{table}[htbp]
     \centering
@@ -497,25 +495,33 @@ Aspek validasi lapangan dimodelkan melalui kelas \textbf{KehadiranPeminjam}, yan
         \hline
         No. & Nama Kelas & Deskripsi \\
         \hline
-        1. & Users & Merepresentasikan pengguna sistem dengan peran mahasiswa, sarpras, atau security \\
+        1. & User & Merepresentasikan pengguna sistem dengan peran Mahasiswa, Sarpras, Security, atau Admin \\
         \hline
-        2. & Organisasi & Menyimpan data organisasi atau unit yang terkait dengan pengguna dan kegiatan \\
+        2. & Organisasi & Menyimpan data organisasi atau unit yang menaungi pengguna dan kegiatan \\
         \hline
-        3. & Ruangan & Menyimpan data ruangan yang dapat dipinjam \\
+        3. & Ruangan & Menyimpan data ruangan yang dapat digunakan dalam proses peminjaman \\
         \hline
         4. & Barang & Menyimpan data barang atau inventaris yang dapat dipinjam \\
         \hline
-        5. & Kegiatan & Menyimpan data kegiatan yang menjadi dasar peminjaman \\
+        5. & Kegiatan & Menyimpan data kegiatan yang menjadi dasar pengajuan peminjaman \\
         \hline
         6. & Peminjaman & Menyimpan data utama transaksi peminjaman sarana dan prasarana \\
         \hline
-        7. & PeminjamanBarangDetail & Menyimpan detail barang yang dipinjam dalam satu transaksi \\
+        7. & PeminjamanBarangDetail & Menyimpan detail barang yang dipinjam dalam satu transaksi peminjaman \\
         \hline
         8. & KehadiranPeminjam & Menyimpan data verifikasi kehadiran peminjam \\
         \hline
-        9. & Notifikasi & Menyimpan data notifikasi sistem kepada pengguna \\
+        9. & Mailbox & Menyimpan pesan atau notifikasi sistem yang dikirim kepada pengguna \\
         \hline
-        10. & LogAktivitas & Menyimpan catatan aktivitas pengguna dalam sistem \\
+        10. & LogAktivitas & Menyimpan catatan aktivitas dan jejak audit pengguna dalam sistem \\
+        \hline
+        11. & AuthService & Menyediakan layanan autentikasi pengguna \\
+        \hline
+        12. & PeminjamanService & Menyediakan layanan pengelolaan logika bisnis peminjaman \\
+        \hline
+        13. & UserRepository & Menyediakan akses data pengguna ke basis data \\
+        \hline
+        14. & PeminjamanRepository & Menyediakan akses data peminjaman ke basis data \\
         \hline
     \end{tabular}
 \end{table}
@@ -524,7 +530,8 @@ Aspek validasi lapangan dimodelkan melalui kelas \textbf{KehadiranPeminjam}, yan
 
 
 
-Dengan adanya Class Diagram ini, struktur kelas dan hubungan antar komponen dalam Sistem Informasi Peminjaman Sarana dan Prasarana Kampus dapat dipahami secara jelas. Class Diagram ini menjadi acuan dalam proses implementasi sistem, khususnya dalam pembuatan model data, pengelolaan relasi antar entitas, serta penerapan logika bisnis sesuai dengan kebutuhan sistem.
+\newpage
+Pada lapisan layanan, AuthService berfungsi menangani proses autentikasi pengguna, sedangkan PeminjamanService mengelola logika bisnis peminjaman secara terstruktur. Akses dan pengelolaan data pada basis data difasilitasi oleh UserRepository dan PeminjamanRepository sebagai penghubung antara lapisan layanan dan penyimpanan data. Uraian fungsi dan peran setiap kelas dalam sistem disajikan secara ringkas pada Tabel \ref{tab:deskripsi_kelas} sebagai acuan pemahaman struktur kelas pada Class Diagram. Dengan struktur kelas dan relasi yang jelas, Class Diagram ini menjadi pedoman utama dalam proses implementasi sistem.
 
 
 \subsection{BPMN Diagram}
@@ -544,6 +551,7 @@ Selanjutnya, Sarpras melakukan \textit{review} pengajuan untuk menentukan perset
 
 Pada hari pelaksanaan, Security melakukan verifikasi kehadiran peminjam; jika peminjam hadir, sistem memperbarui status peminjaman menjadi ONGOING yang menandakan kegiatan berlangsung, sedangkan jika peminjam tidak hadir, sistem mencatat kondisi tersebut dan proses peminjaman dinyatakan selesai.
 
+\newpage
 \subsubsection{BPMN Verifikasi Peminjaman}
 BPMN Verifikasi Peminjaman menggambarkan alur pemeriksaan dan pengambilan keputusan terhadap pengajuan peminjaman sarana dan prasarana oleh pihak Sarpras. Proses dimulai ketika pengajuan peminjaman masuk ke dalam sistem, kemudian Sarpras melakukan login dan mengakses dashboard untuk meninjau serta memeriksa kelengkapan dan kebenaran data pengajuan, seperti identitas peminjam, jenis sarana atau prasarana, jadwal penggunaan, dan dokumen pendukung.
 
