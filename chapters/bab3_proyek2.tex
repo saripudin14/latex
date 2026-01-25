@@ -72,7 +72,7 @@ Proses pengembangan dilakukan secara iteratif dan inkremental dengan melibatkan 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/image2.png}
+    \includegraphics[width=0.6\textwidth]{gambar/media/diagram-scrum.png}
     \caption{Alur Metode Scrum}
     \label{fig:alur_scrum}
 \end{figure}
@@ -246,7 +246,7 @@ Perancangan sistem dilakukan sebagai tahap lanjutan dari hasil analisis kebutuha
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{gambar/media/usecase.png}
+    \includegraphics[width=0.8\textwidth]{gambar/media/Usecasenew.png}
     \caption{Usecase Diagram}
     \label{fig:usecase_diagram}
 \end{figure}
@@ -426,17 +426,17 @@ Sebaliknya, apabila data peminjaman tidak ditemukan atau tidak sesuai, sistem me
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{gambar/media/image10.png}
+    \includegraphics[width=0.9\textwidth]{gambar/media/erd.png}
     \caption{Entity Relationship Diagram}
     \label{fig:erd}
 \end{figure}
 
-Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis data serta hubungan antar entitas yang terlibat dalam Sistem Informasi Peminjaman Sarana dan Prasarana Kampus. Diagram ini memvisualisasikan bagaimana data pengguna, sarana prasarana, dan transaksi peminjaman saling terhubung satu sama lain untuk membentuk integritas sistem yang utuh.
 
-Dalam desain ERD ini, entitas `users` menyimpan informasi pengguna seperti nama, email, dan peran (role), serta terhubung dengan `organisasi` yang menaungi pengguna tersebut. Entitas `peminjaman` menjadi pusat transaksi yang menghubungkan `users` dengan `ruangan` dan `kegiatan`. Untuk mendukung detail peminjaman, terdapat entitas `peminjaman\_barang` yang mencatat item barang yang dipinjam dalam satu transaksi. Selain itu, sistem juga dilengkapi dengan entitas `kehadiran\_peminjam` untuk verifikasi kehadiran, serta `mailbox` dan `log\_aktivitas` yang berfungsi sebagai media notifikasi dan pencatatan jejak audit aktivitas pengguna.
+Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis data serta hubungan antar entitas dalam Sistem Informasi Peminjaman Sarana dan Prasarana Kampus. ERD ini memvisualisasikan keterkaitan data pengguna, organisasi, ruangan, barang, kegiatan, serta transaksi peminjaman sebagai satu kesatuan sistem yang terintegrasi. Pada desain ini, entitas organisasi berperan sebagai induk yang menaungi pengguna dan kegiatan, sedangkan entitas users menyimpan data pengguna sistem beserta peran (role) dan terhubung langsung dengan organisasi terkait.
 
-Desain ERD ini menjamin integritas data serta mendukung efisiensi operasi CRUD, proses verifikasi, dan pelaporan sistem. Penjelasan lebih rinci mengenai relasi antar entitas disajikan pada Tabel \ref{tab:relasi_entitas} sebagai acuan terhadap struktur hubungan data yang terbentuk. Dengan perancangan ERD yang terstruktur dan relasi yang jelas, Sistem Informasi Peminjaman Sarana dan Prasarana Kampus mampu mengelola data peminjaman secara terintegrasi dan konsisten, serta menjadi dasar utama dalam implementasi basis data pada tahap penerapan sistem.
+Entitas peminjaman menjadi pusat transaksi yang menghubungkan pengguna dengan ruangan dan kegiatan, serta menyimpan informasi waktu peminjaman, status, dan proses verifikasi. Untuk mendukung pencatatan detail barang yang dipinjam dalam satu transaksi, digunakan entitas peminjaman\_barang yang merepresentasikan relasi many-to-many antara peminjaman dan barang. Selain itu, sistem dilengkapi dengan entitas kehadiran\_peminjam untuk mencatat dan memverifikasi kehadiran peminjam oleh petugas berwenang.
 
+Sebagai pendukung pengelolaan sistem, entitas log\_aktivitas digunakan untuk mencatat aktivitas pengguna terkait peminjaman, sedangkan entitas mailbox berfungsi sebagai media notifikasi sistem. Dengan perancangan ERD yang terstruktur dan relasi antar entitas yang jelas sebagaimana ditunjukkan pada gambar ERD dan dirinci dalam Tabel \ref{tab:relasi_entitas}, sistem ini mampu menjaga integritas data serta mendukung efisiensi operasi CRUD, proses verifikasi, dan pelaporan sebagai dasar implementasi basis data.
 \begin{table}[htbp]
     \centering
     \caption{Relasi Antar Entitas}
