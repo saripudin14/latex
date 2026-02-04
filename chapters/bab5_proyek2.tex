@@ -1,17 +1,31 @@
 \chapter{KESIMPULAN DAN SARAN}
 
 \section{Kesimpulan}
-Berdasarkan hasil pengembangan dan pengujian sistem, dapat disimpulkan bahwa:
+Berdasarkan hasil perancangan, implementasi, dan pengujian yang telah dilakukan, penelitian ini menghasilkan beberapa kesimpulan utama sebagai berikut:
+
 \begin{enumerate}
-    \item Sistem informasi peminjaman sarana dan prasarana kampus berbasis web telah berhasil diimplementasikan menggunakan bahasa pemrograman Go, basis data PostgreSQL (Supabase), dan metode Scrum, yang mengintegrasikan proses pengajuan, verifikasi Admin Sarpras, hingga validasi kehadiran Security secara terkomputerisasi.
-    \item Fitur validasi jadwal berhasil mencegah bentrok peminjaman (\textit{double booking}) dan menyediakan kalender ketersediaan ruangan secara \textit{real-time} untuk pemantauan mahasiswa.
-    \item Pengujian Black Box menunjukkan seluruh fungsi sistem berjalan sesuai spesifikasi. Pengujian unit menghasilkan code coverage 31,9\%, dengan modul inti mencapai tingkat keterujian di atas 75\%.
+    \item \textbf{Implementasi Teknis dan Metodologi}
+    
+    Sistem informasi peminjaman sarana dan prasarana kampus berbasis web telah berhasil dibangun menggunakan bahasa pemrograman Go (Golang) untuk \textit{backend} dan PostgreSQL sebagai basis data, yang dikelola menggunakan metode pengembangan Scrum. Berdasarkan pengujian \textit{Black Box}, seluruh fungsi utama seperti autentikasi, pengajuan, dan verifikasi berjalan sesuai spesifikasi dengan tingkat keberhasilan (\textit{Pass}) 100\%, serta mencapai \textit{code coverage} di atas 75\% pada modul-modul inti layanan.
+
+    \item \textbf{Validasi Kehadiran Fisik (\textit{Physical Attendance Validation})}
+    
+    Penelitian ini menawarkan kebaruan (\textit{novelty}) melalui mekanisme validasi kehadiran fisik yang melibatkan petugas keamanan (Security) sebagai verifikator akhir. Fitur ini dirancang sebagai solusi teknis untuk mengatasi masalah \textit{capacity waste} (pemborosan kapasitas) pada sistem reservasi. Hal ini merespons isu yang diangkat oleh \textcite{Baron}, yang menyatakan bahwa tanpa intervensi terhadap perilaku strategis pengguna---seperti memesan namun tidak hadir---sistem layanan rentan mengalami inefisiensi sumber daya yang signifikan karena slot waktu terbuang sia-sia. Jika literatur terdahulu menyarankan intervensi berupa denda atau kebijakan, sistem ini menawarkan pendekatan intervensi fisik dan digital (\textit{closed-loop validation}) untuk memastikan akuntabilitas penggunaan fasilitas.
+
+    \item \textbf{Penjadwalan Tanpa Tumpang Tindih (\textit{Zero-Overlap Scheduling})}
+    
+    Validasi jadwal otomatis dalam sistem terbukti mampu mencegah terjadinya \textit{double-booking} (pemesanan ganda) secara sistematis. Fitur ini dirancang sebagai solusi teknis untuk mengeliminasi konflik jadwal yang menjadi kelemahan utama sistem pengelolaan fasilitas konvensional. Hal ini merespons temuan \textcite{Patel}, yang menyoroti bahwa sistem manual atau semi-digital sangat rentan terhadap inefisiensi operasional akibat \textit{human error}, konflik jadwal, dan kurangnya transparansi data. Jika sistem tradisional gagal menangani pembaruan waktu nyata (\textit{real-time updates}) yang menyebabkan ketidakpastian ketersediaan ruangan, sistem ini menawarkan mekanisme pencegahan konflik berbasis basis data yang menolak permintaan tumpang tindih secara instan, memastikan integritas data dan kepastian layanan bagi pengguna.
 \end{enumerate}
 
 \section{Saran}
-Untuk pengembangan selanjutnya, disarankan untuk:
+Berdasarkan keterbatasan penelitian saat ini dan potensi pengembangan di masa depan, disarankan beberapa hal berikut untuk meningkatkan dampak dan kualitas penelitian selanjutnya:
+
 \begin{enumerate}
-    \item Mengembangkan modul manajemen inventaris lanjutan yang mencakup monitoring kondisi aset (baik/rusak), pelacakan riwayat pemeliharaan, serta sistem penjadwalan \textit{maintenance} berkala untuk mendukung pengelolaan aset kampus yang lebih komprehensif.
-    \item Mengembangkan fitur lanjutan: integrasi notifikasi WhatsApp Gateway, visualisasi statistik peminjaman, dan modul pemantauan kondisi aset.
-    \item Menambahkan fitur evaluasi dan \textit{rating} kepuasan pengguna terhadap layanan peminjaman untuk mendukung peningkatan kualitas layanan secara berkelanjutan.
+    \item \textbf{Validasi Kehadiran Berbasis QR Code}
+    
+    Saat ini, validasi kehadiran dilakukan secara manual oleh petugas keamanan melalui pencarian data pada \textit{dashboard} web. Untuk pengembangan selanjutnya, disarankan untuk mengintegrasikan fitur \textit{QR Code Generator} dinamis sebagai tiket masuk digital yang dapat diakses melalui akun pengguna di portal web. Hal ini memungkinkan proses verifikasi yang lebih cepat melalui pemindaian kode tanpa memerlukan aplikasi \textit{mobile} terpisah, sehingga meminimalisir antrean fisik dan kesalahan manusia (\textit{human error}) di pos keamanan. Sejalan dengan saran \textcite{Patel}, pendekatan ini akan meningkatkan aksesibilitas pengguna dan efisiensi operasional sistem.
+
+    \item \textbf{Manajemen Inventaris Aset dan Mekanisme Pendisiplinan Pengguna}
+    
+    Disarankan untuk mengembangkan modul Pengelolaan Inventaris yang mencakup pemantauan kondisi aset (\textit{asset condition monitoring}) dan pelacakan riwayat pemeliharaan (\textit{maintenance tracking}) secara berkala, guna memastikan hanya aset dalam kondisi baik yang tersedia untuk dipinjam. Sistem juga perlu dilengkapi mekanisme penalti otomatis bagi pengguna yang melakukan pelanggaran seperti \textit{no-show} atau \textit{strategic double-booking}. \textcite{Baron} menekankan bahwa intervensi berupa pembatasan akses diperlukan untuk menjaga keadilan sistem dan mencegah pemborosan kapasitas layanan.
 \end{enumerate}
