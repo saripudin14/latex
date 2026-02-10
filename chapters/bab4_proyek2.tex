@@ -4,136 +4,136 @@
 
 \subsection{Perangkat Keras}
 Perangkat keras yang digunakan dalam implementasi sistem memiliki spesifikasi sebagai berikut:
-\begin{itemize}
+\begin{enumerate}
     \item Laptop: Lenovo LOQ 15 IRX9
     \item Prosesor: Intel Core i5-13450HX
     \item Kartu Grafis: NVIDIA GeForce RTX 3050 6GB GDDR6
     \item Memori: 20 GB DDR5 4800 MHz
     \item Penyimpanan Utama: NVMe SSD 512 GB PCIe Gen 4.0 x4
-\end{itemize}
-Spesifikasi perangkat keras tersebut dinilai telah memadai untuk menjalankan aplikasi backend, basis data, serta proses pengembangan dan pengujian sistem secara bersamaan tanpa mengalami kendala performa yang signifikan.
+\end{enumerate}
+Spesifikasi perangkat keras tersebut dinilai telah memadai untuk menjalankan aplikasi \textit{backend}, basis data, serta proses pengembangan dan pengujian sistem secara bersamaan tanpa mengalami kendala performa yang signifikan.
 
 \subsection{Perangkat Lunak}
-Perangkat lunak yang digunakan dalam implementasi sistem meliputi sistem operasi, bahasa pemrograman, basis data, serta berbagai tools pendukung pengembangan sebagai berikut:
+Perangkat lunak yang digunakan dalam implementasi sistem meliputi sistem operasi, bahasa pemrograman, basis data, serta berbagai \textit{tools} pendukung pengembangan sebagai berikut:
 \begin{enumerate}
     \item \textbf{Sistem Operasi}
-    \begin{itemize}
-        \item Windows 11 sebagai sistem operasi utama pengembangan
-    \end{itemize}
-    \item \textbf{Backend}
-    \begin{itemize}
-        \item Bahasa pemrograman Go versi 1.25.3
-        \item PostgreSQL sebagai sistem manajemen basis data relasional
-        \item Supabase sebagai platform hosting database dan penyimpanan file
-        \item Air sebagai development tool untuk hot reload selama pengembangan
-    \end{itemize}
+    \begin{enumerate}[label=(\alph*)]
+        \item \textit{Windows 11} sebagai sistem operasi utama pengembangan
+    \end{enumerate}
+    \item \textbf{\textit{Backend}}
+    \begin{enumerate}[label=(\alph*)]
+        \item Bahasa pemrograman \textit{Go} versi 1.25.3
+        \item \textit{PostgreSQL} sebagai sistem manajemen basis data relasional
+        \item \textit{Supabase} sebagai platform \textit{hosting database} dan penyimpanan \textit{file}
+        \item \textit{Air} sebagai \textit{development tool} untuk \textit{hot reload} selama pengembangan
+    \end{enumerate}
 
 \end{enumerate}
 \newpage
 \begin{enumerate}[resume]
-    \item \textbf{Frontend}
-    \begin{itemize}
-        \item HTML5 untuk struktur halaman web
-        \item CSS3 untuk pengaturan tampilan dan tata letak
-        \item JavaScript (Vanilla) untuk logika interaksi pengguna
-    \end{itemize}
-    \item \textbf{Library dan Dependency Backend}
-    \begin{itemize}
-        \item \texttt{github.com/golang-jwt/jwt/v5} untuk implementasi autentikasi berbasis JSON Web Token
-        \item \texttt{github.com/jackc/pgx/v5} sebagai driver PostgreSQL
+    \item \textbf{\textit{Frontend}}
+    \begin{enumerate}[label=(\alph*)]
+        \item \textit{HTML5} untuk struktur halaman \textit{web}
+        \item \textit{CSS3} untuk pengaturan tampilan dan tata letak
+        \item \textit{JavaScript} (\textit{Vanilla}) untuk logika interaksi pengguna
+    \end{enumerate}
+    \item \textbf{\textit{Library} dan \textit{Dependency Backend}}
+    \begin{enumerate}[label=(\alph*)]
+        \item \texttt{github.com/golang-jwt/jwt/v5} untuk implementasi autentikasi berbasis \textit{JSON Web Token}
+        \item \texttt{github.com/jackc/pgx/v5} sebagai \textit{driver} \textit{PostgreSQL}
         \item \texttt{golang.org/x/crypto/bcrypt} untuk enkripsi kata sandi
-        \item \texttt{github.com/joho/godotenv} untuk manajemen environment variables
-        \item \texttt{github.com/xuri/excelize/v2} untuk fitur ekspor laporan ke format Excel
-    \end{itemize}
+        \item \texttt{github.com/joho/godotenv} untuk manajemen \textit{environment variables}
+        \item \texttt{github.com/xuri/excelize/v2} untuk fitur ekspor laporan ke format \textit{Excel}
+    \end{enumerate}
 \end{enumerate}
 Pemilihan perangkat lunak tersebut didasarkan pada pertimbangan performa, keamanan, kemudahan pengembangan, serta dukungan komunitas yang baik, sehingga mendukung implementasi sistem secara efektif dan berkelanjutan.
 
 \section{Implementasi Desain Tampilan}
 
-\subsection{Halaman Utama (Guest)}
-Halaman Utama (Guest) merupakan halaman publik yang dapat diakses oleh pengguna tanpa melakukan login ke dalam sistem. Halaman ini berfungsi sebagai pusat informasi awal yang menampilkan ketersediaan sarana dan prasarana kampus secara umum, sehingga pengguna dapat memperoleh gambaran kondisi fasilitas sebelum mengajukan peminjaman.
+\subsection{Halaman Utama (\textit{Guest})}
+Halaman Utama (\textit{Guest}) merupakan halaman publik yang dapat diakses oleh pengguna tanpa melakukan \textit{login} ke dalam sistem. Halaman ini berfungsi sebagai pusat informasi awal yang menampilkan ketersediaan sarana dan prasarana kampus secara umum, sehingga pengguna dapat memperoleh gambaran kondisi fasilitas sebelum mengajukan peminjaman.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{gambar/media/image15.png}
-    \caption{Halaman Utama}
+    \caption{Tampilan Halaman Utama}
     \label{fig:halaman_utama}
 \end{figure}
 
-Pada halaman ini ditampilkan informasi berupa kalender aktivitas, jadwal peminjaman harian, daftar ruangan, serta inventaris barang yang tersedia. Seluruh informasi disajikan secara ringkas dan mudah dipahami untuk mendukung transparansi data peminjaman. Dengan adanya Halaman Utama ini, pengguna dapat memantau jadwal penggunaan fasilitas kampus secara efektif dan memperoleh informasi awal tanpa harus masuk ke dalam sistem.
+Pada Gambar \ref{fig:halaman_utama}, ditampilkan informasi berupa kalender aktivitas, jadwal peminjaman harian, daftar ruangan, serta inventaris barang yang tersedia. Seluruh informasi disajikan secara ringkas dan mudah dipahami untuk mendukung transparansi data peminjaman. Dengan adanya Halaman Utama ini, pengguna dapat memantau jadwal penggunaan fasilitas kampus secara efektif dan memperoleh informasi awal tanpa harus masuk ke dalam sistem.
 
-\subsection{Halaman Login}
-Halaman Login digunakan sebagai gerbang autentikasi bagi pengguna untuk dapat mengakses sistem sesuai dengan hak akses yang dimiliki. Pada halaman ini, pengguna diminta untuk memasukkan email dan kata sandi yang telah terdaftar sebagai proses verifikasi identitas sebelum masuk ke dalam sistem.
+\subsection{Halaman \textit{Login}}
+Halaman \textit{Login} digunakan sebagai gerbang autentikasi bagi pengguna untuk dapat mengakses sistem sesuai dengan hak akses yang dimiliki. Pada Gambar \ref{fig:halaman_login}, pengguna diminta untuk memasukkan \textit{email} dan kata sandi yang telah terdaftar sebagai proses verifikasi identitas sebelum masuk ke dalam sistem.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{gambar/media/image16.png}
-    \caption{Halaman Login}
+    \caption{Tampilan Halaman \textit{Login}}
     \label{fig:halaman_login}
 \end{figure}
 
-Sistem akan melakukan validasi terhadap data yang dimasukkan oleh pengguna. Apabila data yang diberikan valid, pengguna akan diarahkan ke dashboard sesuai dengan peran masing-masing, seperti mahasiswa, admin Sarpras, atau petugas security. Sebaliknya, jika data tidak valid, sistem akan menampilkan pesan kesalahan sebagai informasi kepada pengguna. Halaman Login dirancang dengan tampilan sederhana dan responsif guna memberikan kemudahan serta kenyamanan dalam proses autentikasi pengguna.
+Sistem akan melakukan validasi terhadap data yang dimasukkan oleh pengguna. Apabila data yang diberikan valid, pengguna akan diarahkan ke \textit{dashboard} sesuai dengan peran masing-masing, seperti mahasiswa, admin Sarpras, atau petugas \textit{security}. Sebaliknya, jika data tidak valid, sistem akan menampilkan pesan kesalahan sebagai informasi kepada pengguna. Halaman \textit{Login} dirancang dengan tampilan sederhana dan responsif guna memberikan kemudahan serta kenyamanan dalam proses autentikasi pengguna.
 
 \newpage
-\subsection{Halaman Register}
-Halaman Register digunakan oleh pengguna baru untuk melakukan pendaftaran akun sebelum dapat mengakses sistem. Pada halaman ini, pengguna diminta untuk mengisi data diri secara lengkap, seperti nama, email, kata sandi, identitas mahasiswa, serta informasi organisasi yang terkait dengan pengajuan peminjaman.
+\subsection{Halaman \textit{Register}}
+Halaman \textit{Register} digunakan oleh pengguna baru untuk melakukan pendaftaran akun sebelum dapat mengakses sistem. Pada Gambar \ref{fig:halaman_register}, pengguna diminta untuk mengisi data diri secara lengkap, seperti nama, \textit{email}, kata sandi, identitas mahasiswa, serta informasi organisasi yang terkait dengan pengajuan peminjaman.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{gambar/media/image17.png}
-    \caption{Halaman Register}
+    \caption{Tampilan Halaman \textit{Register}}
     \label{fig:halaman_register}
 \end{figure}
 
-Sistem melakukan validasi terhadap data yang dimasukkan untuk memastikan keakuratan dan kelengkapan informasi. Setelah proses pendaftaran berhasil, data pengguna akan disimpan ke dalam sistem dan akun dapat digunakan untuk melakukan login. Halaman Register dirancang agar mudah dipahami dan digunakan, sehingga proses pembuatan akun dapat dilakukan secara efektif dan efisien oleh pengguna.
+Sistem melakukan validasi terhadap data yang dimasukkan untuk memastikan keakuratan dan kelengkapan informasi. Setelah proses pendaftaran berhasil, data pengguna akan disimpan ke dalam sistem dan akun dapat digunakan untuk melakukan \textit{login}. Halaman \textit{Register} dirancang agar mudah dipahami dan digunakan, sehingga proses pembuatan akun dapat dilakukan secara efektif dan efisien oleh pengguna.
 
-\subsection{Dashboard Mahasiswa}
-Dashboard Mahasiswa merupakan halaman utama yang diakses oleh mahasiswa setelah berhasil melakukan login ke dalam sistem. Halaman ini berfungsi sebagai pusat informasi dan aktivitas mahasiswa dalam proses peminjaman sarana dan prasarana kampus.
+\subsection{\textit{Dashboard} Mahasiswa}
+\textit{Dashboard} Mahasiswa merupakan halaman utama yang diakses oleh mahasiswa setelah berhasil melakukan \textit{login} ke dalam sistem. Halaman ini berfungsi sebagai pusat informasi dan aktivitas mahasiswa dalam proses peminjaman sarana dan prasarana kampus.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{gambar/media/image18.png}
-    \caption{Dashboard Mahasiswa}
+    \caption{Tampilan \textit{Dashboard} Mahasiswa}
     \label{fig:dashboard_mahasiswa}
 \end{figure}
 
-Pada dashboard ini ditampilkan ringkasan informasi peminjaman, kalender jadwal penggunaan fasilitas, serta agenda harian yang berkaitan dengan peminjaman yang diajukan. Selain itu, mahasiswa dapat mengakses fitur utama seperti pengajuan peminjaman, melihat status dan riwayat peminjaman, serta memantau jadwal penggunaan sarana dan prasarana. Dashboard Mahasiswa dirancang untuk memudahkan pengguna dalam memantau dan mengelola aktivitas peminjaman secara terstruktur dan efisien.
+Pada Gambar \ref{fig:dashboard_mahasiswa}, ditampilkan ringkasan informasi peminjaman, kalender jadwal penggunaan fasilitas, serta agenda harian yang berkaitan dengan peminjaman yang diajukan. Selain itu, mahasiswa dapat mengakses fitur utama seperti pengajuan peminjaman, melihat status dan riwayat peminjaman, serta memantau jadwal penggunaan sarana dan prasarana. \textit{Dashboard} Mahasiswa dirancang untuk memudahkan pengguna dalam memantau dan mengelola aktivitas peminjaman secara terstruktur dan efisien.
 
-\subsection{Form Pengajuan Peminjaman}
-Form Pengajuan Peminjaman digunakan oleh mahasiswa untuk mengajukan peminjaman sarana dan prasarana kampus melalui sistem. Pada halaman ini, mahasiswa mengisi data pengajuan yang meliputi informasi kegiatan, pilihan ruangan dan/atau barang yang akan dipinjam, jadwal penggunaan, serta dokumen pendukung peminjaman.
+\subsection{\textit{Form} Pengajuan Peminjaman}
+\textit{Form} Pengajuan Peminjaman digunakan oleh mahasiswa untuk mengajukan peminjaman sarana dan prasarana kampus melalui sistem. Pada Gambar \ref{fig:form_pengajuan}, mahasiswa mengisi data pengajuan yang meliputi informasi kegiatan, pilihan ruangan dan/atau barang yang akan dipinjam, jadwal penggunaan, serta dokumen pendukung peminjaman.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{gambar/media/image19.png}
-    \caption{Form Pengajuan}
+    \caption{Tampilan \textit{Form} Pengajuan}
     \label{fig:form_pengajuan}
 \end{figure}
 
-Sistem akan melakukan validasi terhadap data yang dimasukkan sebelum pengajuan diproses. Setelah pengajuan dikirim, data akan disimpan dalam sistem dan menunggu proses verifikasi oleh pihak Sarpras. Form ini dirancang secara terstruktur dan mudah digunakan untuk membantu mahasiswa dalam menyampaikan pengajuan peminjaman secara jelas dan terdokumentasi dengan baik.
+Sistem akan melakukan validasi terhadap data yang dimasukkan sebelum pengajuan diproses. Setelah pengajuan dikirim, data akan disimpan dalam sistem dan menunggu proses verifikasi oleh pihak Sarpras. \textit{Form} ini dirancang secara terstruktur dan mudah digunakan untuk membantu mahasiswa dalam menyampaikan pengajuan peminjaman secara jelas dan terdokumentasi dengan baik.
 
-\subsection{Dashboard Sarpras}
-Dashboard Sarpras merupakan halaman utama yang digunakan oleh pihak Sarana dan Prasarana untuk mengelola dan memantau seluruh proses peminjaman dalam sistem. Halaman ini menampilkan ringkasan informasi pengajuan peminjaman, khususnya pengajuan yang masih menunggu proses verifikasi.
+\subsection{\textit{Dashboard} Sarpras}
+\textit{Dashboard} Sarpras merupakan halaman utama yang digunakan oleh pihak Sarana dan Prasarana untuk mengelola dan memantau seluruh proses peminjaman dalam sistem. Halaman ini menampilkan ringkasan informasi pengajuan peminjaman, khususnya pengajuan yang masih menunggu proses verifikasi.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{gambar/media/image20.png}
-    \caption{Dashboard Sarpras}
+    \caption{Tampilan \textit{Dashboard} Sarpras}
     \label{fig:dashboard_sarpras}
 \end{figure}
 
-Melalui Dashboard Sarpras, admin dapat mengakses fitur manajemen data sarana dan prasarana, melakukan verifikasi pengajuan peminjaman, serta memantau jadwal penggunaan fasilitas kampus. Dashboard ini dirancang untuk membantu pihak Sarpras dalam menjalankan tugas pengelolaan peminjaman secara terpusat, efisien, dan terkontrol.
+Melalui \textit{Dashboard} Sarpras pada Gambar \ref{fig:dashboard_sarpras}, admin dapat mengakses fitur manajemen data sarana dan prasarana, melakukan verifikasi pengajuan peminjaman, serta memantau jadwal penggunaan fasilitas kampus. \textit{Dashboard} ini dirancang untuk membantu pihak Sarpras dalam menjalankan tugas pengelolaan peminjaman secara terpusat, efisien, dan terkontrol.
 
-\subsection{Form Verifikasi Peminjaman}
-Form Verifikasi Peminjaman digunakan oleh pihak Sarpras untuk melakukan pemeriksaan dan pengambilan keputusan terhadap pengajuan peminjaman yang diajukan oleh mahasiswa. Pada halaman ini, Sarpras dapat melihat daftar pengajuan yang menunggu verifikasi beserta detail informasi peminjaman yang diajukan.
+\subsection{\textit{Form} Verifikasi Peminjaman}
+\textit{Form} Verifikasi Peminjaman digunakan oleh pihak Sarpras untuk melakukan pemeriksaan dan pengambilan keputusan terhadap pengajuan peminjaman yang diajukan oleh mahasiswa. Pada Gambar \ref{fig:form_verifikasi_peminjaman}, Sarpras dapat melihat daftar pengajuan yang menunggu verifikasi beserta detail informasi peminjaman yang diajukan.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{gambar/media/image21.png}
-    \caption{Form Verifikasi Peminjaman}
+    \caption{Tampilan \textit{Form} Verifikasi Peminjaman}
     \label{fig:form_verifikasi_peminjaman}
 \end{figure}
 
-Berdasarkan hasil pemeriksaan data dan dokumen pendukung, Sarpras dapat memberikan keputusan berupa persetujuan atau penolakan pengajuan peminjaman. Setiap keputusan yang diambil akan dicatat oleh sistem dan disampaikan kepada mahasiswa melalui notifikasi sebagai informasi hasil verifikasi. Form ini dirancang untuk mendukung proses verifikasi peminjaman secara sistematis, transparan, dan terdokumentasi.
+Berdasarkan hasil pemeriksaan data dan dokumen pendukung, Sarpras dapat memberikan keputusan berupa persetujuan atau penolakan pengajuan peminjaman. Setiap keputusan yang diambil akan dicatat oleh sistem dan disampaikan kepada mahasiswa melalui notifikasi sebagai informasi hasil verifikasi. \textit{Form} ini dirancang untuk mendukung proses verifikasi peminjaman secara sistematis, transparan, dan terdokumentasi.
 
 \subsection{Halaman Laporan Peminjaman}
 Halaman Laporan Peminjaman digunakan oleh pihak Sarpras untuk melihat rekapitulasi data peminjaman sarana dan prasarana yang tersimpan dalam sistem. Halaman ini menyajikan informasi peminjaman secara terstruktur sehingga memudahkan proses pemantauan dan evaluasi.
@@ -141,42 +141,42 @@ Halaman Laporan Peminjaman digunakan oleh pihak Sarpras untuk melihat rekapitula
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{gambar/media/image22.png}
-    \caption{Halaman Laporan Peminjaman}
+    \caption{Tampilan Halaman Laporan Peminjaman}
     \label{fig:halaman_laporan_peminjaman}
 \end{figure}
 
 \newpage
-Pada halaman ini, pengguna dapat melakukan penyaringan data berdasarkan periode waktu dan status peminjaman. Data laporan dapat digunakan sebagai bahan dokumentasi dan pendukung dalam penyusunan laporan administrasi. Halaman Laporan Peminjaman dirancang untuk membantu pihak Sarpras dalam memperoleh informasi peminjaman secara akurat dan sistematis.
+Pada Gambar \ref{fig:halaman_laporan_peminjaman}, pengguna dapat melakukan penyaringan data berdasarkan periode waktu dan status peminjaman. Data laporan dapat digunakan sebagai bahan dokumentasi dan pendukung dalam penyusunan laporan administrasi. Halaman Laporan Peminjaman dirancang untuk membantu pihak Sarpras dalam memperoleh informasi peminjaman secara akurat dan sistematis.
 
-\subsection{Dashboard Security}
-Dashboard Security merupakan halaman utama yang digunakan oleh petugas keamanan untuk memantau dan memverifikasi kehadiran peminjam sarana dan prasarana kampus. Halaman ini menampilkan daftar jadwal peminjaman yang berlangsung pada hari berjalan beserta status verifikasi kehadiran peminjam.
+\subsection{\textit{Dashboard} \textit{Security}}
+\textit{Dashboard} \textit{Security} merupakan halaman utama yang digunakan oleh petugas keamanan untuk memantau dan memverifikasi kehadiran peminjam sarana dan prasarana kampus. Halaman ini menampilkan daftar jadwal peminjaman yang berlangsung pada hari berjalan beserta status verifikasi kehadiran peminjam.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{gambar/media/image23.png}
-    \caption{Dashboard Security}
+    \caption{Tampilan \textit{Dashboard} \textit{Security}}
     \label{fig:dashboard_security}
 \end{figure}
 
-Melalui Dashboard Security, petugas dapat melakukan pengecekan kehadiran peminjam berdasarkan jadwal yang telah disetujui serta mencatat hasil verifikasi ke dalam sistem. Dashboard ini dirancang untuk mendukung proses pengawasan penggunaan fasilitas kampus agar sesuai dengan jadwal dan ketentuan yang telah ditetapkan.
+Melalui \textit{Dashboard} \textit{Security} pada Gambar \ref{fig:dashboard_security}, petugas dapat melakukan pengecekan kehadiran peminjam berdasarkan jadwal yang telah disetujui serta mencatat hasil verifikasi ke dalam sistem. \textit{Dashboard} ini dirancang untuk mendukung proses pengawasan penggunaan fasilitas kampus agar sesuai dengan jadwal dan ketentuan yang telah ditetapkan.
 
 \newpage
-\subsection{Form Verifikasi Kehadiran}
-Form Verifikasi Kehadiran digunakan oleh petugas security untuk mencatat dan memverifikasi kehadiran peminjam pada saat penggunaan sarana dan prasarana kampus. Pada halaman ini, petugas dapat melihat detail jadwal peminjaman yang sedang berlangsung serta melakukan konfirmasi kehadiran peminjam sesuai dengan data yang tercatat dalam sistem.
+\subsection{\textit{Form} Verifikasi Kehadiran}
+\textit{Form} Verifikasi Kehadiran digunakan oleh petugas \textit{security} untuk mencatat dan memverifikasi kehadiran peminjam pada saat penggunaan sarana dan prasarana kampus. Pada Gambar \ref{fig:form_verifikasi_kehadiran}, petugas dapat melihat detail jadwal peminjaman yang sedang berlangsung serta melakukan konfirmasi kehadiran peminjam sesuai dengan data yang tercatat dalam sistem.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{gambar/media/image24.png}
-    \caption{Form Verifikasi Kehadiran}
+    \caption{Tampilan \textit{Form} Verifikasi Kehadiran}
     \label{fig:form_verifikasi_kehadiran}
 \end{figure}
 
-Hasil verifikasi kehadiran akan disimpan dan terdokumentasi sebagai bagian dari riwayat peminjaman. Form ini dirancang untuk memastikan penggunaan sarana dan prasarana sesuai dengan jadwal yang telah disetujui serta mendukung pengawasan dan pengendalian fasilitas kampus secara tertib dan terstruktur.
+Hasil verifikasi kehadiran akan disimpan dan terdokumentasi sebagai bagian dari riwayat peminjaman. \textit{Form} ini dirancang untuk memastikan penggunaan sarana dan prasarana sesuai dengan jadwal yang telah disetujui serta mendukung pengawasan dan pengendalian fasilitas kampus secara tertib dan terstruktur.
 
 \section{Pengujian}
 
-\subsection{Pengujian Black Box}
-Pengujian Black Box dilakukan dengan memvalidasi input dan output sistem tanpa melihat struktur internal kode. Pengujian mencakup modul autentikasi, master data, peminjaman, kehadiran, notifikasi, RBAC, serta pengujian antarmuka pengguna (UI). Detail skenario dan hasil pengujian disajikan pada Tabel \ref{tab:pengujian_aplikasi}. Berdasarkan hasil pengujian tersebut, seluruh skenario uji berhasil dijalankan dengan status PASS.
+\subsection{Pengujian \textit{Black Box}}
+Pengujian \textit{Black Box} dilakukan dengan memvalidasi \textit{input} dan \textit{output} sistem tanpa melihat struktur internal kode. Pengujian mencakup modul autentikasi, \textit{master data}, peminjaman, kehadiran, notifikasi, \textit{RBAC}, serta pengujian antarmuka pengguna (\textit{UI}). Detail skenario dan hasil pengujian disajikan pada Tabel \ref{tab:pengujian_aplikasi}. Berdasarkan hasil pengujian tersebut, seluruh skenario uji berhasil dijalankan dengan status \textit{PASS}.
 
 \begin{table}[H]
     \centering
@@ -186,25 +186,25 @@ Pengujian Black Box dilakukan dengan memvalidasi input dan output sistem tanpa m
         \hline
         No. & Modul/Fitur & Skenario Uji & Hasil Yang Diharapkan & Hasil Uji \\
         \hline
-        1. & Login & Input email \& password valid & Masuk dashboard sesuai role & Passed \\
+        1. & \textit{Login} & \textit{Input email} \& \textit{password} valid & Masuk \textit{dashboard} sesuai \textit{role} & \textit{Passed} \\
         \hline
-        2. & Login & Input password salah & Pesan error muncul & Passed \\
+        2. & \textit{Login} & \textit{Input password} salah & Pesan \textit{error} muncul & \textit{Passed} \\
         \hline
-        3. & Register & Data valid & Akun berhasil dibuat & Passed \\
+        3. & \textit{Register} & Data valid & Akun berhasil dibuat & \textit{Passed} \\
         \hline
-        4. & Pengajuan Peminjaman & Data lengkap & Status PENDING & Passed \\
+        4. & Pengajuan Peminjaman & Data lengkap & Status \textit{PENDING} & \textit{Passed} \\
         \hline
-        5. & Verifikasi Peminjaman & Approve data & Status APPROVED & Passed \\
+        5. & Verifikasi Peminjaman & \textit{Approve} data & Status \textit{APPROVED} & \textit{Passed} \\
         \hline
-        6. & Pembatalan Peminjaman & Klik batal & Status CANCELED & Passed \\
+        6. & Pembatalan Peminjaman & Klik batal & Status \textit{CANCELED} & \textit{Passed} \\
         \hline
-        7. & Kehadiran & Input kehadiran & Data tersimpan & Passed \\
+        7. & Kehadiran & \textit{Input} kehadiran & Data tersimpan & \textit{Passed} \\
         \hline
-        8. & RBAC & Akses tanpa hak & Akses ditolak & Passed \\
+        8. & \textit{RBAC} & Akses tanpa hak & Akses ditolak & \textit{Passed} \\
         \hline
-        9. & Notifikasi & Aksi peminjaman & Notifikasi muncul & Passed \\
+        9. & Notifikasi & Aksi peminjaman & Notifikasi muncul & \textit{Passed} \\
         \hline
-        10. & Logout & Klik logout & Kembali ke halaman dashboard guest & Passed \\
+        10. & \textit{Logout} & Klik \textit{logout} & Kembali ke halaman \textit{dashboard} \textit{guest} & \textit{Passed} \\
         \hline
     \end{tabularx}
 \end{table}
@@ -212,45 +212,45 @@ Pengujian Black Box dilakukan dengan memvalidasi input dan output sistem tanpa m
 
 Berdasarkan tabel di atas, dapat disimpulkan bahwa seluruh fungsi sistem telah berjalan sesuai dengan spesifikasi dan tidak ditemukan kegagalan pada proses pengujian fungsional.
 
-\subsection{Pengujian Code Coverage}
-Pengujian code coverage dilakukan untuk mengukur sejauh mana kode program backend Sistem Informasi Peminjaman Sarana dan Prasarana Kampus telah dieksekusi selama proses unit testing. Pengujian difokuskan pada layer service yang merepresentasikan logika bisnis utama sistem.
+\subsection{Pengujian \textit{Code Coverage}}
+Pengujian \textit{code coverage} menggunakan \texttt{go test} dilakukan untuk mengukur sejauh mana kode program \textit{backend} Sistem Informasi Peminjaman Sarana dan Prasarana Kampus telah dieksekusi selama proses \textit{unit testing}. Pengujian difokuskan pada \textit{layer service} yang merepresentasikan logika bisnis utama sistem.
 
-Hasil pengujian menunjukkan nilai code coverage sebesar 31,9\%. Nilai ini dipengaruhi oleh beberapa fungsi yang tidak dilakukan pengujian unit secara langsung, seperti konstruktor service, fungsi pengiriman email, serta ekspor data ke format Excel yang bergantung pada layanan eksternal dan file system.
+Hasil pengujian menunjukkan nilai \textit{code coverage} sebesar 31,9\%. Nilai ini dipengaruhi oleh beberapa fungsi yang tidak dilakukan pengujian unit secara langsung, seperti konstruktor \textit{service}, fungsi pengiriman \textit{email}, serta ekspor data ke format \textit{Excel} yang bergantung pada layanan eksternal dan \textit{file system}.
     
 \newpage
-Sementara itu, fungsi utama sistem seperti autentikasi pengguna, pengajuan peminjaman, verifikasi peminjaman, pembatalan peminjaman, dan pencatatan kehadiran telah diuji dengan tingkat coverage di atas 75\%, sehingga dapat disimpulkan bahwa logika bisnis inti sistem telah berjalan dengan baik dan sesuai kebutuhan fungsional. Rincian persentase coverage untuk masing-masing service disajikan pada Tabel \ref{tab:hasil_code_coverage}.
+Sementara itu, fungsi utama sistem seperti autentikasi pengguna, pengajuan peminjaman, verifikasi peminjaman, pembatalan peminjaman, dan pencatatan kehadiran telah diuji dengan tingkat \textit{coverage} di atas 75\%, sehingga dapat disimpulkan bahwa logika bisnis inti sistem telah berjalan dengan baik dan sesuai kebutuhan fungsional. Rincian persentase \textit{coverage} untuk masing-masing \textit{service} disajikan pada Tabel \ref{tab:hasil_code_coverage}.
 
 \begin{table}[htbp]
     \centering
-    \caption{Ringkasan Hasil Code Coverage Backend}
+    \caption{Ringkasan Hasil \textit{Code Coverage Backend}}
     \label{tab:hasil_code_coverage}
     \begin{tabularx}{\textwidth}{|c|l|X|c|}
         \hline
         No & Service & Fungsi Utama & Coverage (\%) \\
         \hline
-        1 & Auth Service & Login, Register & 75 -- 100 \\
+        1 & \textit{Auth Service} & \textit{Login}, \textit{Register} & 75 -- 100 \\
         \hline
-        2 & Code Generator & generateCode & 100 \\
+        2 & \textit{Code Generator} & \textit{generateCode} & 100 \\
         \hline
-        3 & Kehadiran Service & CreateKehadiran & 88.2 \\
+        3 & \textit{Kehadiran Service} & \textit{CreateKehadiran} & 88.2 \\
         \hline
-        4 & Peminjaman Service & Create, Verifikasi, Cancel & 76.9 -- 87.5 \\
+        4 & \textit{Peminjaman Service} & \textit{Create}, \textit{Verifikasi}, \textit{Cancel} & 76.9 -- 87.5 \\
         \hline
-        5 & Export Service & Generate Excel & 0 \\
+        5 & \textit{Export Service} & \textit{Generate Excel} & 0 \\
         \hline
-        6 & Email Service & Kirim Notifikasi & 0 \\
+        6 & \textit{Email Service} & Kirim Notifikasi & 0 \\
         \hline
-        \multicolumn{3}{|c|}{\textbf{Total Coverage}} & \textbf{31.9} \\
+        \multicolumn{3}{|c|}{\textbf{Total \textit{Coverage}}} & \textbf{31.9} \\
         \hline
     \end{tabularx}
 \end{table}
 
-Hasil visual pengujian Code Coverage disajikan dalam bentuk laporan HTML dan dilampirkan pada bagian Lampiran Code Coverage sebagai bukti pendukung.
+Hasil visual pengujian \textit{Code Coverage} disajikan dalam bentuk laporan \textit{HTML} dan dilampirkan pada bagian Lampiran \textit{Code Coverage} sebagai bukti pendukung.
 
-\section{Repository GitHub Project}
-Repository GitHub digunakan sebagai media penyimpanan dan pengelolaan source code dalam pengembangan Sistem Informasi Peminjaman Sarana dan Prasarana Kampus. Repository ini mendukung pengendalian versi dan dokumentasi selama proses pengembangan. Struktur repository dipisahkan antara backend dan frontend untuk memudahkan pengelolaan kode. Repository proyek dapat diakses melalui:
-\begin{itemize}
+\section{\textit{Repository GitHub Project}}
+\textit{Repository GitHub} digunakan sebagai media penyimpanan dan pengelolaan \textit{source code} dalam pengembangan Sistem Informasi Peminjaman Sarana dan Prasarana Kampus. \textit{Repository} ini mendukung pengendalian versi dan dokumentasi selama proses pengembangan. Struktur \textit{repository} dipisahkan antara \textit{backend} dan \textit{frontend} untuk memudahkan pengelolaan kode. \textit{Repository} proyek dapat diakses melalui:
+\begin{enumerate}[label=(\alph*)]
     \item \url{https://github.com/ditverse/proyek-2-backend}
     \item \url{https://github.com/ditverse/proyek-2-frontend}
-\end{itemize}
-Penggunaan GitHub membantu memastikan proses pengembangan sistem berjalan secara terstruktur dan terdokumentasi dengan baik.
+\end{enumerate}
+Penggunaan \textit{GitHub} membantu memastikan proses pengembangan sistem berjalan secara terstruktur dan terdokumentasi dengan baik.

@@ -4,38 +4,53 @@
 \sloppy
 
 \section{Deskripsi Aplikasi}
-Transformasi digital telah menjadi kebutuhan strategis bagi institusi pendidikan tinggi dalam meningkatkan efisiensi operasional dan kualitas layanan akademik \parencite{Ramdany2024}. Konsep \textit{smart campus} yang memanfaatkan teknologi informasi seperti \textit{cloud computing}, \textit{big data}, dan infrastruktur jaringan terintegrasi, menawarkan peluang untuk mengoptimalkan berbagai aspek pengelolaan kampus \parencite{Nachandiya2018}. Sarana dan prasarana merupakan komponen pendukung utama kegiatan akademik dan non-akademik, sehingga pengelolaannya perlu dilakukan secara terencana dan terdokumentasi. Namun, pada banyak institusi pendidikan, pengelolaan dan peminjaman fasilitas masih dilakukan secara manual atau menggunakan media pencatatan terpisah seperti \textit{Microsoft Excel}, yang berpotensi menimbulkan kesulitan pencarian data, keterlambatan laporan, serta rendahnya efisiensi kerja pengelola \parencite{PutriNabella2025}.
+Perkembangan teknologi informasi telah mendorong institusi pendidikan tinggi untuk melakukan transformasi digital dalam pengelolaan sumber daya kampus, termasuk sarana dan prasarana \parencite{Ramdany2024}. Pada praktiknya, proses peminjaman sarana dan prasarana di banyak perguruan tinggi masih dilakukan secara manual atau semi-digital, seperti pencatatan berbasis formulir, \textit{spreadsheet} terpisah, atau komunikasi tidak terintegrasi \parencite{PutriNabella2025}. Kondisi ini menimbulkan berbagai permasalahan, antara lain keterlambatan proses, redundansi data, dan potensi bentrok jadwal peminjaman \parencite{Purwati2022}, serta rendahnya akurasi informasi yang menyulitkan pelaporan dan evaluasi secara \textit{real-time} \parencite{Velasquez-Jimenez2025}.
 
-Perkembangan teknologi informasi mendorong penerapan sistem informasi berbasis web sebagai solusi atas permasalahan tersebut. Sistem berbasis web memungkinkan pengelolaan data secara terpusat, mudah diakses, serta mendukung proses pengajuan, pencatatan, dan pelaporan peminjaman fasilitas secara lebih efektif dan terstruktur \parencite{Purwati2022}. Penyajian informasi peminjaman secara \textit{real-time} dapat meminimalkan kesalahan informasi dan bentrok jadwal penggunaan fasilitas kampus \parencite{Herlambang2020}. Integrasi data dan otomatisasi proses dalam sistem informasi juga terbukti memberikan manfaat signifikan terhadap efisiensi operasional dan peningkatan kualitas layanan \parencite{Ramdany2024}.
+Sejalan dengan \textit{state of the art} pengembangan sistem informasi basis web, pendekatan iteratif dan adaptif menjadi kebutuhan utama agar sistem dapat berkembang sesuai kebutuhan pengguna yang dinamis. Metode \textit{Scrum}, sebagai salah satu kerangka kerja \textit{Agile}, banyak digunakan dalam pengembangan perangkat lunak modern karena kemampuannya dalam meningkatkan kolaborasi tim \parencite{Nugraha2021}. Selain itu, metode ini dipilih karena menawarkan fleksibilitas terhadap perubahan kebutuhan \parencite{Rifky2022}, serta memfasilitasi percepatan siklus pengembangan \parencite{permana2015scrum}. Namun, penerapan \textit{Scrum} pada pengembangan sistem informasi peminjaman sarana dan prasarana kampus masih memiliki tantangan tersendiri, terutama terkait adaptasi proses di dalam organisasi \parencite{Putrianasari2024}.
 
-Berdasarkan kondisi tersebut, dikembangkan Sistem Informasi Peminjaman Sarana dan Prasarana Kampus Berbasis Web menggunakan CRUD RDBMS sebagai solusi terintegrasi dalam pengelolaan peminjaman fasilitas. Sistem ini dirancang untuk mendukung proses pengajuan, persetujuan, serta pendokumentasian peminjaman secara efektif, transparan, dan akuntabel.
+Di sisi lain, sistem informasi peminjaman yang efisien membutuhkan perancangan basis data yang baik untuk menjamin konsistensi dan keandalan data. Penerapan teknik normalisasi basis data menjadi aspek penting dalam meminimalkan redundansi serta meningkatkan efisiensi penyimpanan dan pemrosesan data \parencite{Purwati2022}. Selain itu, kualitas sistem yang dikembangkan perlu dievaluasi secara sistematis, misalnya melalui metode \textit{black box testing} untuk memastikan fungsionalitas sistem sesuai kebutuhan pengguna \parencite{Suwirmayanti2020}, serta pengukuran kinerja untuk menilai keandalan teknis sistem \parencite{Pratama2025}.
 
 \newpage
 
+Sebagai solusi atas permasalahan tersebut, penelitian ini mengusulkan pengembangan sistem informasi peminjaman sarana dan prasarana kampus berbasis web yang dirancang menggunakan metode \textit{Scrum}, menerapkan konsep \textit{CRUD} terintegrasi berbasis RDBMS, serta mendukung pemrosesan data secara \textit{real-time}. Sistem ini dirancang dengan struktur basis data yang ternormalisasi untuk menjaga integritas data dan diuji secara menyeluruh menggunakan pendekatan \textit{black box testing} untuk menjamin kualitas fungsionalnya \parencite{PutriNabella2025}.
+
+Berbeda dengan sebagian besar penelitian sebelumnya yang memfokuskan sistem peminjaman sarana dan prasarana pada interaksi administratif antara pengguna dan pengelola, seperti pada sistem manajemen aset sekolah \parencite{PutriNabella2025} maupun sistem manajemen ruang rapat \parencite{Herlambang2020}, penelitian ini juga mengintegrasikan peran petugas keamanan (security) sebagai aktor sistem untuk melakukan validasi kehadiran peminjam secara langsung di lapangan. Integrasi ini memungkinkan sistem tidak hanya mencatat dan menyetujui peminjaman secara digital, tetapi juga memastikan kesesuaian antara jadwal peminjaman pada sistem dengan penggunaan sarana secara aktual guna meminimalkan risiko ketidakakuratan data dan konflik jadwal \parencite{Purwati2022}. Pendekatan ini bertujuan untuk menghilangkan celah verifikasi operasional (operational blind spot) yang sering terjadi pada sistem peminjaman konvensional, serta memperkuat pengendalian pemanfaatan sarana dan prasarana kampus secara menyeluruh \parencite{Ramdany2024}.
+
+Kontribusi utama dari penelitian ini meliputi: (1) penyajian implementasi metode \textit{Scrum} secara sistematis dalam pengembangan sistem informasi peminjaman sarana dan prasarana kampus berbasis web yang terintegrasi dengan validasi administratif dan lapangan; (2) perancangan dan implementasi sistem \textit{CRUD} terintegrasi dan \textit{real-time} yang mendukung efisiensi operasional dengan pendekatan \textit{green computing}; (3) perancangan struktur basis data ternormalisasi untuk meminimalkan redundansi dan meningkatkan kualitas pengelolaan data; serta (4) evaluasi kualitas sistem melalui kombinasi pengujian fungsional dan pengukuran \textit{code coverage}. Diharapkan hasil penelitian ini dapat menjadi referensi dan solusi praktis bagi institusi pendidikan dalam mengembangkan sistem pengelolaan sarana dan prasarana kampus yang efektif, efisien, dan berkelanjutan.
+
 \section{Rumusan Masalah}
-Berdasarkan latar belakang yang telah diuraikan sebelumnya, maka permasalahan dalam Proyek II ini dapat dirumuskan dalam bentuk pertanyaan sebagai berikut:
+Berdasarkan latar belakang permasalahan yang telah diuraikan pada bagian sebelumnya, pengelolaan peminjaman sarana dan prasarana kampus masih menghadapi berbagai kendala, seperti proses yang belum terintegrasi, potensi redundansi data, keterbatasan pemantauan peminjaman secara \textit{real-time}, serta belum optimalnya penerapan metode pengembangan dan pengujian sistem yang sistematis. Oleh karena itu, diperlukan suatu sistem informasi berbasis web yang dirancang dengan pendekatan pengembangan yang adaptif, efisien, dan berorientasi pada kualitas sistem.
+
+Adapun rumusan masalah dalam penelitian ini adalah sebagai berikut:
 \begin{enumerate}
-    \item Bagaimana merancang sistem informasi berbasis web yang mampu mengelola proses peminjaman sarana dan prasarana kampus secara efektif, terintegrasi, dan terkomputerisasi?
-    \item Bagaimana menyediakan mekanisme pengajuan dan pemantauan status peminjaman sarana dan prasarana kampus yang mudah diakses oleh mahasiswa secara real-time?
-    \item Bagaimana sistem informasi dapat meminimalkan terjadinya bentrok jadwal peminjaman serta mendukung pengelolaan data peminjaman yang terdokumentasi dengan baik untuk keperluan pelaporan dan evaluasi?
+    \item Bagaimana penerapan metode \textit{Scrum} dalam perancangan dan pengembangan sistem informasi peminjaman sarana dan prasarana kampus berbasis web?
+    \item Bagaimana perancangan dan implementasi sistem informasi peminjaman sarana dan prasarana kampus berbasis web menggunakan \textit{CRUD} terintegrasi dan \textit{real-time} dengan penerapan \textit{green computing} untuk meningkatkan efisiensi sistem?
+    
+
+    \item Bagaimana merancang struktur basis data menggunakan teknik normalisasi untuk meminimalkan redundansi data pada sistem informasi peminjaman sarana dan prasarana kampus?
+    \item Bagaimana penerapan metode pengujian \textit{black box testing} dan pengukuran \textit{code coverage} dalam mengevaluasi kualitas sistem?
 \end{enumerate}
 
 \section{Tujuan}
-Berdasarkan rumusan masalah yang telah diuraikan sebelumnya, maka tujuan dari pelaksanaan Proyek II ini adalah sebagai berikut:
+Tujuan dari penelitian ini adalah untuk merancang, mengembangkan, dan mengevaluasi sistem informasi peminjaman sarana dan prasarana kampus berbasis web yang efektif, efisien, dan berkualitas melalui penerapan metode pengembangan dan pengujian sistem yang sistematis.
+
+Secara khusus, tujuan penelitian ini adalah sebagai berikut:
 \begin{enumerate}
-    \item Untuk merancang dan membangun sistem informasi peminjaman sarana dan prasarana kampus berbasis web yang terintegrasi guna mendukung proses pengelolaan fasilitas kampus secara efektif dan terstruktur.
-    \item Untuk menyediakan mekanisme pengajuan serta pemantauan status peminjaman sarana dan prasarana kampus yang mudah diakses oleh mahasiswa secara real-time.
-    \item Untuk meminimalkan terjadinya bentrok jadwal peminjaman melalui fitur validasi jadwal serta menyediakan pengelolaan data peminjaman yang terdokumentasi dengan baik guna mendukung keperluan pelaporan dan evaluasi.
+    \item Menerapkan metode \textit{Scrum} dalam proses perancangan dan pengembangan sistem informasi peminjaman sarana dan prasarana kampus berbasis web secara iteratif dan adaptif.
+    \item Merancang dan mengimplementasikan sistem informasi peminjaman sarana dan prasarana kampus berbasis web menggunakan konsep \textit{CRUD} terintegrasi dan \textit{real-time} dengan penerapan prinsip \textit{green computing} untuk meningkatkan efisiensi penggunaan sumber daya sistem.
+    \newpage
+    \item Merancang struktur basis data ternormalisasi guna meminimalkan redundansi data serta menjaga konsistensi dan integritas data pada sistem informasi peminjaman sarana dan prasarana kampus.
+    \item Mengevaluasi kualitas sistem yang dikembangkan melalui penerapan metode \textit{Black Box Testing} untuk validasi fungsionalitas, serta pengukuran \textit{Code Coverage} menggunakan fitur \texttt{go test -cover} untuk menganalisis efektivitas pengujian unit dan tingkat keterujian kode sumber secara mendalam.
 \end{enumerate}
 
-\newpage
-
 \section{Lingkup Dokumentasi}
-Ruang lingkup dokumentasi pada proyek ini mencakup perancangan dan implementasi Sistem Informasi Peminjaman Sarana dan Prasarana yang diterapkan pada lingkungan kampus ULBI. Adapun batasan ruang lingkup sistem yang dikembangkan meliputi:
+Ruang lingkup dokumentasi pada penelitian ini mencakup seluruh tahapan perancangan, implementasi, hingga evaluasi Sistem Informasi Peminjaman Sarana dan Prasarana berbasis web yang diterapkan di lingkungan kampus Universitas Logistik dan Bisnis Internasional (ULBI). Pengembangan sistem dilakukan dengan menerapkan metode \textit{Scrum} guna memastikan proses pengembangan yang adaptif dan kolaboratif.
+
+Secara spesifik, batasan dan ruang lingkup dokumentasi dalam penelitian ini meliputi:
 \begin{enumerate}
-    \item Pengembangan sistem peminjaman sarana dan prasarana kampus yang mendukung proses pengajuan peminjaman oleh mahasiswa, proses verifikasi dan persetujuan oleh pihak sarana dan prasarana (Sarpras), serta pencatatan kehadiran peminjam oleh petugas keamanan.
-    \item Pengelolaan data inventaris sarana dan prasarana yang meliputi proses penambahan data, perubahan data, dan penghapusan data inventaris yang digunakan dalam sistem peminjaman.
-    \item Implementasi fitur pendukung berupa sistem autentikasi pengguna berdasarkan peran (role) yang terdiri dari mahasiswa, petugas sarana dan prasarana, serta petugas keamanan.
-    \item Implementasi sistem notifikasi berbasis email sebagai media penyampaian informasi terkait status pengajuan peminjaman kepada pengguna sistem.
-    \item Sistem yang dikembangkan tidak mencakup proses pengadaan sarana dan prasarana, manajemen stok barang secara menyeluruh, serta integrasi dengan sistem eksternal kampus lainnya.
+    \item Analisis dan perancangan sistem, yang mencakup analisis kebutuhan fungsional dan non-fungsional untuk mendukung konsep \textit{CRUD} terintegrasi, pemrosesan data secara \textit{real-time}, serta penerapan prinsip \textit{green computing} dalam efisiensi penggunaan sumber daya sistem.
+    \item Implementasi fungsionalitas utama sistem, meliputi pengelolaan data sarana dan prasarana, mekanisme pengajuan dan persetujuan peminjaman, sistem penjadwalan, serta pencatatan status peminjaman secara digital.
+    \item Penerapan metodologi pengembangan \textit{Scrum}, yang mencakup penyusunan \textit{product planning}, \textit{product backlog}, \textit{sprint planning}, \textit{sprint execution}, \textit{sprint review}, dan \textit{sprint retrospective}.
+    \item Perancangan arsitektur data dan antarmuka pengguna, yang meliputi perancangan struktur basis data relasional menggunakan teknik normalisasi untuk menjaga integritas data serta implementasi antarmuka pengguna (\textit{user interface}) dengan memperhatikan aspek \textit{usability}.
+    \item Evaluasi dan pengujian kualitas sistem, yang dilakukan melalui penerapan metode \textit{Black Box Testing} untuk memverifikasi kesesuaian fungsionalitas sistem serta pengukuran \textit{code coverage} menggunakan fitur \texttt{go test -cover} sebagai indikator kualitas dan tingkat keterujian kode program.
 \end{enumerate}

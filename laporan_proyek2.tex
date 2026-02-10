@@ -51,7 +51,7 @@
 \renewcommand{\chaptername}{BAB}
 
 \titleformat{\section}
-    {\normalfont\fontsize{14}{16}\bfseries}{\thesection}{1em}{}
+    {\normalfont\fontsize{12}{14}\bfseries}{\thesection}{1em}{}
     
 \titleformat{\subsection}
     {\normalfont\fontsize{12}{14}\bfseries}{\thesubsection}{1em}{}
@@ -81,6 +81,7 @@
 \renewcommand{\contentsname}{DAFTAR ISI}
 \renewcommand{\cfttoctitlefont}{\hfill\fontsize{16}{19}\selectfont\bfseries}
 \renewcommand{\cftaftertoctitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{-20pt} % Adjust top margin
 \renewcommand{\cftchappresnum}{BAB }
 \setlength{\cftchapnumwidth}{4em}
 
@@ -88,11 +89,13 @@
 \renewcommand{\listtablename}{DAFTAR TABEL}
 \renewcommand{\cftlottitlefont}{\hfill\fontsize{16}{19}\selectfont\bfseries}
 \renewcommand{\cftafterlottitle}{\hfill}
+\setlength{\cftbeforelottitleskip}{-20pt} % Adjust top margin
 
 % List of Figures customization
 \renewcommand{\listfigurename}{DAFTAR GAMBAR}
 \renewcommand{\cftloftitlefont}{\hfill\fontsize{16}{19}\selectfont\bfseries}
 \renewcommand{\cftafterloftitle}{\hfill}
+\setlength{\cftbeforeloftitleskip}{-20pt} % Adjust top margin
 \renewcommand{\figurename}{Gambar}
 \renewcommand{\tablename}{Tabel}
 \renewcommand{\figurename}{Gambar}
@@ -131,7 +134,6 @@
 \renewcommand{\maketitle}{
     \begin{titlepage}
         \centering
-        \vspace*{0.5cm}
         
         % Judul Penelitian
         {\fontsize{14}{16}\selectfont\bfseries
@@ -183,7 +185,7 @@
 \makeatother
 
 % Set Metadata
-\myTitle{IMPLEMENTASI SISTEM INFORMASI PEMINJAMAN SARANA DAN PRASARANA KAMPUS BERBASIS WEB MENGGUNAKAN CRUD RDBMS}
+\myTitle{IMPLEMENTASI METODE SCRUM DALAM PERANCANGAN SISTEM INFORMASI SARANA DAN PRASARANA KAMPUS BERBASIS WEB MENGGUNAKAN CRUD RDBMS}
 \myAuthorOne{MUHAMMAD ARIF RIVALDI}{714240008}
 \myAuthorTwo{RADITYA RIZKI RAHARJA}{714240041}
 \myYear{2026}
@@ -199,7 +201,8 @@
     doi=true,
 ]{biblatex}
 \urlstyle{same}
-\addbibresource{sorted-references.bib}
+\addbibresource{laporan_proyek2_Dapus.bib}
+
 
 \begin{document}
 \maketitle
